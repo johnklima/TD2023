@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
+using TMPro.EditorUtilities;       //<JPK> why?
 using UnityEngine;
 
 public class SnakeScript : MonoBehaviour
