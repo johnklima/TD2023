@@ -13,7 +13,7 @@ public class SnakeScript : MonoBehaviour
     public float bodySpeed = 5f;
     private List<GameObject> snakeBodyParts = new List<GameObject>();
     private bool moving = false;
-    private List<Vector3> positionHistory = new List<Vector3>();
+    public List<Vector3> positionHistory = new List<Vector3>();
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0001f;
