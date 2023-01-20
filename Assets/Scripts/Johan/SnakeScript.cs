@@ -51,6 +51,7 @@ public class SnakeScript : MonoBehaviour
         {
             positionHistory.Insert(0, transform.position);
 
+            //limit the size of the position buffer
             if (positionHistory.Count > snakeBodyParts.Count * gap )
                 positionHistory.RemoveAt(positionHistory.Count - 1);
 
@@ -78,8 +79,14 @@ public class SnakeScript : MonoBehaviour
     //Add bodyparts to the snake
     private void GrowSnake()
     {
-        GameObject body = Instantiate(snakeBody, transform.position, transform.rotation);
+        //add as child of snake head, for organizational reasons
+        GameObject body = Instantiate(snakeBody, transform.position, transform.rotation, transform.parent);
         snakeBodyParts.Add(body);
+
+        //make sure there is a position history for each link, by gap padding
+        for(int i = 0; i < gap; i++)
+            positionHistory.Insert(0, transform.position);
+
     }
     //Trigger GrowSnake
      void OnTriggerEnter(Collider other) 

@@ -483,7 +483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &443173138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 638860866}
   - component: {fileID: 638860865}
   m_Layer: 0
-  m_Name: Snake
+  m_Name: SnakeHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ MonoBehaviour:
   moveSpeed: 5
   turningSpeed: 180
   snakeBody: {fileID: 6100778087380872071, guid: 1da95d0d93a6101438c8d27c3f3d5a1d, type: 3}
-  gap: 100
+  gap: 64
   bodySpeed: 5
   positionHistory: []
   sineWaveSpeed: 3.5
