@@ -10,6 +10,7 @@ public class SnakeScript : MonoBehaviour
     public float turningSpeed = 180f;
     public GameObject snakeBody;
     public int gap = 280;
+    public int segments = 16;
     public float bodySpeed = 5f;
     private List<GameObject> snakeBodyParts = new List<GameObject>();
     private bool moving = false;
@@ -20,12 +21,9 @@ public class SnakeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
+        for(int i = 0; i < segments; i++)
+            GrowSnake();
+        
     }
 
     // Update is called once per frame
