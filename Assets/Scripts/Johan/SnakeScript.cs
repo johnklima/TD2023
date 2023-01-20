@@ -50,6 +50,10 @@ public class SnakeScript : MonoBehaviour
         if (moving)
         {
             positionHistory.Insert(0, transform.position);
+
+            if (positionHistory.Count > snakeBodyParts.Count * gap )
+                positionHistory.RemoveAt(positionHistory.Count - 1);
+
             //Wiggle
             Sine(sineWaveSpeed, amplitude);
         }
