@@ -12,7 +12,7 @@ public class SnakeScript : MonoBehaviour
     public int gap = 280;
     public float bodySpeed = 5f;
     private List<GameObject> snakeBodyParts = new List<GameObject>();
-    private bool moving = false;
+    private bool moving = true;
     private List<Vector3> positionHistory = new List<Vector3>();
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
@@ -32,15 +32,15 @@ public class SnakeScript : MonoBehaviour
     void Update()
     {
         //Move Forward
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            moving = true;
-        }
-        else
-        {
-            moving = false;
-        }
+        // if (Input.GetKey(KeyCode.W))
+        // {
+        //     transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        //     moving = true;
+        // }
+        // else
+        // {
+        //     moving = false;
+        // }
 
         //Turning
         float turningDirection = Input.GetAxis("Horizontal");
@@ -78,14 +78,14 @@ public class SnakeScript : MonoBehaviour
         snakeBodyParts.Add(body);
     }
     //Trigger GrowSnake
-     void OnTriggerEnter(Collider other) 
-     {
-        if (other.CompareTag("Food"))
-        {
-            Destroy(other.gameObject);
-            GrowSnake();
-        }
-     }
+     // void OnTriggerEnter(Collider other) 
+     // {
+     //    if (other.CompareTag("Food"))
+     //    {
+     //        Destroy(other.gameObject);
+     //        GrowSnake();
+     //    }
+     // }
     //Sinewave movement
      private void Sine(float speed, float Amplitude)
      {

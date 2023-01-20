@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6578830645048047008}
   - component: {fileID: 3683458975949792295}
   - component: {fileID: 24954684560861817}
-  - component: {fileID: 420921245598442021}
   m_Layer: 0
   m_Name: SnakeBody
   m_TagString: Untagged
@@ -98,22 +97,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &420921245598442021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100778087380872071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afda57034a908614db770a252a3ea037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0.1
-  turningSpeed: 180
-  snikeBody: {fileID: 1366445956450149491, guid: 64380fe80458d4e469df9e26e403ef4f, type: 3}
-  gap: 280
-  bodySpeed: 5
-  sineWaveSpeed: 3.5
-  amplitude: 0.0001
