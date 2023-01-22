@@ -105,10 +105,9 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
             for (int col = 0; col < maxCol; col++)
             {
                 //instantiate and store an object in the objectsArray list
-                float yPos = Random.Range(0f, 2f);
 
                 objectsArray[row, col] = Instantiate(testObject, transform);
-                Vector3 newPosition = new Vector3(row * objectSize, yPos, col * objectSize);
+                Vector3 newPosition = new Vector3(row * objectSize, 0f, col * objectSize);
                 objectsArray[row, col].transform.position = newPosition;
 
                 //randomly determine which ones will be active at start
