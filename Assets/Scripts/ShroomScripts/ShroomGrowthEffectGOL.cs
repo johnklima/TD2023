@@ -27,6 +27,9 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
         cellsArray = new int[maxRows, maxCol];
         objectsArray = new Transform[maxRows, maxCol];
 
+        //SLETT SENERE!!!!!!!!!!!!!
+        Initialize();
+        //SLETT SENERE!!!!!!!!!!!!!
     }
 
     private void Update()
