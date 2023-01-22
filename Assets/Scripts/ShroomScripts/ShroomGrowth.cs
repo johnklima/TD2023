@@ -36,7 +36,11 @@ public class ShroomGrowth : MonoBehaviour, Interactable
     {
         //testing purpose, remember to remove
         if (Input.GetKeyDown(KeyCode.T))
+        {
             isGrowing = true;
+            shroomGrowthEffect.Initialize();
+            shroomGrowthEffect.startGrowing = true;
+        }
 
         if (isGrowing)
         {
