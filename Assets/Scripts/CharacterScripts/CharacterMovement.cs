@@ -42,7 +42,7 @@ public class CharacterMovement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, .1f, groundLayer);
         Move();
         isMoving = (moveDir.magnitude > 0) ? true : false;
-        SpeedControl();
+        Sprint();
 
         Jump();
 
@@ -66,7 +66,7 @@ public class CharacterMovement : MonoBehaviour
 
     
 
-    private void SpeedControl()
+    private void Sprint()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -90,7 +90,9 @@ public class CharacterMovement : MonoBehaviour
         controller.Move(moveDir);
 
         if (isGrounded && (yVelocity.y < 0f))
+        {
             yVelocity.y = 0f;
+        }
 
         yVelocity.y += gravity * Time.deltaTime;
         controller.Move(yVelocity * Time.deltaTime);
@@ -100,8 +102,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            Vector3 jumpDir = Vector3.up * jumpForce * Time.deltaTime;
-            controller.Move(jumpDir.normalized);
+            yVelocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
     }
 
