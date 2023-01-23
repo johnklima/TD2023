@@ -9,8 +9,10 @@ public class CharacterRotation : MonoBehaviour
     [SerializeField] private Transform playerChar;
 
     [SerializeField] private float raycastLength;
+    [SerializeField] private Transform raycastStartPoint;
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private KeyCode interactableKeyCode;
+
 
     private float xRotation = 0f;
     private Camera camera;
@@ -30,14 +32,18 @@ public class CharacterRotation : MonoBehaviour
 
     private void DetectInteractables()
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        //Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = new Ray(raycastStartPoint.position, transform.forward);
+
 
         if (Physics.Raycast(ray, out RaycastHit hit, raycastLength, interactableLayer))
         {
+
+            PlayerMessagesUI.Instance.SetPlayerText("E to interact with " + hit.collider.gameObject.name);
+            
             if (Input.GetKeyDown(interactableKeyCode))
             {
                 Debug.Log("Hello");
-                PlayerMessagesUI.Instance.SetPlayerText("E to interact with " + hit.collider.gameObject.name);
                 hit.collider.gameObject.GetComponent<Interactable>().Interact();
             }
         }
@@ -57,4 +63,5 @@ public class CharacterRotation : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerChar.Rotate(Vector3.up * mouseX);
     }
+
 }
