@@ -13,19 +13,18 @@ public class SnakeScript : MonoBehaviour
     public float bodySpeed = 5f;
     private List<GameObject> snakeBodyParts = new List<GameObject>();
     private bool moving = true;
-    private List<Vector3> positionHistory = new List<Vector3>();
+    public List<Vector3> positionHistory = new List<Vector3>();
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0001f;
+    public int segments = 6;
     // Start is called before the first frame update
     void Start()
     {
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
-        GrowSnake();
+
+        for(int i = 0; i < segments; i++)
+            GrowSnake();
+        
     }
 
     // Update is called once per frame
@@ -50,6 +49,10 @@ public class SnakeScript : MonoBehaviour
         if (moving)
         {
             positionHistory.Insert(0, transform.position);
+
+            if (positionHistory.Count > snakeBodyParts.Count * gap)
+               positionHistory.RemoveAt(positionHistory.Count - 1);
+
             //Wiggle
             Sine(sineWaveSpeed, amplitude);
         }
@@ -74,8 +77,13 @@ public class SnakeScript : MonoBehaviour
     //Add bodyparts to the snake
     private void GrowSnake()
     {
-        GameObject body = Instantiate(snakeBody, transform.position, transform.rotation);
+        GameObject body = Instantiate(snakeBody, transform.position, transform.rotation, transform.parent);
         snakeBodyParts.Add(body);
+
+        //make sure there is a position history for each link, by gap padding
+        for (int i = 0; i < gap; i++)
+            positionHistory.Insert(0, transform.position);
+
     }
     //Trigger GrowSnake
      // void OnTriggerEnter(Collider other) 

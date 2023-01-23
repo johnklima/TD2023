@@ -1051,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &638860865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,9 +1066,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   turningSpeed: 180
-  snakeBody: {fileID: 0}
+  snakeBody: {fileID: 6100778087380872071, guid: 1da95d0d93a6101438c8d27c3f3d5a1d, type: 3}
   gap: 100
   bodySpeed: 5
+  positionHistory: []
   sineWaveSpeed: 3.5
   amplitude: 0.005
 --- !u!65 &638860866
