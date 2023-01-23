@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7032117363872934687
+--- !u!114 &-1020753079662994933
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DecalCube
+  m_Name: DecalMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 765d895adc6a6854ea047a871464302b, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -35,6 +35,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _RenderTexture:
+        m_Texture: {fileID: 8400000, guid: 78b0491df5061ec4ba846901d83ace7e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_dd61551e88744ff8bca817d31694cd31_Texture_1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -52,11 +56,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 0.5
+    - _AlphaClip: 1
     - _HeightAmplitude: 1
-    - _NormalMapStrength: 1
+    - _NormalMapStrength: 9.5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _EmissiveColor: {r: 1, g: 1, b: 1, a: 0}
+    - _EmissiveColor: {r: 0, g: 2.2923048, b: 0.024002966, a: 0}
   m_BuildTextureStacks: []
