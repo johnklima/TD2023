@@ -1814,6 +1814,10 @@ PrefabInstance:
       propertyPath: interactableLayer.m_Bits
       value: 384
       objectReference: {fileID: 0}
+    - target: {fileID: 1696540415414993908, guid: 28a4eae19004641499e74317316de34c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e4fd22ad5aed1dd45b1b8aefcbca13b3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a4eae19004641499e74317316de34c, type: 3}
 --- !u!1 &1236844878
@@ -2237,6 +2241,10 @@ PrefabInstance:
     - target: {fileID: 5525215321477030365, guid: 81c003e3502eff94397e382c17af6827, type: 3}
       propertyPath: m_Name
       value: Shroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525215322725851212, guid: 81c003e3502eff94397e382c17af6827, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c003e3502eff94397e382c17af6827, type: 3}
