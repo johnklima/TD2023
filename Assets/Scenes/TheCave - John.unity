@@ -754,8 +754,6 @@ MonoBehaviour:
   agentPrefab: {fileID: 3879828528215531331, guid: d09a0e7160b0ce048bf30b1b19aecdd7, type: 3}
   behaviour: {fileID: 11400000, guid: d21d512a4af7d3e43a3dc366349fee09, type: 2}
   startingAmount: 30
-  moveSpeed: 5
-  maxSpeed: 5
   neighbourRadius: 1.5
   avoidanceRadius: 0.5
 --- !u!1 &319485539
@@ -1560,12 +1558,12 @@ MonoBehaviour:
   moveSpeed: 5
   turningSpeed: 180
   snakeBody: {fileID: 6100778087380872071, guid: 1da95d0d93a6101438c8d27c3f3d5a1d, type: 3}
-  gap: 64
+  gap: 10
+  segments: 16
   bodySpeed: 5
   positionHistory: []
   sineWaveSpeed: 3.5
-  amplitude: 0.005
-  segments: 6
+  amplitude: 0.05
 --- !u!65 &638860866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1637,7 +1635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638860864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4051821, y: -4.946475, z: -0.15727848}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1668,7 +1666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678805815}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4051821, y: 4.946475, z: 0.15727848}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
