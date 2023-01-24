@@ -51,33 +51,28 @@ public class Boids : MonoBehaviour
 
         newVelocity += constrain() * constrainFactor;
 
-        if(avoidCount > 0)
-        {
-            Vector3 tavoid = avoidObst / avoidCount;
-            newVelocity += tavoid * avoidFactor;
-        }
-
+        newVelocity += avoid();
+       
         Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
 
-        velocity = slerpVelo;
+        velocity = slerpVelo.normalized;
 
         transform.position += velocity * Time.deltaTime * speed;
         transform.LookAt(transform.position + velocity);
 
 
     }
-
-    public void accumAvoid(Vector3 avoid)
+    Vector3 avoid()
     {
-        avoidObst+= transform.position - avoid;
-        avoidCount++;
 
+        if (avoidCount > 0)
+        {
+            return (avoidObst / avoidCount).normalized * avoidFactor;
+        }
+
+        return Vector3.zero;
     }
-    public void resetAvoid()
-    {
-        avoidCount = 0;
-        avoidObst *= 0;
-    }
+    
     Vector3 constrain()
     {
         Vector3 steer = new Vector3(0, 0, 0);
@@ -162,5 +157,15 @@ public class Boids : MonoBehaviour
         return steer;
     }
 
+    public void accumAvoid(Vector3 avoid)
+    {
+        avoidObst += transform.position - avoid;
+        avoidCount++;
 
+    }
+    public void resetAvoid()
+    {
+        avoidCount = 0;
+        avoidObst *= 0;
+    }
 }
