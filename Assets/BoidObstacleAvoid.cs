@@ -17,6 +17,7 @@ public class BoidObstacleAvoid : MonoBehaviour
         boids = boid.GetComponent<Boids>();
     }
 
+
     private void OnTriggerStay(Collider other)
     {
         // Bit shift the index of the layer (8) to get a bit mask
@@ -35,14 +36,11 @@ public class BoidObstacleAvoid : MonoBehaviour
             boids.accumAvoid(hit.point);
         }
         else
-        {
             boids.resetAvoid();
-        }
     }
     private void OnTriggerExit(Collider other)
     {
         boids.resetAvoid();
     }
-
 }
 

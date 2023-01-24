@@ -9,16 +9,16 @@ public class Boids : MonoBehaviour
     public float separationFactor = 6.0f;
     public float allignFactor = 1.0f;
     public float constrainFactor = 2.0f;
+    public float avoidFactor = 2.0f;
 
     public float collisionDistance = 6.0f;
     public float speed = 3.0f;
+    public Vector3 constrainPoint;
 
-    public Vector3 velocity;
-
-    public Vector3 avoidObst;
-    public float avoidFactor = 1.0f;
-
-    private Vector3 constrainPoint;
+    Vector3 velocity;
+    Vector3 avoidObst;
+    float avoidCount;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,7 @@ public class Boids : MonoBehaviour
 
         Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
         Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
-        float speed = Random.Range(0f, 3f);
+        float speed = Random.Range(0f, 1f);
 
 
         transform.position = pos;
@@ -36,26 +36,12 @@ public class Boids : MonoBehaviour
 
     }
 
-    public void accumAvoid(Vector3 avoid)
-    {
-        avoidObst += transform.position - avoid;
-        avoidObst.Normalize();
-
-
-    }
-    public void resetAvoid() 
-    {
-        avoidObst *= 0;
-    }
     // Update is called once per frame
     void Update()
     {
-
-        
         Vector3 newVelocity = new Vector3(0, 0, 0);
         // rule 1 all boids steer towards center of mass - cohesion
         newVelocity += cohesion() * cohesionFactor;
-
 
         // rule 2 all boids steer away from each other - avoidance        
         newVelocity += separation() * separationFactor;
@@ -65,8 +51,11 @@ public class Boids : MonoBehaviour
 
         newVelocity += constrain() * constrainFactor;
 
-        newVelocity += avoidObst * avoidFactor;
-        
+        if(avoidCount > 0)
+        {
+            Vector3 tavoid = avoidObst / avoidCount;
+            newVelocity += tavoid * avoidFactor;
+        }
 
         Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
 
@@ -77,13 +66,26 @@ public class Boids : MonoBehaviour
 
 
     }
+
+    public void accumAvoid(Vector3 avoid)
+    {
+        avoidObst+= transform.position - avoid;
+        avoidCount++;
+
+    }
+    public void resetAvoid()
+    {
+        avoidCount = 0;
+        avoidObst *= 0;
+    }
     Vector3 constrain()
     {
         Vector3 steer = new Vector3(0, 0, 0);
 
-        steer += (Vector3.zero - transform.position);
+        steer += (constrainPoint - transform.position);
 
         steer.Normalize();
+
         return steer;
     }
 
