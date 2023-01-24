@@ -8,12 +8,12 @@ using Random = UnityEngine.Random;
 public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent navMeshagent;
-    public Transform player;
+    private Transform player;
     public LayerMask groundLayer, playerLayer;
     
     //Patroling
     public Vector3 walkPoint;
-    private bool walkPointSet;
+    public bool walkPointSet;
     public float walkPointRange;
     
     //Attacking
@@ -38,8 +38,6 @@ public class EnemyAI : MonoBehaviour
         if (!playerInAttackRange && !playerInSightRange) Patroling();
         if (!playerInAttackRange && playerInSightRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) Attack();
-        
-        
     }
 
     private void Patroling()
@@ -51,7 +49,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         
         //WalkPoint reached
-        if (distanceToWalkPoint.magnitude < 1) walkPointSet = false;
+        if (distanceToWalkPoint.magnitude < 1) walkPointSet = false; 
     }
 
     private void SearchWalkPoint()
