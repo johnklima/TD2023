@@ -21,10 +21,6 @@ public class Flock : MonoBehaviour
     const float agentDensity = 0.08f;
 
     Collider[] otherColliders;
-    
-    [SerializeField] float moveSpeed = 5f;
-
-    [SerializeField] float maxSpeed = 5f;
 
     [Range(1f, 10f)] // the radius distance that agents should keep from neighbouring colliders
     [SerializeField] float neighbourRadius = 1.5f;
@@ -75,12 +71,6 @@ public class Flock : MonoBehaviour
             */
             Vector3 move = behaviour.CalculateMove(agent, otherTransform, this);
 
-            move*= moveSpeed;
-            // if the speed of the vector 3 is greater than our intended max speed, normalize the speed * maxspeed
-            if (move.magnitude > maxSpeed)
-            {
-                move = move.normalized * maxSpeed;
-            }
             // make our new vector3 that we made from the attached FlockBehaviour,
             // and make it move according to those rules
             agent.Move(move);
