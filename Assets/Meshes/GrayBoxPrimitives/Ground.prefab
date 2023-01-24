@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5207545814407631883
+--- !u!1 &3938157818174607004
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5815132854712339255}
+  - component: {fileID: 5444957153389036370}
   - component: {fileID: 6093862990246596484}
   - component: {fileID: 6138922028670120508}
   - component: {fileID: 2051525832902567812}
@@ -17,15 +17,15 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &5815132854712339255
+--- !u!4 &5444957153389036370
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5207545814407631883}
+  m_GameObject: {fileID: 3938157818174607004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.472206, y: -15.560628, z: 29.547737}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,7 +40,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5207545814407631883}
+  m_GameObject: {fileID: 3938157818174607004}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &6138922028670120508
 MeshRenderer:
@@ -48,7 +48,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5207545814407631883}
+  m_GameObject: {fileID: 3938157818174607004}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -90,7 +90,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5207545814407631883}
+  m_GameObject: {fileID: 3938157818174607004}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
