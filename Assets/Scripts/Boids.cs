@@ -51,7 +51,7 @@ public class Boids : MonoBehaviour
 
         newVelocity += constrain() * constrainFactor;
 
-        newVelocity += avoid();
+        newVelocity += avoid() * avoidFactor;
        
         Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
 
@@ -67,7 +67,7 @@ public class Boids : MonoBehaviour
 
         if (avoidCount > 0)
         {
-            return (avoidObst / avoidCount).normalized * avoidFactor;
+            return (avoidObst / avoidCount).normalized ;
         }
 
         return Vector3.zero;
