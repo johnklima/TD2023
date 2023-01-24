@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 61194094}
   - component: {fileID: 61194093}
   - component: {fileID: 61194092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,10 +661,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &61194093
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -887,7 +890,7 @@ GameObject:
   - component: {fileID: 192931880}
   - component: {fileID: 192931879}
   - component: {fileID: 192931878}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,10 +928,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &192931879
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1055,7 +1061,7 @@ GameObject:
   - component: {fileID: 346135356}
   - component: {fileID: 346135355}
   - component: {fileID: 346135354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,10 +1099,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &346135355
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1743,7 +1752,7 @@ GameObject:
   - component: {fileID: 481536803}
   - component: {fileID: 481536802}
   - component: {fileID: 481536801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1781,10 +1790,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
+  constrainFactor: 10
+  collisionDistance: 3
   speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &481536802
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2008,7 +2020,7 @@ GameObject:
   - component: {fileID: 600893838}
   - component: {fileID: 600893837}
   - component: {fileID: 600893836}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2046,10 +2058,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &600893837
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2245,7 +2260,7 @@ GameObject:
   - component: {fileID: 641708278}
   - component: {fileID: 641708277}
   - component: {fileID: 641708276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2283,10 +2298,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
+  constrainFactor: 10
   collisionDistance: 6
   speed: 3
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &641708277
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2774,7 +2792,7 @@ GameObject:
   - component: {fileID: 815380508}
   - component: {fileID: 815380507}
   - component: {fileID: 815380506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2812,10 +2830,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &815380507
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2941,7 +2962,7 @@ GameObject:
   - component: {fileID: 872523560}
   - component: {fileID: 872523559}
   - component: {fileID: 872523558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2979,10 +3000,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &872523559
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3114,7 +3138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &918756942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3135,7 +3159,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918756941}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3353,7 +3377,7 @@ GameObject:
   - component: {fileID: 1002689603}
   - component: {fileID: 1002689602}
   - component: {fileID: 1002689601}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3391,10 +3415,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &1002689602
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3606,7 +3633,7 @@ GameObject:
   - component: {fileID: 1087064533}
   - component: {fileID: 1087064532}
   - component: {fileID: 1087064531}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3644,10 +3671,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &1087064532
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4329,7 +4359,7 @@ GameObject:
   - component: {fileID: 1378941246}
   - component: {fileID: 1378941245}
   - component: {fileID: 1378941244}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4367,10 +4397,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &1378941245
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4447,7 +4480,7 @@ GameObject:
   - component: {fileID: 1396403507}
   - component: {fileID: 1396403506}
   - component: {fileID: 1396403505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4485,10 +4518,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &1396403506
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4986,7 +5022,7 @@ GameObject:
   - component: {fileID: 1849423255}
   - component: {fileID: 1849423254}
   - component: {fileID: 1849423253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5024,10 +5060,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &1849423254
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5222,7 +5261,7 @@ GameObject:
   - component: {fileID: 1994115119}
   - component: {fileID: 1994115118}
   - component: {fileID: 1994115117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5260,10 +5299,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &1994115118
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5340,7 +5382,7 @@ GameObject:
   - component: {fileID: 1996242407}
   - component: {fileID: 1996242406}
   - component: {fileID: 1996242405}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5378,10 +5420,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &1996242406
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5458,7 +5503,7 @@ GameObject:
   - component: {fileID: 2025025106}
   - component: {fileID: 2025025105}
   - component: {fileID: 2025025104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boid (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5496,10 +5541,13 @@ MonoBehaviour:
   cohesionFactor: 0.2
   separationFactor: 6
   allignFactor: 1
-  constrainFactor: 2
-  collisionDistance: 6
-  speed: 3
+  constrainFactor: 10
+  collisionDistance: 3
+  speed: 1
   velocity: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 383
 --- !u!135 &2025025105
 SphereCollider:
   m_ObjectHideFlags: 0

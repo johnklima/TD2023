@@ -15,6 +15,8 @@ public class Boids : MonoBehaviour
 
     public Vector3 velocity;
 
+    [SerializeField] LayerMask layerMask;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,10 @@ public class Boids : MonoBehaviour
         newVelocity += align() * allignFactor;
 
         newVelocity += constrain() * constrainFactor;
+
+        // David's addition
+        // our vector does not multiply with a factor, because we want it to act as top priority
+        newVelocity += StaticAvoid();
 
         Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
 
@@ -136,6 +142,22 @@ public class Boids : MonoBehaviour
 
         steer.Normalize();
 
+        return steer;
+    }
+
+    Vector3 StaticAvoid()
+    {
+        Ray ray = new Ray (transform.position, transform.forward);
+        RaycastHit hit;
+        float distance = 5f;
+
+        Vector3 steer = Vector3.zero;
+        
+        // if we hit something, our position equals itself, but minus the hit position
+        if (Physics.Raycast(ray, out hit, distance, layerMask))
+        {
+            Debug.DrawLine(transform.position, hit.point, Color.red);
+        }
         return steer;
     }
 
