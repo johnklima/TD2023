@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float walkSpeed, runSpeed;
+    [SerializeField] private float walkSpeed, runSpeed, bounceForce;
     private float currentSpeed;
     private Vector3 moveDir;
     
-    private bool isRunning, isJumping, isMoving, isGrounded;
+    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce;
 
     [SerializeField] private float jumpForce;
     private float gravity = -9.81f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask mushroomBounceLayer;
 
-    private Vector3 yVelocity;
+    private Vector3 velocity;
 
     private CharacterController controller;
     private Animator anim;
@@ -40,9 +41,11 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, .1f, groundLayer);
+        onMushroomBounce = Physics.CheckSphere(groundCheck.position, .1f, mushroomBounceLayer);
+
         Move();
         isMoving = (moveDir.magnitude > 0) ? true : false;
-        SpeedControl();
+        Sprint();
 
         Jump();
 
@@ -61,12 +64,16 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
+        if (onMushroomBounce)
+        {
+            velocity.y = bounceForce;
+        }
 
     }
 
     
 
-    private void SpeedControl()
+    private void Sprint()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -89,19 +96,18 @@ public class CharacterMovement : MonoBehaviour
 
         controller.Move(moveDir);
 
-        if (isGrounded && (yVelocity.y < 0f))
-            yVelocity.y = 0f;
+        if (isGrounded && (velocity.y < 0f))
+            velocity.y = 0f;
 
-        yVelocity.y += gravity * Time.deltaTime;
-        controller.Move(yVelocity * Time.deltaTime);
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 
     private void Jump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            Vector3 jumpDir = Vector3.up * jumpForce * Time.deltaTime;
-            controller.Move(jumpDir.normalized);
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
     }
 

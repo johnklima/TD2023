@@ -15,12 +15,15 @@ public class Boids : MonoBehaviour
 
     public Vector3 velocity;
 
-    [SerializeField] LayerMask layerMask;
+    public Vector3 avoidObst;
+    public float avoidFactor = 1.0f;
 
+    private Vector3 constrainPoint;
     // Start is called before the first frame update
     void Start()
     {
         flock = transform.parent;
+        constrainPoint = flock.position;
 
         Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
         Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
@@ -33,9 +36,22 @@ public class Boids : MonoBehaviour
 
     }
 
+    public void accumAvoid(Vector3 avoid)
+    {
+        avoidObst += transform.position - avoid;
+        avoidObst.Normalize();
+
+
+    }
+    public void resetAvoid() 
+    {
+        avoidObst *= 0;
+    }
     // Update is called once per frame
     void Update()
     {
+
+        
         Vector3 newVelocity = new Vector3(0, 0, 0);
         // rule 1 all boids steer towards center of mass - cohesion
         newVelocity += cohesion() * cohesionFactor;
@@ -49,9 +65,8 @@ public class Boids : MonoBehaviour
 
         newVelocity += constrain() * constrainFactor;
 
-        // David's addition
-        // our vector does not multiply with a factor, because we want it to act as top priority
-        newVelocity += StaticAvoid();
+        newVelocity += avoidObst * avoidFactor;
+        
 
         Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
 
@@ -142,22 +157,6 @@ public class Boids : MonoBehaviour
 
         steer.Normalize();
 
-        return steer;
-    }
-
-    Vector3 StaticAvoid()
-    {
-        Ray ray = new Ray (transform.position, transform.forward);
-        RaycastHit hit;
-        float distance = 5f;
-
-        Vector3 steer = Vector3.zero;
-        
-        // if we hit something, our position equals itself, but minus the hit position
-        if (Physics.Raycast(ray, out hit, distance, layerMask))
-        {
-            Debug.DrawLine(transform.position, hit.point, Color.red);
-        }
         return steer;
     }
 

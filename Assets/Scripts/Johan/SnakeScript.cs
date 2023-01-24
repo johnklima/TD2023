@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro.EditorUtilities;       //<JPK> why?
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SnakeScript : MonoBehaviour
 {
@@ -18,9 +19,16 @@ public class SnakeScript : MonoBehaviour
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0001f;
+
+    private NavMeshAgent agent;
+    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+
+        
+
         for (int i = 0; i < segments; i++)
             GrowSnake();
 
@@ -29,6 +37,11 @@ public class SnakeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        agent.SetDestination(target.position);
+
+        /*
+        
         //Move Forward
         if (Input.GetKey(KeyCode.W))
         {
@@ -43,8 +56,15 @@ public class SnakeScript : MonoBehaviour
         //Turning
         float turningDirection = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, turningDirection * turningSpeed * Time.deltaTime);
-
+        
         //Store position history
+        */
+
+        if (agent.remainingDistance > 1)
+            moving = true;
+        else
+            moving = false;                
+
         if (moving)
         {
             positionHistory.Insert(0, transform.position);
