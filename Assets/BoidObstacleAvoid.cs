@@ -7,13 +7,14 @@ using UnityEngine;
 public class BoidObstacleAvoid : MonoBehaviour
 {
 
-    public Boids boids;
-    public Transform boid;
+    private Boids boids;
+    private Transform boid;
 
     private void Start()
     {
-        boids = GetComponent<Boids>();
+        
         boid = transform.parent;
+        boids = boid.GetComponent<Boids>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -30,13 +31,17 @@ public class BoidObstacleAvoid : MonoBehaviour
         if (Physics.Raycast(boid.position, boid.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
         {
             Debug.DrawRay(boid.position, boid.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
+
+            boids.accumAvoid(hit.point);
         }
         else
         {
-            Debug.DrawRay(boid.position, boid.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Did not Hit");
+            boids.resetAvoid();
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        boids.resetAvoid();
     }
 
 }

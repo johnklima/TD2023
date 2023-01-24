@@ -15,10 +15,15 @@ public class Boids : MonoBehaviour
 
     public Vector3 velocity;
 
+    public Vector3 avoidObst;
+    public float avoidFactor = 1.0f;
+
+    private Vector3 constrainPoint;
     // Start is called before the first frame update
     void Start()
     {
         flock = transform.parent;
+        constrainPoint = flock.position;
 
         Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
         Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
@@ -31,9 +36,22 @@ public class Boids : MonoBehaviour
 
     }
 
+    public void accumAvoid(Vector3 avoid)
+    {
+        avoidObst += transform.position - avoid;
+        avoidObst.Normalize();
+
+
+    }
+    public void resetAvoid() 
+    {
+        avoidObst *= 0;
+    }
     // Update is called once per frame
     void Update()
     {
+
+        
         Vector3 newVelocity = new Vector3(0, 0, 0);
         // rule 1 all boids steer towards center of mass - cohesion
         newVelocity += cohesion() * cohesionFactor;
@@ -46,6 +64,9 @@ public class Boids : MonoBehaviour
         newVelocity += align() * allignFactor;
 
         newVelocity += constrain() * constrainFactor;
+
+        newVelocity += avoidObst * avoidFactor;
+        
 
         Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
 
