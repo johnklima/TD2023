@@ -2,21 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KlimaCannon : MonoBehaviour
+public class KlimaCannonNew : MonoBehaviour
 {
 
-    public float GRAVITY = -9.8f;
+    public float GRAVITY = 9.8f;
     public Vector3 direction;
+
+    public Transform start;
+    public Transform end;
+
+    public Gravity grav;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        grav = GetComponent<Gravity>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("fire");
+            Debug.Log(start.name);
+            Debug.Log(end.name);            
+            Debug.Log(grav.finalForce);
+            transform.position += Vector3.up;
+
+            grav.impulse = fire(start.position, end.position, 60.0f);
+
+
+        }
     }
 
 

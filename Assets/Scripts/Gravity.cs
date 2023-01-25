@@ -17,6 +17,9 @@ public class Gravity : MonoBehaviour
     public float mass = 1.0f;
 
     public float height = 0;
+
+    public Vector3 impulse = new Vector3(0, 0, 0);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,10 @@ public class Gravity : MonoBehaviour
         //reset final force to the initial force of gravity
         finalForce.Set(0, GRAVITY_CONSTANT * mass, 0);
         finalForce += thrust;
+
+        finalForce += impulse;
+
+        impulse *= 0;
 
         acceleration = finalForce / mass;
         velocity += acceleration * Time.deltaTime;
