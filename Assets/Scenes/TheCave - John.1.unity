@@ -3131,7 +3131,7 @@ Transform:
   m_GameObject: {fileID: 638860864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 678805816}
@@ -3174,12 +3174,12 @@ MonoBehaviour:
   moveSpeed: 0.1
   turningSpeed: 180
   snakeBody: {fileID: 6100778087380872071, guid: 1da95d0d93a6101438c8d27c3f3d5a1d, type: 3}
-  gap: 32
+  gap: 40
   segments: 16
   bodySpeed: 5
   positionHistory: []
   sineWaveSpeed: 3.5
-  amplitude: 0.002
+  amplitude: 0.025
   target: {fileID: 560455847}
 --- !u!1 &658963564
 GameObject:
