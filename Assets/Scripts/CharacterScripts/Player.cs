@@ -5,17 +5,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
 
     [SerializeField] private int maxHealth;
 
-    private HealthSystem healthSystem;
+    public HealthSystem healthSystem;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        Instance = this;
+
         healthSystem = new HealthSystem(maxHealth);
 
         healthSystem.OnDied += _OnDied;
+    }
+    
+    // Start is called before the first frame update
+    void Start()
+    {
     }
 
     private void _OnDied(object sender, EventArgs e)

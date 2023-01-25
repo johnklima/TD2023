@@ -11,6 +11,7 @@ public class HealthSystem
     public event EventHandler OnDamageTaken;
     public event EventHandler OnDied;
     public event EventHandler OnHealthGain;
+    
 
     public HealthSystem(int maxHealth)
     {

@@ -22,15 +22,30 @@ public class SnakeScript : MonoBehaviour
 
     private NavMeshAgent agent;
     public Transform target;
+
+    private HealthSystem healthSystem;
+    [SerializeField] private int maxHealth;
+
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
-        
 
         for (int i = 0; i < segments; i++)
             GrowSnake();
+
+        healthSystem = new HealthSystem(maxHealth);
+
+        healthSystem.OnDied += _OnDied;
+    }
+
+    
+
+    private void _OnDied(object sender, EventArgs e)
+    {
+        //activate some UI stuff / respawn thing
 
     }
 
