@@ -1,6 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-807940444415735970
+--- !u!114 &-8696514293249582976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/TD course FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638102560140902706
+  FileSizes:
+  - Name: Desktop
+    Value: 2563904
+  Exists: 1
+--- !u!114 &-1040438246802101791
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,13 +32,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../FMOD Studio/TD course FMOD/Build/Desktop/Master.strings.bank
+  Path: Assets/Plugins/FMOD/TD course FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638102493522005015
+  lastModified: 638102560140932711
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 758
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -33,17 +53,18 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -807940444415735970}
-  - {fileID: 8112116986260369976}
-  EditorEvents: []
+  - {fileID: -1040438246802101791}
+  - {fileID: -8696514293249582976}
+  EditorEvents:
+  - {fileID: 3439261579355305913}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8112116986260369976}
+  - {fileID: -8696514293249582976}
   StringsBanks:
-  - {fileID: -807940444415735970}
-  cacheTime: 638102493522005015
+  - {fileID: -1040438246802101791}
+  cacheTime: 638102560140932711
   cacheVersion: 131601
---- !u!114 &8112116986260369976
+--- !u!114 &3439261579355305913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,14 +73,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Event
   m_EditorClassIdentifier: 
-  Path: ../../FMOD Studio/TD course FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638102493521965007
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
+  Path: event:/New Event
+  Guid:
+    Data1: 107807055
+    Data2: 1083887342
+    Data3: -236232576
+    Data4: -1421460928
+  Banks:
+  - {fileID: -8696514293249582976}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 221988
