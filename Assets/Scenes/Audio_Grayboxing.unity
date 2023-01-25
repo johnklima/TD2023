@@ -2158,6 +2158,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf3478a5cac14db4e9a2595216b3a88c, type: 3}
+--- !u!1 &358077905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4655511397611023391, guid: 42ee9eb462b826047b16616516e0c22b, type: 3}
+  m_PrefabInstance: {fileID: 2039593089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &358077910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358077905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 107807055
+      Data2: 1083887342
+      Data3: -236232576
+      Data4: -1421460928
+    Path: event:/New Event
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &376142595
 PrefabInstance:
   m_ObjectHideFlags: 0
