@@ -17,10 +17,10 @@ public class targetWiggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Sine(sineWaveSpeed, amplitude);
+        SineWave(sineWaveSpeed, amplitude);
     }
 
-    private void Sine(float speed, float Amplitude)
+    private void SineWave(float speed, float Amplitude)
     {
         Vector3 pos = transform.position;
         pos.x = Mathf.Sin(Time.time * speed) * Amplitude;

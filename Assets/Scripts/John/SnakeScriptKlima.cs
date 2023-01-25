@@ -5,7 +5,7 @@ using TMPro.EditorUtilities;       //<JPK> why?
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SnakeScript : MonoBehaviour
+public class SnakeScriptKlima : MonoBehaviour
 {
     public float moveSpeed = .1f;
     public float turningSpeed = 180f;
