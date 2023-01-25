@@ -24,7 +24,7 @@ public class KlimaCannon : MonoBehaviour
     {
         
         direction = targPos - startPos;
-        return calculateIterativeTrajectory(startPos, targPos, 70);
+        return calculateIterativeTrajectory(startPos, targPos, angle);
 
 
     }
@@ -166,6 +166,7 @@ public class KlimaCannon : MonoBehaviour
         }
 
         Vector3 angV = new Vector3(direction.x, 0, direction.z);
+        
         angV.Normalize();
         Vector3 side = Vector3.Cross(angV, Vector3.up);
         side.Normalize();
