@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class BoidObstacleAvoid : MonoBehaviour
+public class BoidObstacleAvoidDavid : MonoBehaviour
 {
 
     private Boids boids;
