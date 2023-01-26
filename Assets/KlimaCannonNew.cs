@@ -198,4 +198,14 @@ public class KlimaCannonNew : MonoBehaviour
         return angV;   
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "CannonTarget")  //gonna need some "Or's" here, LayerMask? 
+        {
+            Debug.Log("ball hit " + other.name);
+            grav.reset();
+            transform.localPosition = Vector3.zero;
+        }
+        
+    }
 }

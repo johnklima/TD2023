@@ -64,4 +64,12 @@ public class Gravity : MonoBehaviour
 
     }
 
+    public void reset()
+    {
+        velocity *= 0;
+        acceleration *= 0;
+        impulse *= 0;
+        thrust *= 0;
+    }
+
 }
