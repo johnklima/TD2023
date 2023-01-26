@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Boids : MonoBehaviour
 {
-    // flock parent + all the "importance" values to determine how important one behaviour is over another
+    
     [SerializeField] Transform flock;
     [SerializeField] float cohesionFactor = 0.2f;
     [SerializeField] float separationFactor = 6.0f;
     [SerializeField] float allignFactor = 1.0f;
     [SerializeField] float constrainFactor = 2.0f;
     [SerializeField] float avoidFactor = 2.0f;
-
     [SerializeField] float collisionDistance = 6.0f;
-    private float maxSpeed = 10f;
-    private float startSpeed = 0.5f;
+    [SerializeField] float speed = 6.0f;
     [SerializeField] Vector3 constrainPoint;
+    [SerializeField] bool flocking = true;
 
     // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
     public Vector3 velocity;
@@ -28,14 +27,14 @@ public class Boids : MonoBehaviour
         flock = transform.parent;
         constrainPoint = flock.position;
 
-        // Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
-        // Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
-        // float speed = Random.Range(0f, 1f);
+        Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
+        Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+        float speed = Random.Range(0f, 1f);
 
 
-        // transform.position = pos;
-        // transform.LookAt(look);
-        // velocity = (look - pos) * speed;
+        transform.position = pos;
+        transform.LookAt(look);
+        velocity = (look - pos) * speed;
 
         velocity = new Vector3(0, 0, 0);
 
@@ -44,7 +43,7 @@ public class Boids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (velocity != Vector3.zero)
+        if (flocking)
         {
             Vector3 newVelocity = new Vector3(0, 0, 0);
             // rule 1 all boids steer towards center of mass - cohesion
@@ -64,18 +63,12 @@ public class Boids : MonoBehaviour
     
             velocity = slerpVelo.normalized;
     
-            transform.position += velocity * Time.deltaTime * startSpeed;
+            transform.position += velocity * Time.deltaTime * speed;
             transform.LookAt(transform.position + velocity);
 
-            startSpeed += maxSpeed * Time.deltaTime;
-            if (startSpeed >= maxSpeed)
-            {
-                startSpeed = maxSpeed;
-            }
         }
-
-
     }
+
     Vector3 avoid()
     {
 

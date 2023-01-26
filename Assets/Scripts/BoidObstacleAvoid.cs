@@ -10,8 +10,6 @@ public class BoidObstacleAvoid : MonoBehaviour
     private Boids boids;
     private Transform boid;
 
-    [SerializeField] LayerMask avoidMask;
-
     private void Start()
     {
         
@@ -22,7 +20,8 @@ public class BoidObstacleAvoid : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+
+        int avoidMask = 1 << 6;
 
         bool didHit = false;
         RaycastHit hit;
@@ -70,6 +69,7 @@ public class BoidObstacleAvoid : MonoBehaviour
 
         if (!didHit)
             boids.resetAvoid();
+        
     }
     private void OnTriggerExit(Collider other)
     {
