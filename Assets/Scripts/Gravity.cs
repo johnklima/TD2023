@@ -40,13 +40,11 @@ public class Gravity : MonoBehaviour
         //reset final force to the initial force of gravity
         finalForce.Set(0, GRAVITY_CONSTANT * mass, 0);
         finalForce += thrust;
+               
 
-        finalForce += impulse;
-
-        impulse *= 0;
-
-        acceleration = finalForce / mass;
+        acceleration = finalForce / mass;        
         velocity += acceleration * Time.deltaTime;
+        velocity += impulse;
 
         //move the object
         transform.position += velocity * Time.deltaTime;
@@ -57,12 +55,11 @@ public class Gravity : MonoBehaviour
             acceleration *= 0;
             velocity *= 0;
 
-
         }
-            
 
-        //reset thrust
-        thrust.Set(0, 0, 0);
+
+        //reset impulse
+        impulse *= 0;
 
 
     }

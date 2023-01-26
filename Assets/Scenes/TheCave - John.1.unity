@@ -4334,7 +4334,7 @@ GameObject:
   - component: {fileID: 989046018}
   - component: {fileID: 989046017}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4411,7 +4411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989046016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.6, y: 0, z: -21.13}
+  m_LocalPosition: {x: 8.86, y: 0, z: -21.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5386,7 +5386,7 @@ GameObject:
   - component: {fileID: 1210359337}
   - component: {fileID: 1210359342}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5408,6 +5408,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   start: {fileID: 1915759623}
   end: {fileID: 989046020}
+  grav: {fileID: 0}
 --- !u!135 &1210359338
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7961,7 +7962,7 @@ GameObject:
   - component: {fileID: 1915759621}
   - component: {fileID: 1915759620}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

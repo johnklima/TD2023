@@ -5,7 +5,7 @@ using UnityEngine;
 public class KlimaCannonNew : MonoBehaviour
 {
 
-    public float GRAVITY = 9.8f;
+    public float G = 9.8f;
     public Vector3 direction;
 
     public Transform start;
@@ -27,13 +27,10 @@ public class KlimaCannonNew : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Debug.Log("fire");
-            Debug.Log(start.name);
-            Debug.Log(end.name);            
-            Debug.Log(grav.finalForce);
+            
             transform.position += Vector3.up;
 
-            grav.impulse = fire(start.position, end.position, 60.0f);
+            grav.impulse = fire(start.position, end.position, 70.0f);
 
 
         }
@@ -96,10 +93,10 @@ public class KlimaCannonNew : MonoBehaviour
             angle = 0.985398163f;
 
         //if we are asked to use a specific angle, this is our angle..
-        if (desiredAngle != 0)
-        {
-            angle = Mathf.Deg2Rad * desiredAngle;
-        }
+        //if (desiredAngle != 0)
+        //{
+        //    angle = Mathf.Deg2Rad * desiredAngle;
+        //}
 
 
         float Y = endPoint.y - startPoint.y;
@@ -134,7 +131,7 @@ public class KlimaCannonNew : MonoBehaviour
             {
 
                 //create an initial force 
-                float sqrtcheck = (trydistance * GRAVITY) / f;
+                float sqrtcheck = (trydistance * G) / f;
                 if (sqrtcheck > 0)
                     Vo = Mathf.Sqrt(sqrtcheck);
                 else
@@ -145,12 +142,12 @@ public class KlimaCannonNew : MonoBehaviour
                 float Vx = Vo * Mathf.Cos(angle);
 
                 //get a height and thus time to peak
-                float H = -Y + (Vy * Vy) / (2 * GRAVITY);
-                float upt = Vy / GRAVITY;                      // time to max height
+                float H = -Y + (Vy * Vy) / (2 * G);
+                float upt = Vy / G;                      // time to max height
 
                 //if again we squirt on a neg, but it is because our angle and force
                 //are too accute. note: we handle up and down trajectory differently
-                if (2 * H / GRAVITY < 0)
+                if (2 * H / G < 0)
                 {
                     if (endPoint.y < startPoint.y)
                         rng = flatdistance;       //if going down we are done
@@ -159,7 +156,7 @@ public class KlimaCannonNew : MonoBehaviour
                 }
                 else
                 {
-                    sqrtcheck = 2 * H / GRAVITY;
+                    sqrtcheck = 2 * H / G;
                     if (sqrtcheck > 0)
                     {
                         float dnt = Mathf.Sqrt(sqrtcheck);           // time from max height to impact
@@ -194,8 +191,11 @@ public class KlimaCannonNew : MonoBehaviour
         //we need to rotate that by our actual launch angle
         angV = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, side) * angV;
 
+        angV *= Vo;
+
+        Debug.Log(Vo.ToString());
         //multiply by calculated "powder charge"   
-        return angV * Vo;   
+        return angV;   
 
     }
 }
