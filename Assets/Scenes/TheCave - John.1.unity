@@ -3223,7 +3223,7 @@ GameObject:
   - component: {fileID: 638860870}
   - component: {fileID: 638860871}
   m_Layer: 0
-  m_Name: SnakeHead
+  m_Name: SnakeAgent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3344,7 +3344,7 @@ MonoBehaviour:
   moveSpeed: 0.1
   turningSpeed: 180
   snakeBody: {fileID: 6100778087380872071, guid: 1da95d0d93a6101438c8d27c3f3d5a1d, type: 3}
-  gap: 40
+  gap: 32
   segments: 16
   bodySpeed: 5
   positionHistory: []
@@ -3584,7 +3584,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678805816}
-  - component: {fileID: 678805817}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -3605,27 +3604,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 560455847}
-  - {fileID: 1049310207}
+  - {fileID: 2004903972}
   - {fileID: 638860869}
-  - {fileID: 2075519020}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &678805817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678805815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899cc0a4b461acc47a5b2c726d6c11ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IK: {fileID: 1049310207}
-  targetHolder: {fileID: 2075519020}
-  snakeHead: {fileID: 638860869}
 --- !u!1 &747181232
 GameObject:
   m_ObjectHideFlags: 0
@@ -4934,8 +4917,8 @@ Transform:
   - {fileID: 1331037412}
   - {fileID: 557760829}
   - {fileID: 456705784}
-  m_Father: {fileID: 678805816}
-  m_RootOrder: 1
+  m_Father: {fileID: 2004903972}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063016250
 GameObject:
@@ -8101,6 +8084,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974099908}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2004903971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004903972}
+  - component: {fileID: 2004903973}
+  m_Layer: 0
+  m_Name: SnakeHead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2004903972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004903971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1049310207}
+  - {fileID: 2075519020}
+  m_Father: {fileID: 678805816}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2004903973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004903971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899cc0a4b461acc47a5b2c726d6c11ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakeAgent: {fileID: 638860869}
+  snakeHeadIK: {fileID: 2004903972}
 --- !u!1 &2014646728
 GameObject:
   m_ObjectHideFlags: 0
@@ -8292,14 +8323,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075519019}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 808782980}
-  m_Father: {fileID: 678805816}
-  m_RootOrder: 3
+  m_Father: {fileID: 2004903972}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5525215322849654646
 PrefabInstance:
@@ -8314,7 +8345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5525215321477030363, guid: 81c003e3502eff94397e382c17af6827, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43
+      value: -2.73
       objectReference: {fileID: 0}
     - target: {fileID: 5525215321477030363, guid: 81c003e3502eff94397e382c17af6827, type: 3}
       propertyPath: m_LocalPosition.y
