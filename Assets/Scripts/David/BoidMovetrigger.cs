@@ -23,7 +23,6 @@ public class BoidMovetrigger : MonoBehaviour
 
           if (inTrigger)
           {
-            inTrigger = true;
             boids[i].velocity = new Vector3(0, -0.5f, 0);
 
             thisColl.enabled = false;

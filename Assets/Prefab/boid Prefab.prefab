@@ -83,7 +83,6 @@ GameObject:
   - component: {fileID: 6632452797934199050}
   - component: {fileID: 6632452797934199053}
   - component: {fileID: 6632452797934199052}
-  - component: {fileID: 659092693677881173}
   - component: {fileID: 8174974048839186492}
   m_Layer: 7
   m_Name: boid Prefab
@@ -171,19 +170,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &659092693677881173
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6632452797934199089}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8174974048839186492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +190,6 @@ MonoBehaviour:
   avoidFactor: 40
   collisionDistance: 5
   velocity: {x: 0, y: 0, z: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
