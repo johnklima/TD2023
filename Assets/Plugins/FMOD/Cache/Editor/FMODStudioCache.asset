@@ -53,17 +53,66 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -1040438246802101791}
-  - {fileID: -8696514293249582976}
+  - {fileID: 8989812012893571271}
+  - {fileID: 2264706801605754295}
   EditorEvents:
-  - {fileID: 3439261579355305913}
+  - {fileID: 1206567272685326247}
+  - {fileID: 8091015636239435730}
+  - {fileID: 6365132791860328089}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -8696514293249582976}
+  - {fileID: 2264706801605754295}
   StringsBanks:
-  - {fileID: -1040438246802101791}
-  cacheTime: 638102575780000000
+  - {fileID: 8989812012893571271}
+  cacheTime: 638103193537932831
   cacheVersion: 131601
+--- !u!114 &1206567272685326247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3rdCaveTrack
+  m_EditorClassIdentifier: 
+  Path: event:/3rdCaveTrack
+  Guid:
+    Data1: 281130763
+    Data2: 1122110017
+    Data3: -473926513
+    Data4: -1508430089
+  Banks:
+  - {fileID: 2264706801605754295}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75360
+--- !u!114 &2264706801605754295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638103193537882823
+  FileSizes:
+  - Name: Desktop
+    Value: 2513536
+  Exists: 1
 --- !u!114 &3439261579355305913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,3 +140,77 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 221988
+--- !u!114 &6365132791860328089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/1stCaveTrack
+  m_EditorClassIdentifier: 
+  Path: event:/1stCaveTrack
+  Guid:
+    Data1: 1042408123
+    Data2: 1182072462
+    Data3: 1830579377
+    Data4: -898440580
+  Banks:
+  - {fileID: 2264706801605754295}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75360
+--- !u!114 &8091015636239435730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2ndCaveTrack
+  m_EditorClassIdentifier: 
+  Path: event:/2ndCaveTrack
+  Guid:
+    Data1: 1857198108
+    Data2: 1176129748
+    Data3: 263618731
+    Data4: 1576834426
+  Banks:
+  - {fileID: 2264706801605754295}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75360
+--- !u!114 &8989812012893571271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638103193537932831
+  FileSizes:
+  - Name: Desktop
+    Value: 860
+  Exists: 1
