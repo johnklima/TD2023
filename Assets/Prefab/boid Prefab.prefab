@@ -240,13 +240,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flock: {fileID: 0}
-  cohesionFactor: 0.2
-  separationFactor: 6
+  cohesionFactor: 1
+  separationFactor: 10
   allignFactor: 1
-  constrainFactor: 2
-  avoidFactor: 10
-  collisionDistance: 6
+  constrainFactor: 20
+  avoidFactor: 75
+  collisionDistance: 5
   speed: 10
-  constrainPoint: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  avoidDist: -350
+  constrainPoint: {x: 0, y: 5, z: 6}
+  velocity: {x: -0.68846226, y: -0.71496737, z: -0.12182498}

@@ -13,7 +13,8 @@ public class Boids : MonoBehaviour
     [SerializeField] float avoidFactor = 2.0f;
 
     [SerializeField] float collisionDistance = 6.0f;
-    [SerializeField] float speed = 10f;
+    private float maxSpeed = 10f;
+    private float startSpeed = 0.5f;
     [SerializeField] Vector3 constrainPoint;
 
     // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
@@ -63,8 +64,14 @@ public class Boids : MonoBehaviour
     
             velocity = slerpVelo.normalized;
     
-            transform.position += velocity * Time.deltaTime * speed;
+            transform.position += velocity * Time.deltaTime * startSpeed;
             transform.LookAt(transform.position + velocity);
+
+            startSpeed += maxSpeed * Time.deltaTime;
+            if (startSpeed >= maxSpeed)
+            {
+                startSpeed = maxSpeed;
+            }
         }
 
 
@@ -169,7 +176,7 @@ public class Boids : MonoBehaviour
 
     public void accumAvoid(Vector3 avoid)
     {
-        avoidObst += (transform.position * speed) - avoid;
+        avoidObst += transform.position - avoid;
         avoidCount++;
 
     }

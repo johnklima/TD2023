@@ -3009,6 +3009,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6632452797934199055, guid: e3f39a18012248447a1cc5191e76b68c, type: 3}
+      propertyPath: flock
+      value: 
+      objectReference: {fileID: 2047288984}
+    - target: {fileID: 6632452797934199055, guid: e3f39a18012248447a1cc5191e76b68c, type: 3}
+      propertyPath: startSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6632452797934199089, guid: e3f39a18012248447a1cc5191e76b68c, type: 3}
       propertyPath: m_Name
       value: boid Prefab
@@ -5269,7 +5277,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
-  timer: 0
+  thisColl: {fileID: 2047288986}
 --- !u!135 &2047288986
 SphereCollider:
   m_ObjectHideFlags: 0
