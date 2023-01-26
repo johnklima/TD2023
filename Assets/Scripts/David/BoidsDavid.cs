@@ -15,7 +15,7 @@ public class BoidsDavid : MonoBehaviour
     [SerializeField] float collisionDistance = 6.0f;
     private float maxSpeed = 10f;
     private float startSpeed = 0.5f;
-    [SerializeField] Vector3 constrainPoint;
+    Vector3 constrainPoint;
 
     // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
     public Vector3 velocity;
@@ -162,7 +162,7 @@ public class BoidsDavid : MonoBehaviour
         {
             if (boid != transform)
             {
-                steer += boid.GetComponent<Boids>().velocity;
+                steer += boid.GetComponent<BoidsDavid>().velocity;
                 sibs++;
             }
 
