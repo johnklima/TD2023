@@ -12,7 +12,7 @@ public class KlimaCannonNew : MonoBehaviour
     public Transform end;
 
     public Gravity grav;
-
+    public bool inAir;
 
 
 
@@ -25,12 +25,11 @@ public class KlimaCannonNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !inAir)
         {
-            
+            inAir = true;
             transform.position += Vector3.up;
-
-            grav.impulse = fire(start.position, end.position, 70.0f);
+            grav.impulse = fire(start.position, end.position, 30.0f);
 
 
         }
@@ -204,6 +203,7 @@ public class KlimaCannonNew : MonoBehaviour
         {
             Debug.Log("ball hit " + other.name);
             grav.reset();
+            inAir = false;
             transform.localPosition = Vector3.zero;
         }
         
