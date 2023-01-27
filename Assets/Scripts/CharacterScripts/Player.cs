@@ -45,6 +45,6 @@ public class Player : MonoBehaviour
             healthSystem.GainHealth(10);
             Debug.Log(healthSystem.GetHealth());
         }
-
+        Debug.Log("player + " + healthSystem.GetHealth());
     }
 }

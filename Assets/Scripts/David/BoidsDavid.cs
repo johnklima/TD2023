@@ -22,12 +22,17 @@ public class BoidsDavid : MonoBehaviour
     Vector3 avoidObst;
     float avoidCount;
 
+    // variable to check if the player is in vicinity of a boids collider
     SphereCollider boidColl;
     bool PCinRange;
-    float distance = 10f;
+    float distance = 15f;
     [SerializeField] LayerMask playerLayer;
-
     Collider[] playerColl;
+    [SerializeField] GameObject player;
+
+    int health = 1;
+    int damage = 5;
+    HealthSystem playerHealth;
     
     // Start is called before the first frame update
     void Start()
@@ -40,12 +45,14 @@ public class BoidsDavid : MonoBehaviour
         // Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
         // float speed = Random.Range(0f, 1f);
 
-
         // transform.position = pos;
         // transform.LookAt(look);
         // velocity = (look - pos) * speed;
 
         velocity = new Vector3(0, 0, 0);
+
+        playerHealth = new HealthSystem(health);
+        Debug.Log(playerHealth);
 
     }
 
@@ -95,7 +102,9 @@ public class BoidsDavid : MonoBehaviour
     
             transform.position += velocity * Time.deltaTime * startSpeed;
             transform.LookAt(transform.position + velocity);
-
+        }
+        if (velocity != Vector3.zero)
+        {
             startSpeed += maxSpeed * Time.deltaTime;
             if (startSpeed >= maxSpeed)
             {
@@ -226,20 +235,16 @@ public class BoidsDavid : MonoBehaviour
         return steer;
     }
 
-    // void OnTriggerStay(Collider collider)
-    // {
-    //     playerColl = Physics.OverlapSphere(transform.position, distance, playerLayer);
-
-    //     PCinRange = Physics.CheckSphere(transform.position, distance, playerLayer);
-
-    //     if (PCinRange)
-    //     {
-    //         transform.position -= velocity;
-    //         transform.position += playerColl[0].transform.position;
-    //     }
-    // }
-    // void OnTriggerExit(Collider collider)
-    // {
-    //     PCinRange = false;
-    // }
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject == player)
+        {
+           playerHealth.DealDamage(damage); 
+           Debug.Log("bat + " + playerHealth.GetHealth()); 
+        }
+    }
+    void OnTriggerExit(Collider collider)
+    {
+        PCinRange = false;
+    }
 }
