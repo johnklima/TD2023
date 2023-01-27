@@ -9,11 +9,11 @@ public class BoidMovetrigger : MonoBehaviour
     [SerializeField] SphereCollider thisColl;
 
     float distance = 10f;
-    Boids[] boids;
+    BoidsDavid[] boids;
 
     void Start()
     {
-      boids = transform.GetComponentsInChildren<Boids>();
+      boids = transform.GetComponentsInChildren<BoidsDavid>();
     }
     void OnTriggerEnter(Collider collider)
     {
@@ -23,7 +23,6 @@ public class BoidMovetrigger : MonoBehaviour
 
           if (inTrigger)
           {
-            inTrigger = true;
             boids[i].velocity = new Vector3(0, -0.5f, 0);
 
             thisColl.enabled = false;

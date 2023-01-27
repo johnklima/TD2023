@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!114 &-4628092306514755400
+=======
+--- !u!114 &-6507757067839959614
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,6 +14,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< Updated upstream
   m_Name: event:/3rdCaveTrack
   m_EditorClassIdentifier: 
   Path: event:/3rdCaveTrack
@@ -20,6 +25,18 @@ MonoBehaviour:
     Data4: -1508430089
   Banks:
   - {fileID: 8466644154703053430}
+=======
+  m_Name: event:/2ndCaveTrack
+  m_EditorClassIdentifier: 
+  Path: event:/2ndCaveTrack
+  Guid:
+    Data1: 1857198108
+    Data2: 1176129748
+    Data3: 263618731
+    Data4: 1576834426
+  Banks:
+  - {fileID: -6280921822691683193}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -27,6 +44,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75360
+<<<<<<< Updated upstream
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +72,9 @@ MonoBehaviour:
   cacheTime: 638103186739015762
   cacheVersion: 131601
 --- !u!114 &1608449418951620526
+=======
+--- !u!114 &-6280921822691683193
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,15 +86,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
   lastModified: 638103186739015762
+=======
+  Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638103249909199352
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 860
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &4210161168554176936
+=======
+--- !u!114 &-4866119685550643033
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,6 +115,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< Updated upstream
   m_Name: event:/2ndCaveTrack
   m_EditorClassIdentifier: 
   Path: event:/2ndCaveTrack
@@ -93,23 +126,7 @@ MonoBehaviour:
     Data4: 1576834426
   Banks:
   - {fileID: 8466644154703053430}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 75360
---- !u!114 &4640233424467262102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+=======
   m_Name: event:/1stCaveTrack
   m_EditorClassIdentifier: 
   Path: event:/1stCaveTrack
@@ -119,7 +136,8 @@ MonoBehaviour:
     Data3: 1830579377
     Data4: -898440580
   Banks:
-  - {fileID: 8466644154703053430}
+  - {fileID: -6280921822691683193}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -127,7 +145,79 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75360
+<<<<<<< Updated upstream
+--- !u!114 &4640233424467262102
+=======
+--- !u!114 &11400000
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  Path: event:/1stCaveTrack
+  Guid:
+    Data1: 1042408123
+    Data2: 1182072462
+    Data3: 1830579377
+    Data4: -898440580
+  Banks:
+  - {fileID: 8466644154703053430}
+=======
+  EditorBanks:
+  - {fileID: 8478141712504390165}
+  - {fileID: -6280921822691683193}
+  EditorEvents:
+  - {fileID: 5040247396789846385}
+  - {fileID: -6507757067839959614}
+  - {fileID: -4866119685550643033}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -6280921822691683193}
+  StringsBanks:
+  - {fileID: 8478141712504390165}
+  cacheTime: 638103249909199352
+  cacheVersion: 131601
+--- !u!114 &5040247396789846385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3rdCaveTrack
+  m_EditorClassIdentifier: 
+  Path: event:/3rdCaveTrack
+  Guid:
+    Data1: 281130763
+    Data2: 1122110017
+    Data3: -473926513
+    Data4: -1508430089
+  Banks:
+  - {fileID: -6280921822691683193}
+>>>>>>> Stashed changes
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75360
+<<<<<<< Updated upstream
 --- !u!114 &8466644154703053430
+=======
+--- !u!114 &8478141712504390165
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,10 +229,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
   lastModified: 638103186739005726
+=======
+  Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638103249909199352
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 2513536

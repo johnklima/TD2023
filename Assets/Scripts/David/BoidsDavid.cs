@@ -15,16 +15,24 @@ public class BoidsDavid : MonoBehaviour
     [SerializeField] float collisionDistance = 6.0f;
     private float maxSpeed = 10f;
     private float startSpeed = 0.5f;
-    [SerializeField] Vector3 constrainPoint;
+    Vector3 constrainPoint;
 
     // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
     public Vector3 velocity;
     Vector3 avoidObst;
     float avoidCount;
+
+    SphereCollider boidColl;
+    bool PCinRange;
+    float distance = 10f;
+    [SerializeField] LayerMask playerLayer;
+
+    Collider[] playerColl;
     
     // Start is called before the first frame update
     void Start()
     {
+        // boidColl = gameObject.GetComponent<SphereCollider>();
         flock = transform.parent;
         constrainPoint = flock.position;
 
@@ -44,9 +52,30 @@ public class BoidsDavid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (velocity != Vector3.zero)
+        
+        PCinRange = Physics.CheckSphere(transform.position, distance, playerLayer);
+
+        if (velocity != Vector3.zero && PCinRange)
         {
+
+
+            Debug.Log("Player in range");
+            Vector3 newVelocity = new Vector3(0f, 0f, 0f);
+            newVelocity += GoToPlayer();
+            Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
+    
+            velocity = slerpVelo.normalized;
+    
+            transform.position += velocity * Time.deltaTime * startSpeed;
+            transform.LookAt(transform.position + velocity);
+        }
+
+        else if (velocity != Vector3.zero && !PCinRange)
+        {
+
+            Debug.Log("PC not in range");
             Vector3 newVelocity = new Vector3(0, 0, 0);
+            
             // rule 1 all boids steer towards center of mass - cohesion
             newVelocity += cohesion() * cohesionFactor;
     
@@ -73,8 +102,6 @@ public class BoidsDavid : MonoBehaviour
                 startSpeed = maxSpeed;
             }
         }
-
-
     }
     Vector3 avoid()
     {
@@ -162,7 +189,7 @@ public class BoidsDavid : MonoBehaviour
         {
             if (boid != transform)
             {
-                steer += boid.GetComponent<Boids>().velocity;
+                steer += boid.GetComponent<BoidsDavid>().velocity;
                 sibs++;
             }
 
@@ -185,4 +212,34 @@ public class BoidsDavid : MonoBehaviour
         avoidCount = 0;
         avoidObst *= 0;
     }
+
+    Vector3 GoToPlayer()
+    {
+        Vector3 steer = new Vector3(0, 0, 0);
+
+        playerColl = Physics.OverlapSphere(transform.position, distance, playerLayer);
+
+        steer += playerColl[0].transform.position - transform.position;
+
+        steer.Normalize();
+
+        return steer;
+    }
+
+    // void OnTriggerStay(Collider collider)
+    // {
+    //     playerColl = Physics.OverlapSphere(transform.position, distance, playerLayer);
+
+    //     PCinRange = Physics.CheckSphere(transform.position, distance, playerLayer);
+
+    //     if (PCinRange)
+    //     {
+    //         transform.position -= velocity;
+    //         transform.position += playerColl[0].transform.position;
+    //     }
+    // }
+    // void OnTriggerExit(Collider collider)
+    // {
+    //     PCinRange = false;
+    // }
 }

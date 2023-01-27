@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,23 +8,20 @@ using UnityEngine;
 public class BoidObstacleAvoidDavid : MonoBehaviour
 {
 
-    private Boids boids;
+    private BoidsDavid boids;
     private Transform boid;
 
     [SerializeField] LayerMask avoidMask;
 
     private void Start()
     {
-        
         boid = transform.parent;
-        boids = boid.GetComponent<Boids>();
+        boids = boid.GetComponent<BoidsDavid>();
     }
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider collider)
     {
-        
-
         bool didHit = false;
         RaycastHit hit;
         // Does the ray intersect any objects in the layer mask
