@@ -29,9 +29,8 @@ public class KlimaCannonNew : MonoBehaviour
         {
             inAir = true;
             transform.position += Vector3.up;
+            grav.enabled = true;
             grav.impulse = fire(start.position, end.position, 30.0f);
-
-
         }
     }
 
@@ -123,14 +122,17 @@ public class KlimaCannonNew : MonoBehaviour
         if (f <= 0)
             f = 1.0f;      //just for safety (though this should never be)
 
+       
+
         while (Mathf.Abs(rng - flatdistance) > 0.001f && iters < 64)
         {
             //make sure we dont squirt on a negative number. we can IGNORE that result
             if (trydistance > 0)
             {
 
-                //create an initial force 
-                float sqrtcheck = (trydistance * G) / f;
+                //create an initial force ( / f seems to do nothing???)
+                float sqrtcheck = (trydistance * G) / f ;
+                
                 if (sqrtcheck > 0)
                     Vo = Mathf.Sqrt(sqrtcheck);
                 else
@@ -186,14 +188,16 @@ public class KlimaCannonNew : MonoBehaviour
         angV.Normalize();
         Vector3 side = Vector3.Cross(angV, Vector3.up);
         side.Normalize();
-       
+
+        
         //we need to rotate that by our actual launch angle
         angV = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, side) * angV;
 
+        //multiply by calculated "powder charge"
         angV *= Vo;
 
         Debug.Log(Vo.ToString());
-        //multiply by calculated "powder charge"   
+           
         return angV;   
 
     }
@@ -203,6 +207,7 @@ public class KlimaCannonNew : MonoBehaviour
         {
             Debug.Log("ball hit " + other.name);
             grav.reset();
+            grav.enabled = false;
             inAir = false;
             transform.localPosition = Vector3.zero;
         }

@@ -35,6 +35,11 @@ public class Gravity : MonoBehaviour
     void handleMovement()
     {
 
+        //set the rate of integration, which is (almost) equivalent to
+        //explosion by mass for impulse calc. problem is, gravity
+        //is no longer a constant. but for gameplay, maybe not an issue?
+        float forceDeltaTime = Time.deltaTime * 1; //TESTING, param this...
+
         Vector3 curPos = transform.position;  //begin position
 
         //reset final force to the initial force of gravity
@@ -43,11 +48,11 @@ public class Gravity : MonoBehaviour
                
 
         acceleration = finalForce / mass;        
-        velocity += acceleration * Time.deltaTime;
+        velocity += acceleration * forceDeltaTime;
         velocity += impulse;
 
         //move the object
-        transform.position += velocity * Time.deltaTime;
+        transform.position += velocity * forceDeltaTime;
 
         if (transform.position.y < height)
         {
