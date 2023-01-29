@@ -24,8 +24,8 @@ public class BoidsDavid : MonoBehaviour
 
     // variable to check if the player is in vicinity of a boids collider
     SphereCollider boidColl;
-    bool PCinRange;
-    float distance = 15f;
+    bool pcInRange;
+    float distance = 10f;
     [SerializeField] LayerMask playerLayer;
     Collider[] playerColl;
     [SerializeField] GameObject player;
@@ -52,17 +52,15 @@ public class BoidsDavid : MonoBehaviour
         velocity = new Vector3(0, 0, 0);
 
         playerHealth = new HealthSystem(health);
-        Debug.Log(playerHealth);
-
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        PCinRange = Physics.CheckSphere(transform.position, distance, playerLayer);
+        pcInRange = Physics.CheckSphere(transform.position, distance, playerLayer);
 
-        if (velocity != Vector3.zero && PCinRange)
+        if (velocity != Vector3.zero && pcInRange)
         {
 
 
@@ -77,7 +75,7 @@ public class BoidsDavid : MonoBehaviour
             transform.LookAt(transform.position + velocity);
         }
 
-        else if (velocity != Vector3.zero && !PCinRange)
+        else if (velocity != Vector3.zero && !pcInRange)
         {
 
             Debug.Log("PC not in range");
@@ -228,7 +226,7 @@ public class BoidsDavid : MonoBehaviour
 
         playerColl = Physics.OverlapSphere(transform.position, distance, playerLayer);
 
-        steer += playerColl[0].transform.position - transform.position;
+        steer += (playerColl[0].transform.position - transform.position);
 
         steer.Normalize();
 
@@ -240,11 +238,11 @@ public class BoidsDavid : MonoBehaviour
         if (collider.gameObject == player)
         {
            playerHealth.DealDamage(damage); 
-           Debug.Log("bat + " + playerHealth.GetHealth()); 
+           Debug.Log("player" + playerHealth.GetHealth()); 
         }
     }
     void OnTriggerExit(Collider collider)
     {
-        PCinRange = false;
+        pcInRange = false;
     }
 }

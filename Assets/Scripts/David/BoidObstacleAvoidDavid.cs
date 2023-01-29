@@ -20,7 +20,7 @@ public class BoidObstacleAvoidDavid : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider collider)
+    private void Update()
     {
         bool didHit = false;
         RaycastHit hit;
