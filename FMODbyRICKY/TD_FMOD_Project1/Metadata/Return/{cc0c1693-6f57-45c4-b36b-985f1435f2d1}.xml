@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerReturn" id="{cc0c1693-6f57-45c4-b36b-985f1435f2d1}">
+		<property name="volume">
+			<value>-9.5</value>
+		</property>
 		<property name="overridingInputFormat">
 			<value>2</value>
 		</property>
 		<property name="name">
-			<value>Reverb</value>
+			<value>Reverb1</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{6635dddb-2306-45e8-a602-95a130fd9580}</destination>
@@ -25,6 +28,21 @@
 	</object>
 	<object class="MixerBusPanner" id="{44e06a86-cbc5-4342-beb1-b4d874db47d2}" />
 	<object class="SFXReverbEffect" id="{3c6cb5ac-139d-4a80-a1b9-dc99df33f16e}">
+		<property name="decayTime">
+			<value>20000</value>
+		</property>
+		<property name="HFReference">
+			<value>1750</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>36</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>12</value>
+		</property>
+		<property name="highCut">
+			<value>1050</value>
+		</property>
 		<property name="wetLevel">
 			<value>0</value>
 		</property>
