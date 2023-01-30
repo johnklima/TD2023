@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShroomGrowthEffectGOL : MonoBehaviour
 {
-    [SerializeField] private Transform testObject;
+    [SerializeField] private Transform objectToSpawn;
     [SerializeField] private int maxRows, maxCol;
     private float objectSize;
     public bool startGrowing;
@@ -23,7 +23,7 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
         Random.seed = seed;
         timer = timerMax;
 
-        objectSize = testObject.localScale.x;
+        objectSize = objectToSpawn.localScale.x;
         cellsArray = new int[maxRows, maxCol];
         objectsArray = new Transform[maxRows, maxCol];
 
@@ -106,7 +106,7 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
             {
                 //instantiate and store an object in the objectsArray list
 
-                objectsArray[row, col] = Instantiate(testObject, transform);
+                objectsArray[row, col] = Instantiate(objectToSpawn, transform);
                 Vector3 newPosition = new Vector3(row * objectSize, 0f, col * objectSize);
                 objectsArray[row, col].transform.position = newPosition;
 

@@ -8,9 +8,8 @@ public class HealthSystem
 
     private int currentHealth, maxHealth;
 
-    public event EventHandler OnDamageTaken;
+    public event EventHandler OnHealthChanged;
     public event EventHandler OnDied;
-    public event EventHandler OnHealthGain;
     
 
     public HealthSystem(int maxHealth)
@@ -27,7 +26,7 @@ public class HealthSystem
     public void DealDamage(int damage)
     {
         currentHealth -= damage;
-        OnDamageTaken?.Invoke(this, EventArgs.Empty);
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
 
         if(currentHealth < 0)
         {
@@ -39,7 +38,7 @@ public class HealthSystem
     public void GainHealth(int healthAmount)
     {
         currentHealth += healthAmount;
-        OnHealthGain?.Invoke(this, EventArgs.Empty);
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
 
         if (currentHealth >= maxHealth)
         {

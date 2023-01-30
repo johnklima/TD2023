@@ -15,23 +15,6 @@ public class HealthBar : MonoBehaviour
     public int healthTest;
     
 
-    private void Start()
-    {
-        SetMaxHealth(Player.Instance.healthSystem.GetHealth());
-        Player.Instance.healthSystem.OnDamageTaken += _OnDamageTaken;
-        Player.Instance.healthSystem.OnHealthGain += _OnHealthGain;
-    }
-    
-    private void _OnDamageTaken(object sender, EventArgs e)
-    {
-        SetHealth(Player.Instance.healthSystem.GetHealth());
-    }
-
-    private void _OnHealthGain(object sender, EventArgs e)
-    {
-        SetHealth(Player.Instance.healthSystem.GetHealth());
-    }
-
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;

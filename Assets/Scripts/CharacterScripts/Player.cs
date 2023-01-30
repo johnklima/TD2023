@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int maxHealth;
 
     public HealthSystem healthSystem;
+    [SerializeField] private HealthBar healthBar;
 
     private void Awake()
     {
@@ -17,13 +18,26 @@ public class Player : MonoBehaviour
 
         healthSystem = new HealthSystem(maxHealth);
 
+        healthSystem.OnHealthChanged += _OnHealthChanged;
         healthSystem.OnDied += _OnDied;
+
+    }
+
+    private void Start()
+    {
+        if (healthBar != null)
+            healthBar.SetMaxHealth(maxHealth);
+
+    }
+
+    private void _OnHealthChanged(object sender, EventArgs e)
+    {
+        if (healthBar != null)
+            healthBar.SetHealth(healthSystem.GetHealth());
+        else
+            Debug.Log("Healthbar Reference not set");
     }
     
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     private void _OnDied(object sender, EventArgs e)
     {
@@ -45,6 +59,6 @@ public class Player : MonoBehaviour
             healthSystem.GainHealth(10);
             Debug.Log(healthSystem.GetHealth());
         }
-        Debug.Log("player + " + healthSystem.GetHealth());
+
     }
 }
