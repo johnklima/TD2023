@@ -235,12 +235,13 @@ public class BoidsDavid : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject == player)
+
+        if (collider.gameObject.GetComponent<Player>() != null)
         {
-           playerHealth.DealDamage(damage); 
-           Debug.Log("player" + playerHealth.GetHealth()); 
+            collider.gameObject.GetComponent<Player>().healthSystem.DealDamage(damage);
         }
     }
+
     void OnTriggerExit(Collider collider)
     {
         pcInRange = false;
