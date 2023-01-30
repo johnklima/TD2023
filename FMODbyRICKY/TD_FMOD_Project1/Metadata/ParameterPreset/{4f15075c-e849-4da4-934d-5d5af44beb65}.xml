@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4f15075c-e849-4da4-934d-5d5af44beb65}">
+		<property name="name">
+			<value>Pebbles</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{db2e15c9-1436-4d27-ae61-1b638f326a6d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{db2e15c9-1436-4d27-ae61-1b638f326a6d}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
