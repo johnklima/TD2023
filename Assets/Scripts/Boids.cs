@@ -26,7 +26,7 @@ public class Boids : MonoBehaviour
     void Start()
     {
         flock = transform.parent;
-        constrainPoint = flock.position;
+        
 
         Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
         Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
@@ -46,6 +46,8 @@ public class Boids : MonoBehaviour
     {
         if (flocking)
         {
+            constrainPoint = flock.position;  //flock folows player
+
             Vector3 newVelocity = new Vector3(0, 0, 0);
             // rule 1 all boids steer towards center of mass - cohesion
             newVelocity += cohesion() * cohesionFactor;
