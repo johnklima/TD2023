@@ -66,7 +66,8 @@ public class BoidObstacleAvoid : MonoBehaviour
 
             didHit = true;
         }
-
+        if(didHit)
+            Debug.Log("DidHit " + boid.name);
         if (!didHit)
             boids.resetAvoid();
         
