@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7304243459414070690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/RickyTest
+  m_EditorClassIdentifier: 
+  Path: event:/RickyTest
+  Guid:
+    Data1: -1867557162
+    Data2: 1133766519
+    Data3: -2130247000
+    Data4: -29255780
+  Banks:
+  - {fileID: 4999443003652698281}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15542
 --- !u!114 &-6606552772280869392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +224,10 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638107699927295978
+  lastModified: 638107879103202278
   FileSizes:
   - Name: Desktop
-    Value: 1578
+    Value: 1618
   Exists: 1
 --- !u!114 &-1598076748816532784
 MonoBehaviour:
@@ -276,12 +303,13 @@ MonoBehaviour:
   - {fileID: 1771433068175811384}
   - {fileID: -3377746871062643750}
   - {fileID: 5939776715147555720}
+  - {fileID: -7304243459414070690}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4999443003652698281}
   StringsBanks:
   - {fileID: -1959182526917441608}
-  cacheTime: 638107699927295978
+  cacheTime: 638107879103202278
   cacheVersion: 131601
 --- !u!114 &1522974654024707544
 MonoBehaviour:
@@ -483,10 +511,10 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638107699927246019
+  lastModified: 638107879103132320
   FileSizes:
   - Name: Desktop
-    Value: 4380192
+    Value: 5039968
   Exists: 1
 --- !u!114 &5939776715147555720
 MonoBehaviour:
