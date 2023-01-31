@@ -20,13 +20,19 @@ public class BoidObstacleAvoid : MonoBehaviour
     }
     private void Update()
     {
-        avoid();
+        
     }
 
-    //private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
+    {
+
+        avoid();
+
+    }
     void avoid()
     {
 
+       
         int avoidMask = 1 << 6;
 
         bool didHit = false;

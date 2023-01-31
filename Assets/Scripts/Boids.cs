@@ -10,15 +10,16 @@ public class Boids : MonoBehaviour
     [SerializeField] float separationFactor = 6.0f;
     [SerializeField] float allignFactor = 1.0f;
     [SerializeField] float constrainFactor = 2.0f;
-    [SerializeField] float avoidFactor = 2.0f;
+    [SerializeField] float avoidFactor = 20.0f;
     [SerializeField] float collisionDistance = 6.0f;
     [SerializeField] float speed = 6.0f;
     [SerializeField] Vector3 constrainPoint;
     [SerializeField] bool flocking = true;
-
+    [SerializeField] Vector3 avoidObst;
+    [SerializeField] float integrationRate = 3.0f;
     // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
     public Vector3 velocity;
-    Vector3 avoidObst;
+   
     float avoidCount;
     
     // Start is called before the first frame update
@@ -59,8 +60,8 @@ public class Boids : MonoBehaviour
     
             newVelocity += avoid() * avoidFactor;
            
-            Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
-    
+            Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime * integrationRate);
+
             velocity = slerpVelo.normalized;
     
             transform.position += velocity * Time.deltaTime * speed;
