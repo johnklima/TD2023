@@ -15,7 +15,7 @@ public class BoidObstacleAvoid : MonoBehaviour
     private void Start()
     {
 
-        boid = transform ;
+        boid = transform.parent;
         boids = boid.GetComponent<Boids>();
     }
     private void Update()
