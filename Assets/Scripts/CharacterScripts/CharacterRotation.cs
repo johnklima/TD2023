@@ -47,8 +47,8 @@ public class CharacterRotation : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Interactable>().Interact();
             }
         }
-        else
-            PlayerMessagesUI.Instance.HideText();
+        else {  } 
+            //PlayerMessagesUI.Instance.HideText();
 
     }
 
