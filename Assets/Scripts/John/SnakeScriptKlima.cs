@@ -13,7 +13,7 @@ public class SnakeScriptKlima : MonoBehaviour
     public int gap = 280;
     public int segments = 16;
     public float bodySpeed = 5f;
-    private List<GameObject> snakeBodyParts = new List<GameObject>();
+    public List<GameObject> snakeBodyParts = new List<GameObject>();
     private bool moving = false;
     public List<Vector3> positionHistory = new List<Vector3>();
     private float maxDistanceIndex = 5000;

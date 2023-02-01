@@ -61,29 +61,31 @@ public class _EnemyAI : MonoBehaviour
         if (walkPointSet)
         {
             //var currentDestination = EvaluateSlerpPoints(curPoint, walkPoint, SlerpCircleOffset);
-            navMeshagent.SetDestination(transform.forward);
+            navMeshagent.SetDestination(walkPoint);
             Vector3 directionToLook = walkPoint - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(directionToLook);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
             var angle = Vector3.Angle(transform.forward, walkPoint);
             
-            if (Mathf.Abs(angle) < 45)
-            {
-                navMeshagent.SetDestination(walkPoint);
-            }
             
-            float turnAmount = 0f;
-            Vector3 dirToMove = (walkPoint - transform.position).normalized;
-            float dot = Vector3.Dot(transform.forward, dirToMove);
-        
-            float angleToDir = Vector3.SignedAngle(transform.forward, dirToMove, Vector3.up);
-        
-            if (angleToDir > 0) turnAmount = 1f;
-            else turnAmount = -1f;
             
-            if (angleToDir > -45 || angleToDir < 45)
-            
-            Debug.Log(angleToDir);
+            // if (Mathf.Abs(angle) < 45)
+            // {
+            //     navMeshagent.SetDestination(walkPoint);
+            // }
+            //
+            // float turnAmount = 0f;
+            // Vector3 dirToMove = (walkPoint - transform.position).normalized;
+            // float dot = Vector3.Dot(transform.forward, dirToMove);
+            //
+            // float angleToDir = Vector3.SignedAngle(transform.forward, dirToMove, Vector3.up);
+            //
+            // if (angleToDir > 0) turnAmount = 1f;
+            // else turnAmount = -1f;
+            //
+            // if (angleToDir > -45 || angleToDir < 45)
+            //
+            // Debug.Log(angleToDir);
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;

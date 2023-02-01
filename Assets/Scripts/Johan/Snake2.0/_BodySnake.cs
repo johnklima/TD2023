@@ -27,7 +27,7 @@ public class _BodySnake : MonoBehaviour
                 positionHistory.RemoveAt(positionHistory.Count - 1);
             
             //Wiggle
-            //Sine(sineWaveSpeed, amplitude);
+            Sine(sineWaveSpeed, amplitude);
         }
         
         // Move Body parts
@@ -39,14 +39,12 @@ public class _BodySnake : MonoBehaviour
                 Vector3 point = positionHistory[Mathf.Min(Index * gap, positionHistory.Count - 1)];
                 
                 Vector3 moveDirection = point - body.transform.position;
-                body.transform.rotation =  Quaternion.AngleAxis(0, Vector3.up);
+                //body.transform.rotation =  Quaternion.AngleAxis(0, Vector3.up);
                 
                 body.transform.position += Vector3.MoveTowards(body.transform.position, moveDirection * bodySpeed * Time.deltaTime, maxDistanceIndex);
 
-                pointAt(point);
-                
-                
-                
+                // pointAt(point);
+                body.transform.LookAt(point);
                 Index++;
             }
         }
