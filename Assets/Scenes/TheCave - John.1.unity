@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 263778319}
   - component: {fileID: 263778318}
   m_Layer: 0
-  m_Name: Rev (1)
+  m_Name: RevZone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3843,7 +3843,7 @@ GameObject:
   - component: {fileID: 703520380}
   - component: {fileID: 703520385}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: CombatCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3863,7 +3863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: Player
   Emitters:
-  - Target: {fileID: 0}
+  - Target: {fileID: 2022341131}
     Params:
     - Name: Combat
       Value: 1
@@ -3960,7 +3960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: Player
   Emitters:
-  - Target: {fileID: 0}
+  - Target: {fileID: 2022341131}
     Params:
     - Name: Combat
       Value: 0
@@ -4529,7 +4529,7 @@ GameObject:
   - component: {fileID: 946781184}
   - component: {fileID: 946781183}
   m_Layer: 0
-  m_Name: Rev (0)
+  m_Name: ReverbZone (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9247,6 +9247,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014646728}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2022341125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1696540414920657297, guid: 28a4eae19004641499e74317316de34c, type: 3}
+  m_PrefabInstance: {fileID: 1145058575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2022341131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022341125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -363406361
+      Data2: 1185035985
+      Data3: -1833696885
+      Data4: -1448164732
+    Path: event:/Richard'sCave3Music_Attempt001
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Combat
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2047288983
 GameObject:
   m_ObjectHideFlags: 0
