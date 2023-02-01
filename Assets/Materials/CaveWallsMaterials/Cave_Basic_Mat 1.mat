@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cave_Basic_Mat 1
-  m_Shader: {fileID: -6465566751694194690, guid: 4ba880dfcbb7f6346a386210646547a7,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 4ba880dfcbb7f6346a386210646547a7, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -22,27 +21,27 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo_Map:
-        m_Texture: {fileID: 2800000, guid: a26ce426b0514504fa87e9ec86756795, type: 3}
+        m_Texture: {fileID: 2800000, guid: 23038f6034538d5478734cc4150b3b5a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormal:
-        m_Texture: {fileID: 2800000, guid: 644f365d02cb210409d292a32dacaa22, type: 3}
+        m_Texture: {fileID: 2800000, guid: 447cb028b2132b04793546fc5757a294, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask_RHaoM_Map:
-        m_Texture: {fileID: 2800000, guid: 78c1837c812f12f409cf5d18a96797cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 64efc309e6df39e468f5f2913df42337, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MossNormal:
-        m_Texture: {fileID: 2800000, guid: ba3996edc4f73d045bdfdeca71136dfe, type: 3}
+        m_Texture: {fileID: 2800000, guid: b4a5ad4ef9c6f49448915408fd08d59d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Moss_Albedo:
-        m_Texture: {fileID: 2800000, guid: 2423347254ad71044b79f42fcfa317fc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 49dc0f9dccb3e3f43b1672a70abce473, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: cd2d1df6980bb97438aefce2e46c77db, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8720c26582dcfbe4180d027c43a85f5f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_ef55ff71c9bb48b68482c407518b8552_Texture_1:
@@ -63,7 +62,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AO: 0.376
+    - _AO: 0.8
     - _AlphaClip: 1
     - _Alpha_Clip_Threshold: 0
     - _Blend: 0
@@ -72,23 +71,24 @@ Material:
     - _DetailNormalScale: 7
     - _DetailNormalStrength: 1
     - _DstBlend: 0
-    - _Height_Scale: 1
+    - _Height_Scale: 0.5
     - _HexSharpness: 15
     - _HexSize: 0.8
-    - _Metallic: 0.255
-    - _MossAmount: 1
-    - _MossAreaY: 10
-    - _MossDots: 0.46
-    - _Moss_Moistness: 1
-    - _Moss_Tiling: 5
+    - _Metallic: 0.1
+    - _MossAmount: 0.806
+    - _MossAreaY: 92
+    - _MossDots: 2.5
+    - _Moss_Moistness: 0.5
+    - _Moss_Tiling: 10
     - _NormalStrength: 1
-    - _PuddleAreaY: 1
+    - _PuddleAreaY: 10.5
+    - _Puddle_Opacity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RoofMoisture: 0.612
-    - _RoofMoisture_Area: 10
-    - _Roughness: 0
+    - _RoofMoisture: 0.386
+    - _RoofMoisture_Area: 14.5
+    - _Roughness: 0.098
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
@@ -97,10 +97,10 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _ColorVariation: {r: 1, g: 1, b: 1, a: 0}
-    - _MossDotsOffset: {r: 0.73, g: 0.28, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _PuddleColor: {r: 0.30807227, g: 0.32208335, b: 0.4056604, a: 0}
-    - _Tiling: {r: 3, g: 3, b: 0, a: 0}
+    - _MossDotsOffset: {r: 3.1, g: 5.28, b: 0, a: 0}
+    - _Offset: {r: 1.98, g: 0.27, b: 0, a: 0}
+    - _PuddleColor: {r: 0.4552332, g: 0.6119405, b: 0.6226415, a: 0}
+    - _Tiling: {r: 6, g: 6, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5870218673237556846
 MonoBehaviour:
