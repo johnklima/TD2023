@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9072311160636479122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Richard'sCave2Music_Attempt043/Percussion Intro
+  m_EditorClassIdentifier: 
+  Name: Percussion Intro
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1201024851
+    data2: 4033690503
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7116907637952674311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Richard'sCave2Music_Attempt043/MelodyIn
+  m_EditorClassIdentifier: 
+  Name: MelodyIn
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3687666225
+    data2: 15268984
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-6864299216449705752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22,8 +70,14 @@ MonoBehaviour:
   - {fileID: 4999443003652698281}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7762160427014732200}
+  - {fileID: -9072311160636479122}
+  - {fileID: -5344543203759055538}
+  - {fileID: 6107045455444106270}
+  - {fileID: -2493417521549623234}
+  - {fileID: -7116907637952674311}
   MinDistance: 1
   MaxDistance: 20
   Length: 153652
@@ -71,6 +125,30 @@ MonoBehaviour:
   ID:
     data1: 1578591753
     data2: 1799545589
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5344543203759055538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Richard'sCave2Music_Attempt043/RythmIn
+  m_EditorClassIdentifier: 
+  Name: RythmIn
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 149765615
+    data2: 2871951227
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -182,6 +260,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 88093
+--- !u!114 &-2493417521549623234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Richard'sCave2Music_Attempt043/EndChord
+  m_EditorClassIdentifier: 
+  Name: EndChord
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2758347353
+    data2: 1561058245
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2099495125201197737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,10 +326,10 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638108407921836458
+  lastModified: 638108586779366374
   FileSizes:
   - Name: Desktop
-    Value: 1640
+    Value: 2030
   Exists: 1
 --- !u!114 &-1598076748816532784
 MonoBehaviour:
@@ -277,6 +379,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-125595628609588354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Richard'sCave3Music_Attempt001
+  m_EditorClassIdentifier: 
+  Path: event:/Richard'sCave3Music_Attempt001
+  Guid:
+    Data1: -363406361
+    Data2: 1185035985
+    Data3: -1833696885
+    Data4: -1448164732
+  Banks:
+  - {fileID: 4999443003652698281}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3991816713073324784}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15542
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,12 +434,13 @@ MonoBehaviour:
   - {fileID: -3377746871062643750}
   - {fileID: 5939776715147555720}
   - {fileID: -6864299216449705752}
+  - {fileID: -125595628609588354}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4999443003652698281}
   StringsBanks:
   - {fileID: -1959182526917441608}
-  cacheTime: 638108407921836458
+  cacheTime: 638108586779366374
   cacheVersion: 131601
 --- !u!114 &1522974654024707544
 MonoBehaviour:
@@ -442,6 +573,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3991816713073324784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Richard'sCave3Music_Attempt001/Combat
+  m_EditorClassIdentifier: 
+  Name: Combat
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4212847225
+    data2: 16154945
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4054271743013498453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,10 +666,10 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638108407921795895
+  lastModified: 638108586779346407
   FileSizes:
   - Name: Desktop
-    Value: 11249664
+    Value: 11940736
   Exists: 1
 --- !u!114 &5939776715147555720
 MonoBehaviour:
@@ -545,4 +700,52 @@ MonoBehaviour:
   - {fileID: -4554435786828038624}
   MinDistance: 1
   MaxDistance: 20
-  Length: 534
+  Length: 593
+--- !u!114 &6107045455444106270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Richard'sCave2Music_Attempt043/Chord'n'Claves
+  m_EditorClassIdentifier: 
+  Name: Chord'n'Claves
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 683111180
+    data2: 347117401
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7762160427014732200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Richard'sCave2Music_Attempt043/Flute Ending
+  m_EditorClassIdentifier: 
+  Name: Flute Ending
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3610524451
+    data2: 3114728943
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1

@@ -175,6 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBar: {fileID: 0}
+  isInCombat: 0
+  isOnPebbles: 0
+  isOnForest: 0
+  isOnDirt: 0
 --- !u!1 &1696540414920657297
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +193,6 @@ GameObject:
   - component: {fileID: 1696540414920657306}
   - component: {fileID: 1696540414920657309}
   - component: {fileID: 6240501368779780221}
-  - component: {fileID: 1145058577}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -311,19 +315,6 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
 --- !u!114 &6240501368779780221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696540414920657297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
---- !u!114 &1145058577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
