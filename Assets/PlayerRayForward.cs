@@ -17,16 +17,16 @@ public class PlayerRayForward : MonoBehaviour
 
         int avoidMask = 1 << 6;
 
-        bool didHit = false;
+        
         RaycastHit hit;
         // Does the ray intersect any objects in the layer mask
         if (Physics.Raycast(transform.position, transform.forward, out hit, 30, avoidMask))
         {
-            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
+            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);           
 
            
-
-            didHit = true;
         }
+
+
     }
 }

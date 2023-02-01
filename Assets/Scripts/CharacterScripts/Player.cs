@@ -14,28 +14,26 @@ public class Player : MonoBehaviour
 
     public HealthSystem healthSystem;
     [SerializeField] private HealthBar healthBar;
-       
     
-    FMOD.Studio.EventInstance e;
+    
     FMOD.Studio.EventInstance ewalk;
 
 
-    public bool isInCombat = false;
-    public float  isOnPebbles = 0;
+   
+    public float isOnPebbles = 0;
     public float isOnForest = 0;
     public float isOnDirt = 0;
+
+    [SerializeField] private float walkThresh = 0.05f;
 
     private Vector3 prevPos;
 
     private void Awake()
     {
-        e = FMODUnity.RuntimeManager.CreateInstance("event:/Richard'sCave3Music_Attempt001");
-        e.start();
-       
+              
         ewalk = FMODUnity.RuntimeManager.CreateInstance("event:/Footstep");
         ewalk.start();
         ewalk.setPaused(true);
-
 
         Instance = this;
 
@@ -72,7 +70,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        if(Vector3.Distance(transform.position, prevPos) > 0.02f)
+        if(Vector3.Distance(transform.position, prevPos) > walkThresh)
         {
             
             prevPos = transform.position;
@@ -80,7 +78,7 @@ public class Player : MonoBehaviour
             
             ewalk.setPaused(false);
 
-            /* //walking is 2d, no need for this.
+            /* //walking is 2d, no need for this. use this if it is 3d
             FMOD.ATTRIBUTES_3D structure;
             FMOD.VECTOR pos;
 
@@ -104,9 +102,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            ewalk.setParameterByName("Dirt", 0);
-            ewalk.setParameterByName("Pebbles", 0);
-            ewalk.setParameterByName("Forest", 0);
+
             ewalk.setPaused(true);
         }
 
@@ -122,16 +118,7 @@ public class Player : MonoBehaviour
             Debug.Log(healthSystem.GetHealth());
         }
 
-        if(isInCombat)
-        {
-            e.setParameterByName("Combat", 1.0f);            
-        }
-        else 
-        {
-            e.setParameterByName("Combat", 0.0f);
-        }
-
-        
+       
 
     }
 }
