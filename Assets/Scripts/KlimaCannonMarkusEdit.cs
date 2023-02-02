@@ -14,9 +14,9 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
     public Transform start;
     public Vector3 end;
 
-    public Gravity grav;
-    public bool inAir;
+    public Gravity grav;  //get this from the ball beign currently fired
 
+   
     // Start is called before the first frame update
     private void Start()
     {
@@ -27,10 +27,10 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !inAir)
+        if (Input.GetKeyDown(KeyCode.Mouse0) )
             StartCoroutine(StartCharge());
 
-        if (Input.GetKeyUp(KeyCode.Mouse0) && !inAir)
+        if (Input.GetKeyUp(KeyCode.Mouse0) )
             FireCharge();
     }
     
@@ -57,8 +57,17 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
 
     private void FireCharge()
     {
+
+        Transform balls = transform.GetChild(0); //the list of balls
+        for(int i = 0; i < balls.childCount; i++)
+        {
+            grav = balls.GetChild(i).GetComponent<Gravity>();
+            if (!grav.isInAir)
+                break;
+        }
+        
         StopCoroutine(StartCharge());
-        inAir = true;
+        
         transform.position += Vector3.up;
             
         grav.impulse = fire(start.position, end, 30.0f);

@@ -20,6 +20,8 @@ public class Gravity : MonoBehaviour
 
     public Vector3 impulse = new Vector3(0, 0, 0);
 
+    public bool isInAir = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,11 +56,15 @@ public class Gravity : MonoBehaviour
         //move the object
         transform.position += velocity * forceDeltaTime;
 
+
+        //this is only useful on a flat surface
+        //handle with collision box or raycast to ground
         if (transform.position.y < height)
         {
             transform.position = curPos;       //hard reset to the surface
             acceleration *= 0;
             velocity *= 0;
+            isInAir = false;
 
         }
 
