@@ -12,8 +12,8 @@ public class KlimaCannonNew : MonoBehaviour
     public Transform end;
 
     public Gravity grav;
-    public bool inAir;
-    public float launchAngle = 10;
+
+
 
 
     // Start is called before the first frame update
@@ -25,12 +25,14 @@ public class KlimaCannonNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !inAir)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            inAir = true;
+            
             transform.position += Vector3.up;
-            grav.enabled = true;
-            grav.impulse = fire(start.position, end.position, launchAngle);
+
+            grav.impulse = fire(start.position, end.position, 70.0f);
+
+
         }
     }
 
@@ -39,12 +41,12 @@ public class KlimaCannonNew : MonoBehaviour
     {
         
         direction = targPos - startPos;
-        return calculateIterativeTrajectory(startPos, targPos, angle, false);
+        return calculateIterativeTrajectory(startPos, targPos, angle);
 
 
     }
 
-    Vector3 calculateIterativeTrajectory(Vector3 startPoint, Vector3 endPoint, float desiredAngle, bool checkAngle)
+    Vector3 calculateIterativeTrajectory(Vector3 startPoint, Vector3 endPoint, float desiredAngle)
     {
 
         Vector3 t;
@@ -68,45 +70,43 @@ public class KlimaCannonNew : MonoBehaviour
         //unitize the vector
         P2.Normalize();
 
-
-        float angle = 0;
-
-        //if we are asked to use a specific angle, this is our angle, for better or worse        
-        angle = Mathf.Deg2Rad * desiredAngle;
-        
-        //add a bit of inclination just in case
-        angle += Mathf.Acos(Vector3.Dot(P1, Vector3.up)) * 0.15f;
-
-        //get direct angle in rads, this is a minimum launch angle
-        float directAngle =  Mathf.Acos(Vector3.Dot(P1, P2));
-
-        if (angle < directAngle)
-            angle = directAngle;
+        //get angle in rads, this is a minimum launch angle (if down to up)
+        float angle = Mathf.Acos(Vector3.Dot(P1, P2));
 
         //any angle less than 45 is 45 (optimal angle)
         //any angle greater is the angle, plus HALF the angle of the vector to y up.
         //with balistics the angle ALWAYS has to be greater than the direct angle from
         //point to point. so we add half of this angle to 90, splitting the difference
-        if (checkAngle)
-        {   
 
-            if (angle < 0.785398163f)
-                angle = 0.785398163f;
-            
+        if (angle < 0.785398163f)
+            angle = 0.785398163f;
+        else
+            angle += Mathf.Acos(Vector3.Dot(P1, Vector3.up)) * 0.5f;
 
-            //if it is too close to pure vertical make it less than pure vertical
-            if (angle > Mathf.PI / 2 - 0.05f)
-                angle = Mathf.PI / 2 - 0.05f;
 
-            //if we are going from up to down, use direct angle
-            if (startPoint.y > endPoint.y)
-                angle = directAngle;
+        //if it is too close to pure vertical make it less than pure vertical
+        if (angle > Mathf.PI / 2 - 0.05f)
+            angle = Mathf.PI / 2 - 0.05f;
 
-        }
+        //if we are going from up to down, just use appx 60 degs
+        if (startPoint.y > endPoint.y)
+            angle = 0.985398163f;
+
+        //if we are asked to use a specific angle, this is our angle..
+        //if (desiredAngle != 0)
+        //{
+        //    angle = Mathf.Deg2Rad * desiredAngle;
+        //}
+
 
         float Y = endPoint.y - startPoint.y;
 
-        
+        //are we firing down a hill?
+        if (endPoint.y < startPoint.y && false)
+        {
+            angle *= -0.5f;
+        }
+
         // perform the trajectory calculation to arrive at the gun powder charge aka 
         // target velocity for the distance we desire, based on launch angle
         float rng = 0;
@@ -120,9 +120,9 @@ public class KlimaCannonNew : MonoBehaviour
         //achieved regardless of height differential. by iterating with a binary heuristic
         //we increase or decrease the initial velocity until we acheive our XY distance
 
-        angle = Mathf.Abs(angle); // no negative numbers please!
         float f = (Mathf.Sin(angle * 2.0f));
-              
+        if (f <= 0)
+            f = 1.0f;      //just for safety (though this should never be)
 
         while (Mathf.Abs(rng - flatdistance) > 0.001f && iters < 64)
         {
@@ -130,13 +130,8 @@ public class KlimaCannonNew : MonoBehaviour
             if (trydistance > 0)
             {
 
-                //---------------create an initial force-------------------------
-                //-----------( / f seems to do nothing??? )----------------------
-                //-it behaves as a constant and Vo is adjusted in relation to f?-
-                //---------------------------------------------------------------
-                f = 1;
-                float sqrtcheck = (trydistance * G) / f ;
-                
+                //create an initial force 
+                float sqrtcheck = (trydistance * G) / f;
                 if (sqrtcheck > 0)
                     Vo = Mathf.Sqrt(sqrtcheck);
                 else
@@ -192,41 +187,24 @@ public class KlimaCannonNew : MonoBehaviour
         angV.Normalize();
         Vector3 side = Vector3.Cross(angV, Vector3.up);
         side.Normalize();
-
-        
+       
         //we need to rotate that by our actual launch angle
         angV = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, side) * angV;
 
-        //multiply by calculated "powder charge"
         angV *= Vo;
 
         Debug.Log(Vo.ToString());
-           
+        //multiply by calculated "powder charge"   
         return angV;   
 
     }
-    
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.tag == "CannonTarget")  
-        {
-            Debug.Log("ball hit target" );
-            grav.reset();
-            grav.enabled = false;
-            inAir = false;
-            transform.localPosition = Vector3.zero;
-            //do some damage? handle it on the thing hit? explosion?
-        }
-        else
+        if (other.tag == "CannonTarget")  //gonna need some "Or's" here, LayerMask? 
         {
             Debug.Log("ball hit " + other.name);
             grav.reset();
-            grav.enabled = false;
-            inAir = false;
             transform.localPosition = Vector3.zero;
-            //explosion?
-
         }
         
     }
