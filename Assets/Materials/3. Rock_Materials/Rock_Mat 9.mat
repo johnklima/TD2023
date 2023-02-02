@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2074345975546609596
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CaveWall 15
-  m_Shader: {fileID: -6465566751694194690, guid: 4ba880dfcbb7f6346a386210646547a7, type: 3}
+  m_Name: Rock_Mat 9
+  m_Shader: {fileID: -6465566751694194690, guid: 292a5f5aab85b5940a0a87892f772cb0, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -21,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo_Map:
-        m_Texture: {fileID: 2800000, guid: 59e0c702e5f84304db1ec7f5f095ba31, type: 3}
+        m_Texture: {fileID: 2800000, guid: 34ae904962141f343ac4e08e5d6e3926, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormal:
@@ -29,7 +42,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask_RHaoM_Map:
-        m_Texture: {fileID: 2800000, guid: f24d58a922ef5774aa2f7d1f727760a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: a59287204b0e42c498c10b87f03a8cc7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mesh_Normal:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MossNormal:
@@ -41,11 +58,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 970863ba3f742964daaa36cfcc7d9de9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1a2770e1a5827d54383e4eec8e67482d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_ef55ff71c9bb48b68482c407518b8552_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 64838211cc6cbb34c972c5c7fe0011b9, type: 3}
+    - _Texture_Normal_Map:
+        m_Texture: {fileID: 2800000, guid: 1a2770e1a5827d54383e4eec8e67482d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -62,56 +79,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AO: 0.8
-    - _AlphaClip: 1
-    - _Alpha_Clip_Threshold: 0
-    - _Blend: 0
-    - _CastShadows: 1
-    - _Cull: 2
-    - _DetailNormalScale: 7
+    - _AO: 1
+    - _DetailNormalScale: 8
     - _DetailNormalStrength: 1
-    - _DstBlend: 0
-    - _Height_Scale: -0.5
-    - _HexSharpness: 15
-    - _HexSize: 0.8
-    - _Metallic: 0.1
-    - _MossAmount: 1
-    - _MossAreaY: 54
-    - _MossDots: 7.02
-    - _Moss_Moistness: 0.627
-    - _Moss_Tiling: 10
-    - _NormalStrength: 1
-    - _PuddleAreaY: 23
-    - _Puddle_Opacity: 1
+    - _HexSharpness: 16
+    - _HexSize: 2.5
+    - _Metallic: 0.089
+    - _MossAmount: 0.264
+    - _MossAreaY: 6.46
+    - _MossDrawLineY: 1
+    - _Moss_Tiling: 4
+    - _NormalStrength: 2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _RoofMoisture: 0.386
-    - _RoofMoisture_Area: 14.5
-    - _Roughness: 0.098
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _WorkflowMode: 1
-    - _ZTest: 4
-    - _ZWrite: 1
-    - _ZWriteControl: 0
+    - _Roughness: 0.2
     m_Colors:
     - _ColorVariation: {r: 1, g: 1, b: 1, a: 0}
-    - _MossDotsOffset: {r: 3.1, g: 5.28, b: 0, a: 0}
-    - _Offset: {r: 1.98, g: 0.27, b: 0, a: 0}
-    - _PuddleColor: {r: 0.31318974, g: 0.32854044, b: 0.4339623, a: 0}
-    - _Tiling: {r: 6, g: 6, b: 0, a: 0}
+    - _DetailNormalScale: {r: 8, g: 8, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Tiling: {r: 4, g: 4, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &5870218673237556846
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
