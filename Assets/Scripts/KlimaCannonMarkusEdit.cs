@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class KlimaCannonMarkusEdit : MonoBehaviour
 {
+    private int ammo = 8, damage = 1;
+    private Vector3 scale = new Vector3(0.29f, 0.29f, 0.29f);
+    private float aimCap = 10;
+
     public float G = 9.8f;
     public Vector3 direction;
 
@@ -16,6 +20,7 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        start = transform;
         grav = GetComponent<Gravity>();
     }
 
@@ -23,13 +28,40 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && !inAir)
+            StartCoroutine(StartCharge());
+
+        if (Input.GetKeyUp(KeyCode.Mouse0) && !inAir)
+            FireCharge();
+    }
+    
+    private IEnumerator StartCharge()
+    {
+        end = transform.position - new Vector3(0, 1, 0);
+        
+        float time = 0;
+        while (time < 2)
         {
-            ClickDestination();
-            inAir = true;
-            transform.position += Vector3.up;
-            
-            grav.impulse = fire(start.position, end, 30.0f);
+            end += transform.forward * (Time.deltaTime * aimCap);
+            //Debug.DrawRay(start.position, aimPos + aimPos, Color.green, time);
+            yield return null;
+            time += Time.deltaTime;
         }
+        
+        /*Ray ray = Camera.main.ScreenPointToRay(aimPos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 40))
+            end = hit.point;
+        
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 40))*/
+    }
+
+    private void FireCharge()
+    {
+        StopCoroutine(StartCharge());
+        inAir = true;
+        transform.position += Vector3.up;
+            
+        grav.impulse = fire(start.position, end, 30.0f);
     }
 
     public Vector3 fire(Vector3 startPoint, Vector3 endPoint, float desiredAngle)
@@ -184,15 +216,5 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
             inAir = false;
             transform.localPosition = Vector3.zero;
         }
-    }
-
-    private void ClickDestination()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 40))
-            end = hit.point;
-        
-        //if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 40))
     }
 }
