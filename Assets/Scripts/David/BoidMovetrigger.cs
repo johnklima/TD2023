@@ -6,11 +6,12 @@ public class BoidMovetrigger : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask;
     bool inTrigger;
-    [SerializeField] SphereCollider thisColl;
 
     float distance = 10f;
     BoidsDavid[] boids;
 
+    [SerializeField] SphereCollider thisColl;
+    
     void Start()
     {
       boids = transform.GetComponentsInChildren<BoidsDavid>();
