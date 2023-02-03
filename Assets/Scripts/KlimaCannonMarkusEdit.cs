@@ -222,7 +222,7 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
         {
             Debug.Log("ball hit " + other.name);
             grav.reset();
-            inAir = false;
+            //inAir = false;
             transform.localPosition = Vector3.zero;
         }
     }
