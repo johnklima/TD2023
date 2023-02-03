@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{5716ef5c-f74c-43ac-8adb-5eb77719f2f4}">
+		<property name="name">
+			<value>LoopOuttro</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6d4f67b7-1fd2-4b75-a22c-f0720f6268a3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6d4f67b7-1fd2-4b75-a22c-f0720f6268a3}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
