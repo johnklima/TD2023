@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2074345975546609596
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Small Rock 2_Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 292a5f5aab85b5940a0a87892f772cb0, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo_Map:
+        m_Texture: {fileID: 2800000, guid: 23038f6034538d5478734cc4150b3b5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormal:
+        m_Texture: {fileID: 2800000, guid: 447cb028b2132b04793546fc5757a294, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask_RHaoM_Map:
+        m_Texture: {fileID: 2800000, guid: 64efc309e6df39e468f5f2913df42337, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mesh_Normal:
+        m_Texture: {fileID: 2800000, guid: deb3644084dc32c4eb94cfb67fb6d451, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MossNormal:
+        m_Texture: {fileID: 2800000, guid: b4a5ad4ef9c6f49448915408fd08d59d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Moss_Albedo:
+        m_Texture: {fileID: 2800000, guid: 49dc0f9dccb3e3f43b1672a70abce473, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Map:
+        m_Texture: {fileID: 2800000, guid: 8720c26582dcfbe4180d027c43a85f5f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture_Normal_Map:
+        m_Texture: {fileID: 2800000, guid: 8720c26582dcfbe4180d027c43a85f5f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AO: 1
+    - _DetailNormalScale: 8
+    - _DetailNormalStrength: 1
+    - _HexSharpness: 16
+    - _HexSize: 2.5
+    - _Metallic: 0.089
+    - _MossAmount: 0.867
+    - _MossAreaY: 0.5
+    - _MossDrawLineY: 1
+    - _Moss_Tiling: 4
+    - _NormalStrength: 2
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Roughness: 0.2
+    m_Colors:
+    - _ColorVariation: {r: 1, g: 1, b: 1, a: 0}
+    - _DetailNormalScale: {r: 8, g: 8, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Tiling: {r: 4, g: 4, b: 0, a: 0}
+  m_BuildTextureStacks: []
