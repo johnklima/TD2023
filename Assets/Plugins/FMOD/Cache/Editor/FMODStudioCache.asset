@@ -24,6 +24,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8374070349275354471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Character/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Character/New Event
+  Guid:
+    Data1: 1527539850
+    Data2: 1246806986
+    Data3: 1076405674
+    Data4: -743033049
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1937
 --- !u!114 &-7801781896801634858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +131,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62314
+--- !u!114 &-6992212262001223041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Character/Death Music
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Character/Death Music
+  Guid:
+    Data1: 256587808
+    Data2: 1185000719
+    Data3: -678823264
+    Data4: -1638556512
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4946
 --- !u!114 &-6954689058627385403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,10 +308,10 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638110331872838059
+  lastModified: 638110349197540281
   FileSizes:
   - Name: Desktop
-    Value: 2516
+    Value: 2620
   Exists: 1
 --- !u!114 &-4118725879217332950
 MonoBehaviour:
@@ -556,12 +610,14 @@ MonoBehaviour:
   - {fileID: 3517057159829294439}
   - {fileID: 714396190151932659}
   - {fileID: 8994069927461811416}
+  - {fileID: -6992212262001223041}
+  - {fileID: -8374070349275354471}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2282483429167426546}
   StringsBanks:
   - {fileID: -4530888687225453756}
-  cacheTime: 638110331872838059
+  cacheTime: 638110349197540281
   cacheVersion: 131601
 --- !u!114 &714396190151932659
 MonoBehaviour:
@@ -639,11 +695,11 @@ MonoBehaviour:
   - {fileID: 2282483429167426546}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 31000
+  Length: 7500
 --- !u!114 &2282483429167426546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,10 +715,10 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638110331872758375
+  lastModified: 638110349197465263
   FileSizes:
   - Name: Desktop
-    Value: 14668480
+    Value: 14626432
   Exists: 1
 --- !u!114 &2904796885987859720
 MonoBehaviour:

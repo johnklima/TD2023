@@ -1,47 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class KlimaCannonMarkusEdit : MonoBehaviour
+public class KlimaCannonMEJE : MonoBehaviour
 {
-    private int ammo = 8, damage = 1;
-    private Vector3 scale = new Vector3(0.29f, 0.29f, 0.29f);
-    private float aimCap = 10;
+    //private int damage = 1;
+    [SerializeField] private Transform ammo;
+    private float aimAmount, aimCap = 10;
 
     public float G = 9.8f;
     public Vector3 direction;
 
-    public Transform start;
+    public Transform cannon;
     public Vector3 end;
 
-    public Gravity grav;  //get this from the ball beign currently fired
+    public GravityME grav;  //get this from the ball being currently fired
 
-   
     // Start is called before the first frame update
     private void Start()
     {
-        start = transform;
-        grav = GetComponent<Gravity>();
+        cannon = transform;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) )
+        if (Input.GetKeyDown(KeyCode.Mouse0))
             StartCoroutine(StartCharge());
 
-        if (Input.GetKeyUp(KeyCode.Mouse0) )
+        if (Input.GetKeyUp(KeyCode.Mouse0))
             FireCharge();
     }
     
     private IEnumerator StartCharge()
     {
-        end = transform.position - new Vector3(0, 1, 0);
+        for(int i = 0; i < ammo.childCount; i++) //The list of balls
+        {
+            grav = ammo.GetChild(i).GetComponent<GravityME>();
+            if (!grav.inAir)
+                break;
+        }
+
+        aimAmount = 0;
         
         float time = 0;
         while (time < 2)
         {
-            end += transform.forward * (Time.deltaTime * aimCap);
+            aimAmount += (Time.deltaTime * aimCap);
             //Debug.DrawRay(start.position, aimPos + aimPos, Color.green, time);
             yield return null;
             time += Time.deltaTime;
@@ -57,26 +63,19 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
 
     private void FireCharge()
     {
-
-        Transform balls = transform.GetChild(0); //the list of balls
-        for(int i = 0; i < balls.childCount; i++)
-        {
-            grav = balls.GetChild(i).GetComponent<Gravity>();
-            if (!grav.isInAir)
-                break;
-        }
-        
         StopCoroutine(StartCharge());
-        
-        transform.position += Vector3.up;
-            
-        grav.impulse = fire(start.position, end, 30.0f);
-    }
+        end = transform.position - new Vector3(0, 1, 0) + transform.forward * aimAmount;
 
+        grav.gameObject.SetActive(true);
+        grav.inAir = true;
+        grav.transform.position = transform.position + Vector3.up;
+        
+        direction = end - cannon.position;
+        grav.impulse = fire(cannon.position, end, 30.0f);
+    }
+    
     public Vector3 fire(Vector3 startPoint, Vector3 endPoint, float desiredAngle)
     {
-        direction = endPoint - startPoint;
-        
         Vector3 t = endPoint;
         Vector3 c = startPoint;
 
@@ -193,7 +192,6 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
                 else if (rng < flatdistance)
                     trydistance += (flatdistance - rng) / 2;
 
-
                 //Debug.Log("ITERS = " + iters);
             }
             else
@@ -212,18 +210,8 @@ public class KlimaCannonMarkusEdit : MonoBehaviour
 
         angV *= Vo;
 
-        Debug.Log(Vo.ToString());
+        //Debug.Log(Vo.ToString());
         //multiply by calculated "powder charge"
         return angV;
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "CannonTarget")  //gonna need some "Or's" here, LayerMask? 
-        {
-            Debug.Log("ball hit " + other.name);
-            grav.reset();
-            //inAir = false;
-            transform.localPosition = Vector3.zero;
-        }
     }
 }
