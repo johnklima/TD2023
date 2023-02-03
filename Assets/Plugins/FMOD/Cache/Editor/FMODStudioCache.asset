@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9072311160636479122
+--- !u!114 &-9069230741919643919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Richard'sCave2Music_Attempt043/Percussion Intro
+  m_Name: parameter:/Cave2Music/LoopSynthSolo
   m_EditorClassIdentifier: 
-  Name: Percussion Intro
+  Name: LoopSynthSolo
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 1201024851
-    data2: 4033690503
+    data1: 2390891477
+    data2: 3967458813
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -48,90 +48,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7127987420833618595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/footsteps
-  m_EditorClassIdentifier: 
-  Path: event:/footsteps
-  Guid:
-    Data1: -1443321460
-    Data2: 1276435824
-    Data3: 2047827631
-    Data4: -1221414476
-  Banks:
-  - {fileID: 4999443003652698281}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 16368
---- !u!114 &-7116907637952674311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Richard'sCave2Music_Attempt043/MelodyIn
-  m_EditorClassIdentifier: 
-  Name: MelodyIn
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3687666225
-    data2: 15268984
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-6864299216449705752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Richard'sCave2Music_Attempt043
-  m_EditorClassIdentifier: 
-  Path: event:/Richard'sCave2Music_Attempt043
-  Guid:
-    Data1: -1185612945
-    Data2: 1222996589
-    Data3: -1042229088
-    Data4: -2069506014
-  Banks:
-  - {fileID: 4999443003652698281}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 7762160427014732200}
-  - {fileID: -9072311160636479122}
-  - {fileID: -5344543203759055538}
-  - {fileID: 6107045455444106270}
-  - {fileID: -2493417521549623234}
-  - {fileID: -7116907637952674311}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 153652
 --- !u!114 &-6780048845536645541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +71,12 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -1601435473764307768}
+  - {fileID: -9069230741919643919}
+  - {fileID: -769667983272449508}
+  - {fileID: -2937222021028699503}
+  - {fileID: 7193295630206173343}
   MinDistance: 1
   MaxDistance: 20
   Length: 74462
@@ -207,79 +128,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-6195550100642394329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/footstep/Pebbles
-  m_EditorClassIdentifier: 
-  Name: Pebbles
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 184944827
-    data2: 2897388192
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-6114489940258576213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/footstep/Dirt
-  m_EditorClassIdentifier: 
-  Name: Dirt
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2345404158
-    data2: 2908085043
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-5344543203759055538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Richard'sCave2Music_Attempt043/RythmIn
-  m_EditorClassIdentifier: 
-  Name: RythmIn
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 149765615
-    data2: 2871951227
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-4210854287083994549
+--- !u!114 &-4611380454464222378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,23 +138,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/3rdCaveTrack
+  m_Name: event:/FX/Gun_Fire
   m_EditorClassIdentifier: 
-  Path: event:/3rdCaveTrack
+  Path: event:/FX/Gun_Fire
   Guid:
-    Data1: 281130763
-    Data2: 1122110017
-    Data3: -473926513
-    Data4: -1508430089
+    Data1: -971917521
+    Data2: 1125508992
+    Data3: 386224514
+    Data4: 1854868812
   Banks:
   - {fileID: 4999443003652698281}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 75360
+  Length: 687
 --- !u!114 &-3673358636732782211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,36 +184,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 197770
---- !u!114 &-3475275280541322738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/footstep
-  m_EditorClassIdentifier: 
-  Path: event:/footstep
-  Guid:
-    Data1: 373259756
-    Data2: 1300264699
-    Data3: 1991953573
-    Data4: -1660330442
-  Banks:
-  - {fileID: 4999443003652698281}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -6195550100642394329}
-  - {fileID: -6114489940258576213}
-  - {fileID: -2976767255445458160}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 281
 --- !u!114 &-3377746871062643750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,7 +238,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 88093
---- !u!114 &-2976767255445458160
+--- !u!114 &-2937222021028699503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -429,98 +248,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/footstep/Forrest
+  m_Name: parameter:/Cave2Music/Cave2ChordsIn
   m_EditorClassIdentifier: 
-  Name: Forrest
+  Name: Cave2ChordsIn
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 3024326030
-    data2: 365448307
+    data1: 3828647179
+    data2: 656046053
   Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2889211420997028302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/2ndCaveTrack
-  m_EditorClassIdentifier: 
-  Path: event:/2ndCaveTrack
-  Guid:
-    Data1: 1857198108
-    Data2: 1176129748
-    Data3: 263618731
-    Data4: 1576834426
-  Banks:
-  - {fileID: 4999443003652698281}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 75360
---- !u!114 &-2493417521549623234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Richard'sCave2Music_Attempt043/EndChord
-  m_EditorClassIdentifier: 
-  Name: EndChord
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2758347353
-    data2: 1561058245
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-2326808651883010624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/1stCaveTrack
-  m_EditorClassIdentifier: 
-  Path: event:/1stCaveTrack
-  Guid:
-    Data1: 1042408123
-    Data2: 1182072462
-    Data3: 1830579377
-    Data4: -898440580
-  Banks:
-  - {fileID: 4999443003652698281}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 75360
 --- !u!114 &-2099495125201197737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,10 +304,82 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638110117605713572
+  lastModified: 638110166746187015
   FileSizes:
   - Name: Desktop
-    Value: 2498
+    Value: 2260
+  Exists: 1
+--- !u!114 &-1927560712304992656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footstep/Dirt
+  m_EditorClassIdentifier: 
+  Name: Dirt
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2345404158
+    data2: 2908085043
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1876651779882805279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footstep/Pebbles
+  m_EditorClassIdentifier: 
+  Name: Pebbles
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 184944827
+    data2: 2897388192
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1601435473764307768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/Cave2RythmIn
+  m_EditorClassIdentifier: 
+  Name: Cave2RythmIn
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 816259794
+    data2: 2874213035
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-1598076748816532784
 MonoBehaviour:
@@ -612,6 +425,30 @@ MonoBehaviour:
   ID:
     data1: 1570419858
     data2: 1864315219
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-769667983272449508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/LoopFluteDuett
+  m_EditorClassIdentifier: 
+  Name: LoopFluteDuett
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2818183
+    data2: 2966883145
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -665,21 +502,17 @@ MonoBehaviour:
   - {fileID: 4563968721998154164}
   - {fileID: 1771433068175811384}
   - {fileID: -3377746871062643750}
-  - {fileID: -6864299216449705752}
-  - {fileID: -4210854287083994549}
   - {fileID: 7678890121560174526}
-  - {fileID: -2889211420997028302}
   - {fileID: -6780048845536645541}
-  - {fileID: -7127987420833618595}
-  - {fileID: -2326808651883010624}
   - {fileID: 1832175087482801451}
-  - {fileID: -3475275280541322738}
+  - {fileID: -4611380454464222378}
+  - {fileID: 9006718726181814280}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4999443003652698281}
   StringsBanks:
   - {fileID: -1959182526917441608}
-  cacheTime: 638110117605713572
+  cacheTime: 638110166746187015
   cacheVersion: 131601
 --- !u!114 &1522974654024707544
 MonoBehaviour:
@@ -885,12 +718,12 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638110117605663564
+  lastModified: 638110166746137008
   FileSizes:
   - Name: Desktop
-    Value: 16922976
+    Value: 14241984
   Exists: 1
---- !u!114 &6107045455444106270
+--- !u!114 &6187252738394135714
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -900,16 +733,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Richard'sCave2Music_Attempt043/Chord'n'Claves
+  m_Name: parameter:/Footstep/Forrest
   m_EditorClassIdentifier: 
-  Name: Chord'n'Claves
+  Name: Forrest
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 683111180
-    data2: 347117401
+    data1: 3024326030
+    data2: 365448307
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -934,6 +767,30 @@ MonoBehaviour:
   ID:
     data1: 1504806095
     data2: 2365609203
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7193295630206173343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/Cave2MelodyIn
+  m_EditorClassIdentifier: 
+  Name: Cave2MelodyIn
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 967503469
+    data2: 2395803777
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -970,30 +827,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75328
---- !u!114 &7762160427014732200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Richard'sCave2Music_Attempt043/Flute Ending
-  m_EditorClassIdentifier: 
-  Name: Flute Ending
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3610524451
-    data2: 3114728943
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &8453267406610916535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,3 +875,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &9006718726181814280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footstep
+  m_EditorClassIdentifier: 
+  Path: event:/Footstep
+  Guid:
+    Data1: 373259756
+    Data2: 1300264699
+    Data3: 1991953573
+    Data4: -1660330442
+  Banks:
+  - {fileID: 4999443003652698281}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1876651779882805279}
+  - {fileID: -1927560712304992656}
+  - {fileID: 6187252738394135714}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 281
