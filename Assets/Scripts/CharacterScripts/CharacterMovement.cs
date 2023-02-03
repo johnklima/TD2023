@@ -21,15 +21,6 @@ public class CharacterMovement : MonoBehaviour
     private CharacterController controller;
     private Animator anim;
 
-    private States playerStates = new States();
-    private enum States
-    {
-        Idle,
-        Walk,
-        Run,
-        InAir,
-    }
-
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -44,34 +35,35 @@ public class CharacterMovement : MonoBehaviour
         onMushroomBounce = Physics.CheckSphere(groundCheck.position, .1f, mushroomBounceLayer);
 
         Move();
-        isMoving = (moveDir.magnitude > 0) ? true : false;
         Sprint();
 
         Jump();
-
-
-        if (!isGrounded)
-        {
-            playerStates = States.InAir;
-        }
-        else
-        {
-            if (!isMoving && !isRunning)
-                playerStates = States.Idle;
-            else
-            {
-                playerStates = (isRunning) ? States.Run : States.Walk;
-            }
-        }
 
         if (onMushroomBounce)
         {
             velocity.y = bounceForce;
         }
-
     }
 
-    
+    public bool IsMoving()
+    {
+        if (moveDir.magnitude <= 0f)
+        {
+            return false;
+        }
+        else
+            return true;
+    }
+
+    public bool IsRunning()
+    {
+        return isRunning;
+    }
+
+    public bool IsJumping()
+    {
+        return isGrounded;
+    }
 
     private void Sprint()
     {
@@ -110,40 +102,4 @@ public class CharacterMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
     }
-
-    private void AnimationStates()
-    {
-        switch (playerStates)
-        {
-            case States.Idle:
-
-                anim.SetBool("IsRunning", true);
-                anim.SetBool("IsWalking", true);
-                anim.SetBool("IsJumping", true);
-
-                break;
-
-            case States.Walk:
-
-                anim.SetBool("IsWalking", true);
-
-                break;
-
-            case States.Run:
-
-                anim.SetBool("IsRunning", true);
-
-                break;
-
-                //assuming there will be one animation for the jumping animation that gets played once, otherwise the logic needs to change
-            case States.InAir:
-
-                anim.SetBool("IsRunning", false);
-                anim.SetBool("IsWalking", false);
-                anim.SetBool("IsJumping", true);
-
-                break;
-        }
-    }
-
 }

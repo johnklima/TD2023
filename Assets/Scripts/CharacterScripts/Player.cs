@@ -105,20 +105,5 @@ public class Player : MonoBehaviour
 
             ewalk.setPaused(true);
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            healthSystem.DealDamage(10);
-            Debug.Log(healthSystem.GetHealth());
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            healthSystem.GainHealth(10);
-            Debug.Log(healthSystem.GetHealth());
-        }
-
-       
-
     }
 }

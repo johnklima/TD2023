@@ -8,6 +8,7 @@ public class StartMenu : MonoBehaviour
 {
     [SerializeField] private Button playBtn, settingsBtn, quitBtn;
     [SerializeField] private int sceneToLoadIndex;
+    [SerializeField] private Transform settingsUI;
 
     private void Start()
     {
@@ -18,17 +19,6 @@ public class StartMenu : MonoBehaviour
 
     private void Settings()
     {
-        Hide();
+        settingsUI.gameObject.SetActive(true);
     }
-
-    private void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void Show()
-    {
-        gameObject.SetActive(true);
-    }
-
 }

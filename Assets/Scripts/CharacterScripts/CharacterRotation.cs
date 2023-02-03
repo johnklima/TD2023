@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CharacterRotation : MonoBehaviour
 {
-
+    /*public float mouseSens;
+    public bool invX = false, invY = false;*/
+    
     [SerializeField] private float mouseSens, xNegativeClamp, xPositiveClamp;
     [SerializeField] private Transform playerChar;
+    
 
     [SerializeField] private float raycastLength;
     [SerializeField] private Transform raycastStartPoint;
@@ -43,12 +46,12 @@ public class CharacterRotation : MonoBehaviour
             
             if (Input.GetKeyDown(interactableKeyCode))
             {
-                Debug.Log("Hello");
                 hit.collider.gameObject.GetComponent<Interactable>().Interact();
             }
         }
-        else {  } 
-            //PlayerMessagesUI.Instance.HideText();
+        else
+            PlayerMessagesUI.Instance.HideText();
+        
 
     }
 
@@ -57,7 +60,13 @@ public class CharacterRotation : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
 
-        xRotation -= mouseY;
+        /*if (invX)
+            mouseX * -1;
+         
+         if (invY)
+            xRotation += mouseY;
+        else*/
+            xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, xNegativeClamp, xPositiveClamp);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
