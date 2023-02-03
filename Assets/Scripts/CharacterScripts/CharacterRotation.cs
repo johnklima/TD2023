@@ -43,12 +43,12 @@ public class CharacterRotation : MonoBehaviour
             
             if (Input.GetKeyDown(interactableKeyCode))
             {
-                Debug.Log("Hello");
                 hit.collider.gameObject.GetComponent<Interactable>().Interact();
             }
         }
-        else {  } 
-            //PlayerMessagesUI.Instance.HideText();
+        else
+            PlayerMessagesUI.Instance.HideText();
+        
 
     }
 

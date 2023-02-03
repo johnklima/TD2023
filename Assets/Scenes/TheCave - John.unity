@@ -3817,6 +3817,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1696540415414993865, guid: 28a4eae19004641499e74317316de34c, type: 3}
+      propertyPath: m_Name
+      value: playerMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696540415414993865, guid: 28a4eae19004641499e74317316de34c, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
@@ -3850,6 +3854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1696540414920657310, guid: 28a4eae19004641499e74317316de34c, type: 3}
+    - {fileID: 2023314765, guid: 28a4eae19004641499e74317316de34c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 28a4eae19004641499e74317316de34c, type: 3}
 --- !u!1 &1145058576 stripped
 GameObject:
@@ -3869,6 +3874,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!114 &1145058578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1696540414641986722, guid: 28a4eae19004641499e74317316de34c, type: 3}
+  m_PrefabInstance: {fileID: 1145058575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269b344a16731d248a34bfd6491b2d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1145058579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1696540415414993865, guid: 28a4eae19004641499e74317316de34c, type: 3}
+  m_PrefabInstance: {fileID: 1145058575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1145058580
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145058579}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8c0e9160100c9f4cb23015034114aa9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1145058581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145058579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b28c301c4d97ed4193b9958ddc3585a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterMovement: {fileID: 1145058578}
 --- !u!1 &1220285562
 GameObject:
   m_ObjectHideFlags: 0
