@@ -58,9 +58,10 @@ public class GravityME : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")  //gonna need some "Or's" here, LayerMask? 
+        if (other.GetComponent<Enemy>() != null) //gonna need some "Or's" here, LayerMask? 
         {
             Debug.Log("ball hit " + other.name);
+            other.GetComponent<Enemy>().healthSystem.DealDamage(1);
             reset();
         }
     }
