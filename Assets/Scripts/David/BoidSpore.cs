@@ -12,7 +12,7 @@ public class BoidSpore : MonoBehaviour
     [SerializeField] float constrainFactor = 2.0f;
     [SerializeField] float avoidFactor = 2.0f;
     [SerializeField] float collisionDistance = 6.0f;
-    private float speed = 1.5f;
+    private float speed = 1f;
     Vector3 constrainPoint;
 
     Transform flockparent;
@@ -32,6 +32,7 @@ public class BoidSpore : MonoBehaviour
     void Start()
     {
         flockparent = transform.parent;
+        constrainPoint = flockparent.position;
 
         velocity = new Vector3(0, 0, 0);
     }
@@ -40,7 +41,6 @@ public class BoidSpore : MonoBehaviour
     void Update()
     {
         
-        constrainPoint = flockparent.position;
         inStationRange = Physics.CheckSphere(transform.position, distance, stationLayer);
 
         if (inStationRange)
@@ -213,7 +213,6 @@ public class BoidSpore : MonoBehaviour
         if (collider.tag == "Interactable")
         {
             velocity = new Vector3 (0f, 0f, 0f);
-            gameObject.SetActive(false);
         }
     }
 }

@@ -17,18 +17,15 @@ public class BoidsDavid : MonoBehaviour
     private float startSpeed = 0.5f;
     Vector3 constrainPoint;
 
-    // animator component
-    Animator batController;
-    bool canFly;
-
     // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
     public Vector3 velocity;
     Vector3 avoidObst;
     float avoidCount;
 
     // variable to check if the player is in vicinity of a boids collider
+    SphereCollider boidColl;
     bool pcInRange;
-    float distance = 5f;
+    float distance = 10f;
     [SerializeField] LayerMask playerLayer;
     Collider[] playerColl;
     [SerializeField] GameObject player;
@@ -40,10 +37,17 @@ public class BoidsDavid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // boidColl = gameObject.GetComponent<SphereCollider>();
         flock = transform.parent;
         constrainPoint = flock.position;
 
-        batController = GetComponent<Animator>();
+        // Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
+        // Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+        // float speed = Random.Range(0f, 1f);
+
+        // transform.position = pos;
+        // transform.LookAt(look);
+        // velocity = (look - pos) * speed;
 
         velocity = new Vector3(0, 0, 0);
 
@@ -58,7 +62,7 @@ public class BoidsDavid : MonoBehaviour
 
         if (velocity != Vector3.zero && pcInRange)
         {
-            canFly = true;
+            Debug.Log("Player in range");
             Vector3 newVelocity = new Vector3(0f, 0f, 0f);
             newVelocity += GoToPlayer();
             Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
@@ -71,7 +75,8 @@ public class BoidsDavid : MonoBehaviour
 
         else if (velocity != Vector3.zero && !pcInRange)
         {
-            canFly = true;
+
+            Debug.Log("PC not in range");
             Vector3 newVelocity = new Vector3(0, 0, 0);
             
             // rule 1 all boids steer towards center of mass - cohesion
@@ -101,10 +106,6 @@ public class BoidsDavid : MonoBehaviour
             {
                 startSpeed = maxSpeed;
             }
-        }
-        if (canFly)
-        {
-            batController.SetBool("isFlying", true);
         }
     }
     Vector3 avoid()
@@ -235,30 +236,12 @@ public class BoidsDavid : MonoBehaviour
 
         if (collider.gameObject.GetComponent<Player>() != null)
         {
-            batController.SetBool("isAttacking", true);
             collider.gameObject.GetComponent<Player>().healthSystem.DealDamage(damage);
-        }
-        if (collider.gameObject.GetComponent<Mycelium>() != null)
-        {
-            // change condition to component tag later
-            // currently not working
-            transform.position += new Vector3(0, -1f, 0);
-            batController.SetBool("isDead", true);
-
-            float timer = 0f;
-            timer += Time.deltaTime;
-            if (timer > 0.5f)
-            {
-                gameObject.SetActive(false);
-                timer -= Time.deltaTime;
-                timer = 0f;
-            }
         }
     }
 
     void OnTriggerExit(Collider collider)
     {
         pcInRange = false;
-        batController.SetBool("isAttacking", false);
     }
 }

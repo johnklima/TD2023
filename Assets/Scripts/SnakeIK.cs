@@ -10,7 +10,7 @@ public class SnakeIK : MonoBehaviour
     public Transform targetHolder;
 
     //the snake head
-    public Transform snakeAgent;
+    public Transform snakeHead;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,10 @@ public class SnakeIK : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IK.position = snakeAgent.position;
-        IK.rotation = snakeAgent.rotation;
+        IK.position = snakeHead.position;
+        IK.rotation = snakeHead.rotation;
 
-        targetHolder.position = snakeAgent.position;
-        targetHolder.rotation = snakeAgent.rotation;
+        targetHolder.position = snakeHead.position;
+        targetHolder.rotation = snakeHead.rotation;
     }
 }

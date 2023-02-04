@@ -983,6 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &248632002
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1319,6 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &282339238
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1808,6 +1810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &408373755
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2338,6 +2341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &462741056
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2668,6 +2672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &483407138
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3099,6 +3104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &515849513
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3209,6 +3215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &522474980
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3655,7 +3662,6 @@ MonoBehaviour:
   gap: 32
   segments: 16
   bodySpeed: 5
-  snakeBodyParts: []
   positionHistory: []
   sineWaveSpeed: 3.5
   amplitude: 0.025
@@ -3821,6 +3827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &661204973
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4434,6 +4441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &824770912
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5636,6 +5644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &1083733373
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5903,10 +5912,6 @@ PrefabInstance:
     - target: {fileID: 1696540414641986722, guid: 28a4eae19004641499e74317316de34c, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1696540414641986722, guid: 28a4eae19004641499e74317316de34c, type: 3}
-      propertyPath: walkThresh
-      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1696540414641986722, guid: 28a4eae19004641499e74317316de34c, type: 3}
       propertyPath: bounceForce
@@ -7039,6 +7044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &1343969686
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7318,6 +7324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &1477270979
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8418,6 +8425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!1001 &1673850379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8534,6 +8542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &1722421288
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8950,6 +8959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &1906718338
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9254,6 +9264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb13b8959ea0e6c4c8b047280c0a9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDetect: 25
 --- !u!135 &1974099911
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9363,9 +9374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899cc0a4b461acc47a5b2c726d6c11ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IK: {fileID: 0}
-  targetHolder: {fileID: 0}
-  snakeHead: {fileID: 0}
+  snakeAgent: {fileID: 638860869}
+  snakeHeadIK: {fileID: 2004903972}
 --- !u!1 &2014646728
 GameObject:
   m_ObjectHideFlags: 0

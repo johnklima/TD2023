@@ -21,77 +21,6 @@ public class CharacterMovement : MonoBehaviour
     private CharacterController controller;
     private Animator anim;
 
-
-
-    ////////////// <movement sound> /////////////////////
-    
-    // from here down we can place all code related to character sound
-    // and it is in one nice tight place. perhaps it is a class of its
-    // own, but we will prolly want to hook into private stuff inside
-    // the movement class, without having to expose those properties.
-    // Add any other new character variables ABOVE this block.
-
-    FMOD.Studio.EventInstance ewalk;
-    //prolly need more events for running and jumping
-
-    public float isOnPebbles = 0;
-    public float isOnForest = 0;
-    public float isOnDirt = 0;
-
-    [SerializeField] private float walkThreshold = 0.02f;
-
-    private Vector3 prevPos;
-
-
-    private void doSound()
-    {
-        if (Vector3.Distance(transform.position, prevPos) > walkThreshold)
-        {
-            //TODO: handle running and jumping sounds
-
-            prevPos = transform.position;
-
-
-            ewalk.setPaused(false);
-
-            /* //walking is 2d, no need for this. use this if it is a 3d sound
-            FMOD.ATTRIBUTES_3D structure;
-            FMOD.VECTOR pos;
-
-            ewalk.get3DAttributes(out structure);
-
-            pos.x = transform.position.x;
-            pos.y = transform.position.y;
-            pos.z = transform.position.z;
-
-            structure.position = pos;
-
-            ewalk.set3DAttributes(structure);           
-            */
-
-            ewalk.setParameterByName("Dirt", isOnDirt);
-            ewalk.setParameterByName("Pebbles", isOnPebbles);
-            ewalk.setParameterByName("Forest", isOnForest);
-
-
-
-        }
-        else
-        {
-            ewalk.setPaused(true);
-        }
-
-    }
-
-    ////////////// </movement sound> /////////////////////
-
-    private void Awake()
-    {
-        ewalk = FMODUnity.RuntimeManager.CreateInstance("event:/Footstep");
-        ewalk.start();
-        ewalk.setPaused(true);
-    }
-
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -114,8 +43,6 @@ public class CharacterMovement : MonoBehaviour
         {
             velocity.y = bounceForce;
         }
-
-        doSound();  //<jpk>
     }
 
     public bool IsMoving()
