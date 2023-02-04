@@ -24,7 +24,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-8374070349275354471
+--- !u!114 &-8355963122263650970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,14 +34,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FX/Character/New Event
+  m_Name: event:/FX/Ambient Sounds/Ambient_Pebbles_Debris2
   m_EditorClassIdentifier: 
-  Path: event:/FX/Character/New Event
+  Path: event:/FX/Ambient Sounds/Ambient_Pebbles_Debris2
   Guid:
-    Data1: 1527539850
-    Data2: 1246806986
-    Data3: 1076405674
-    Data4: -743033049
+    Data1: -1572946937
+    Data2: 1154984223
+    Data3: 1531811719
+    Data4: -1870368152
   Banks:
   - {fileID: 2282483429167426546}
   IsStream: 0
@@ -50,7 +50,31 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1937
+  Length: 3428
+--- !u!114 &-8122494531822958523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/Cave2ChordsIn
+  m_EditorClassIdentifier: 
+  Name: Cave2ChordsIn
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3828647179
+    data2: 656046053
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7801781896801634858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +102,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-7487083562026513035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Ambient Sounds/Ambient_Stone_Rumble
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Ambient Sounds/Ambient_Stone_Rumble
+  Guid:
+    Data1: -1109648181
+    Data2: 1342114608
+    Data3: -431240297
+    Data4: -1610807309
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1079
 --- !u!114 &-7420999744045145239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +182,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62314
+--- !u!114 &-7133280651343068889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Attack/Mushroom_Gun_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Attack/Mushroom_Gun_Fire
+  Guid:
+    Data1: -971917521
+    Data2: 1125508992
+    Data3: 386224514
+    Data4: 1854868812
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 625
 --- !u!114 &-6992212262001223041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +236,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4946
+--- !u!114 &-6961172404040745075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Ambient Sounds/Ambient_HowlingWind
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Ambient Sounds/Ambient_HowlingWind
+  Guid:
+    Data1: 1684746272
+    Data2: 1099235324
+    Data3: -1358726981
+    Data4: -946442926
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &-6954689058627385403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +317,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2281
+--- !u!114 &-5285107493042990098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/LoopSynthSolo
+  m_EditorClassIdentifier: 
+  Name: LoopSynthSolo
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2390891477
+    data2: 3967458813
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-5013268668638973507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,10 +437,10 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638110349197540281
+  lastModified: 638110667549461331
   FileSizes:
   - Name: Desktop
-    Value: 2620
+    Value: 3210
   Exists: 1
 --- !u!114 &-4118725879217332950
 MonoBehaviour:
@@ -467,6 +596,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 15542
+--- !u!114 &-2580406595654124186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/Cave2MelodyIn
+  m_EditorClassIdentifier: 
+  Name: Cave2MelodyIn
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 967503469
+    data2: 2395803777
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1159315400142996632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +647,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-629002194753601841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Character/Footsteps/Dirt_Multisounds
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Character/Footsteps/Dirt_Multisounds
+  Guid:
+    Data1: 588690741
+    Data2: 1092186072
+    Data3: 1729492883
+    Data4: -1258374157
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
 --- !u!114 &-371293500826457939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +721,12 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 8703309771626103136}
+  - {fileID: -5285107493042990098}
+  - {fileID: 7381874084349338231}
+  - {fileID: -8122494531822958523}
+  - {fileID: -2580406595654124186}
   MinDistance: 1
   MaxDistance: 20
   Length: 74462
@@ -604,20 +789,28 @@ MonoBehaviour:
   - {fileID: -6954689058627385403}
   - {fileID: 1999131367197578953}
   - {fileID: 7881381798464383685}
-  - {fileID: 3507386095971142298}
   - {fileID: -5013268668638973507}
   - {fileID: -2984842609710697626}
   - {fileID: 3517057159829294439}
   - {fileID: 714396190151932659}
   - {fileID: 8994069927461811416}
   - {fileID: -6992212262001223041}
-  - {fileID: -8374070349275354471}
+  - {fileID: -8355963122263650970}
+  - {fileID: 2348542804757061445}
+  - {fileID: -6961172404040745075}
+  - {fileID: 7779136726922187170}
+  - {fileID: -7133280651343068889}
+  - {fileID: -629002194753601841}
+  - {fileID: 5670833708831868902}
+  - {fileID: 8793758994347383901}
+  - {fileID: -7487083562026513035}
+  - {fileID: 7507097958834857339}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2282483429167426546}
   StringsBanks:
   - {fileID: -4530888687225453756}
-  cacheTime: 638110349197540281
+  cacheTime: 638110667549461331
   cacheVersion: 131601
 --- !u!114 &714396190151932659
 MonoBehaviour:
@@ -715,11 +908,38 @@ MonoBehaviour:
   Path: FMODbyRICKY/TD_FMOD_Project1/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638110349197465263
+  lastModified: 638110667549391308
   FileSizes:
   - Name: Desktop
-    Value: 14626432
+    Value: 16648096
   Exists: 1
+--- !u!114 &2348542804757061445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Ambient Sounds/Ambient_Mountain_Movement
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Ambient Sounds/Ambient_Mountain_Movement
+  Guid:
+    Data1: 822906910
+    Data2: 1215628215
+    Data3: 1064447116
+    Data4: -170869103
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22134
 --- !u!114 &2904796885987859720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,33 +972,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75328
---- !u!114 &3507386095971142298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FX/Attack/Gun_Fire
-  m_EditorClassIdentifier: 
-  Path: event:/FX/Attack/Gun_Fire
-  Guid:
-    Data1: -971917521
-    Data2: 1125508992
-    Data3: 386224514
-    Data4: 1854868812
-  Banks:
-  - {fileID: 2282483429167426546}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 625
 --- !u!114 &3517057159829294439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,6 +1079,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 197770
+--- !u!114 &5670833708831868902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Ambient Sounds/Ambient_IceyWind
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Ambient Sounds/Ambient_IceyWind
+  Guid:
+    Data1: 1096633412
+    Data2: 1227150158
+    Data3: 697699724
+    Data4: -1843904599
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &6528854086248094084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,6 +1130,57 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7381874084349338231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/LoopFluteDuett
+  m_EditorClassIdentifier: 
+  Name: LoopFluteDuett
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2818183
+    data2: 2966883145
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7507097958834857339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Ambient Sounds/Ambient_Water_Drip
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Ambient Sounds/Ambient_Water_Drip
+  Guid:
+    Data1: 1554055405
+    Data2: 1086431049
+    Data3: 769559175
+    Data4: 719699207
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11500
 --- !u!114 &7511849935133311126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,6 +1229,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7779136726922187170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Ambient Sounds/Ambient_Water_Drip2
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Ambient Sounds/Ambient_Water_Drip2
+  Guid:
+    Data1: 222621738
+    Data2: 1190800993
+    Data3: 133036716
+    Data4: 1680556030
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
 --- !u!114 &7881381798464383685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,6 +1331,57 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &8703309771626103136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cave2Music/Cave2RythmIn
+  m_EditorClassIdentifier: 
+  Name: Cave2RythmIn
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 816259794
+    data2: 2874213035
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8793758994347383901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/Ambient Sounds/Ambient_Pebbles_Debris
+  m_EditorClassIdentifier: 
+  Path: event:/FX/Ambient Sounds/Ambient_Pebbles_Debris
+  Guid:
+    Data1: -1413399370
+    Data2: 1162984785
+    Data3: 648628136
+    Data4: -486797598
+  Banks:
+  - {fileID: 2282483429167426546}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3440
 --- !u!114 &8994069927461811416
 MonoBehaviour:
   m_ObjectHideFlags: 0
