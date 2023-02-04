@@ -32,6 +32,7 @@ public class CharacterMovement : MonoBehaviour
     // Add any other new character variables ABOVE this block.
 
     FMOD.Studio.EventInstance ewalk;
+    //prolly need more events for running and jumping
 
     public float isOnPebbles = 0;
     public float isOnForest = 0;
@@ -46,6 +47,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, prevPos) > walkThreshold)
         {
+            //TODO: handle running and jumping sounds
 
             prevPos = transform.position;
 
@@ -76,7 +78,6 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
-
             ewalk.setPaused(true);
         }
 
