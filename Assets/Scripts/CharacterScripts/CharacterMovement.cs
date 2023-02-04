@@ -37,14 +37,14 @@ public class CharacterMovement : MonoBehaviour
     public float isOnForest = 0;
     public float isOnDirt = 0;
 
-    [SerializeField] private float walkThresh = 0.05f;
+    [SerializeField] private float walkThreshold = 0.02f;
 
     private Vector3 prevPos;
 
 
     private void doSound()
     {
-        if (Vector3.Distance(transform.position, prevPos) > walkThresh)
+        if (Vector3.Distance(transform.position, prevPos) > walkThreshold)
         {
 
             prevPos = transform.position;
