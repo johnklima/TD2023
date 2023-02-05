@@ -23,7 +23,7 @@ public class _EnemyAI : MonoBehaviour
     public float walkPointRange;
     public float patrollingSpeed = 3.5f;
     public Transform backUpLocation;
-
+    private Transform startspawn;
     public float rotationSpeed = 500;
     //Attacking
     public float timeBetweenAttacks;
@@ -51,6 +51,12 @@ public class _EnemyAI : MonoBehaviour
         // player = GameObject.Find("Player").transform;
         navMeshagent = GetComponent<NavMeshAgent>();
         bodyScript = GetComponent<_BodySnake>();
+        
+    }
+
+    private void Start()
+    {
+        startspawn= this.transform;
     }
 
     private void Update()
@@ -59,37 +65,24 @@ public class _EnemyAI : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
 
         if (!playerInAttackRange && !playerInSightRange) Patroling();
-        if (!playerInAttackRange && playerInSightRange) ChasePlayer();
+        if (!playerInAttackRange && playerInSightRange && !alreadyAttacked) ChasePlayer();
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) Attack();
+        if (playerInAttackRange && playerInSightRange && alreadyAttacked) FleeAfterAttack();
+        if (!playerInAttackRange && playerInSightRange && alreadyAttacked) FleeAfterAttack();
     }
 
     private void Patroling()
     {
+        
         if (!walkPointSet) SearchWalkPoint();
         
         if (walkPointSet)
         {
-            var angle = Vector3.Angle(transform.forward, walkPoint);
             
-            if (Mathf.Abs(angle) > 90 || Mathf.Abs(angle) < 290 )
-            {
-                Quaternion toRotation = quaternion.LookRotation(walkPoint, Vector3.up);
-                transform.rotation =
-                    Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                navMeshagent.SetDestination(walkPoint);
-                Debug.Log(Mathf.Abs(angle));
-            }
-            else
-            {
-                Quaternion toRotation = quaternion.LookRotation(backUpLocation.position, Vector3.up);
-                transform.rotation =
-                    Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                navMeshagent.SetDestination(backUpLocation.position); 
-                Vector3 distanceToBackUpWalkPoint = transform.position - backUpLocation.position;
-                if (distanceToBackUpWalkPoint.magnitude > 1) SearchWalkPoint();
-            }
-            
-            
+            Quaternion toRotation = quaternion.LookRotation(walkPoint, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            navMeshagent.SetDestination(walkPoint); 
+                
             Vector3 lowHeadVector3 = new Vector3(headTarget.transform.localPosition.x, 0.3f, headTarget.transform.localPosition.z);
 
             headTarget.transform.localPosition = Vector3.Lerp(headTarget.transform.localPosition, lowHeadVector3, headLiftSpeed * Time.deltaTime);
@@ -111,24 +104,39 @@ public class _EnemyAI : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
         curPoint = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        walkPoint = new Vector3(startspawn.position.x + randomX, startspawn.position.y , startspawn.position.z + randomZ);
 
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, groundLayer))
+        RaycastHit hit;
+        if (Physics.Raycast(walkPoint, transform.up, out hit, 1f, groundLayer))
         {
+            walkPoint = hit.point;
             walkPointSet = true;
         }
+        if (Physics.Raycast(walkPoint, -transform.up, out hit, 1f, groundLayer))
+        {
+            walkPoint = hit.point;
+            walkPointSet = true;
+        }
+        else
+        {
+            SearchWalkPoint();
+        }
+        
         if (highHead)
         {
             headTarget.transform.position = headOriginalPosition.transform.position;
         }
+
+        StartCoroutine(CheckIfStopped());
+        
+        Debug.Log(walkPoint);
     }
     private void ChasePlayer()
     {
         Vector3 highHeadVector3 = new Vector3(headTarget.transform.localPosition.x, HeadHeightOffset, headTarget.transform.localPosition.z);
         navMeshagent.SetDestination(player.position);
         navMeshagent.speed = chasingSpeed;
-        // Sine(sineWaveSpeed, amplitude);
+        Sine(sineWaveSpeed, amplitude);
         
         headTarget.transform.localPosition = Vector3.Lerp(headTarget.transform.localPosition, highHeadVector3, headLiftSpeed * Time.deltaTime);
 
@@ -136,7 +144,7 @@ public class _EnemyAI : MonoBehaviour
     }
     private void Attack()
     {
-        // navMeshagent.SetDestination(player.position);
+        navMeshagent.SetDestination(player.position);
         navMeshagent.speed = attackingWalkingSpeed;
         transform.LookAt(player);
         Transform headPosition = headTarget.transform;
@@ -149,13 +157,24 @@ public class _EnemyAI : MonoBehaviour
             //Attack code goes here:
             Vector3 attackHeadVector3 = new Vector3(headPosition.localPosition.x, 3f, 2f);
             headPosition.localPosition = attackHeadVector3;
-            Patroling();
+            FleeAfterAttack();
             
             AttackAnim();
-            alreadyAttacked = true;
+            if (transform.position.x - player.transform.position.x < 1f)
+            {
+               alreadyAttacked = true; 
+            }
             
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+    }
+
+    private void FleeAfterAttack()
+    {
+        if (!walkPointSet) SearchWalkPoint();
+        navMeshagent.SetDestination(walkPoint);
+        speed = attackingWalkingSpeed;
+        Sine(sineWaveSpeed, amplitude);
     }
 
     private void AttackAnim()
@@ -168,6 +187,17 @@ public class _EnemyAI : MonoBehaviour
         Patroling();
     }
 
+    private IEnumerator CheckIfStopped()
+    {
+        yield return new WaitForSeconds(5f);
+        var firstPosition = transform.position.x;
+        yield return new WaitForSeconds(5f);
+        var secondPosition = transform.position.x;
+        if (firstPosition - secondPosition > 3f)
+        {
+            SearchWalkPoint();
+        }
+    }
     private void Sine(float speed, float Amplitude)
     {
         Vector3 pos = transform.position;
