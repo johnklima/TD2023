@@ -41,15 +41,18 @@ public class CharacterRotation : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, raycastLength, interactableLayer))
         {
-
-            PlayerMessagesUI.Instance.SetPlayerText("E to interact with " + hit.collider.gameObject.name);
-            
-            if (Input.GetKeyDown(interactableKeyCode))
+            //<JPK> safety check, just in case I dont have one
+            if (PlayerMessagesUI.Instance)
             {
-                hit.collider.gameObject.GetComponent<Interactable>().Interact();
+                PlayerMessagesUI.Instance.SetPlayerText("E to interact with " + hit.collider.gameObject.name);
+
+                if (Input.GetKeyDown(interactableKeyCode))
+                {
+                    hit.collider.gameObject.GetComponent<Interactable>().Interact();
+                }
             }
         }
-        else
+        else if (PlayerMessagesUI.Instance)             //<JPK> safety check, just in case I dont have one
             PlayerMessagesUI.Instance.HideText();
         
 
