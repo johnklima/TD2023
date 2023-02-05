@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShroomGrowthEffectGOL : MonoBehaviour
 {
+    
     [SerializeField] private Transform objectToSpawn;
     [SerializeField] private int maxRows, maxCol;
     private float objectSize;
@@ -17,7 +18,6 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
     private int[,] cellsArray;
     [SerializeField] private Transform[,] objectsArray;
 
-
     private void Start()
     {
         Random.seed = seed;
@@ -26,10 +26,7 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
         objectSize = objectToSpawn.localScale.x;
         cellsArray = new int[maxRows, maxCol];
         objectsArray = new Transform[maxRows, maxCol];
-
-        //SLETT SENERE!!!!!!!!!!!!!
-        Initialize();
-        //SLETT SENERE!!!!!!!!!!!!!
+        
     }
 
     private void Update()
@@ -70,7 +67,7 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
                 neighboursAmount += cellsArray[row - 1, col - 1];
 
 
-                if (cellsArray[row, col] == 1 && (neighboursAmount < 2 || neighboursAmount > 3))
+                if (cellsArray[row, col] == 1 && (neighboursAmount < 2 || neighboursAmount > 3)) 
                     nextGenerationArr[row, col] = 0;
                 else if (cellsArray[row, col] == 0 && neighboursAmount == 3)
                     nextGenerationArr[row, col] = 1;
@@ -107,7 +104,7 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
                 //instantiate and store an object in the objectsArray list
 
                 objectsArray[row, col] = Instantiate(objectToSpawn, transform);
-                Vector3 newPosition = new Vector3(row * objectSize, 0f, col * objectSize);
+                Vector3 newPosition = new Vector3(transform.position.x + row * objectSize, transform.position.y, transform.position.z + col * objectSize);
                 objectsArray[row, col].transform.position = newPosition;
 
                 //randomly determine which ones will be active at start
