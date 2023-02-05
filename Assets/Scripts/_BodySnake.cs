@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -15,6 +16,14 @@ public class _BodySnake : MonoBehaviour
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0005f;
+    public List<Transform> bodyTransforms = new List<Transform>();
+    public _EnemyAI enemyAIScript;
+
+    private void Start()
+    {
+        enemyAIScript = FindObjectOfType<_EnemyAI>();
+    }
+
 
     void Update()
     {
@@ -25,11 +34,10 @@ public class _BodySnake : MonoBehaviour
             //limit the size of the position buffer
             if (positionHistory.Count > snakeBodyParts.Count * gap)
                 positionHistory.RemoveAt(positionHistory.Count - 1);
-            
-            //Wiggle
-            Sine(sineWaveSpeed, amplitude);
+
+            bodySpeed = enemyAIScript.speed;
         }
-        
+
         // Move Body parts
         int Index = 0;
         foreach (var body in snakeBodyParts)
@@ -39,12 +47,13 @@ public class _BodySnake : MonoBehaviour
                 Vector3 point = positionHistory[Mathf.Min(Index * gap, positionHistory.Count - 1)];
                 
                 Vector3 moveDirection = point - body.transform.position;
-                //body.transform.rotation =  Quaternion.AngleAxis(0, Vector3.up);
-                
-                body.transform.position += Vector3.MoveTowards(body.transform.position, moveDirection * bodySpeed * Time.deltaTime, maxDistanceIndex);
 
-                // pointAt(point);
-                body.transform.LookAt(point);
+                body.transform.position += Vector3.MoveTowards(body.transform.position, moveDirection * bodySpeed * Time.deltaTime, maxDistanceIndex);
+                
+                transform.LookAt(point);
+                Vector3 rotBody = new Vector3(body.transform.rotation.eulerAngles.x, body.transform.rotation.eulerAngles.y, 0);
+                body.transform.rotation = Quaternion.Euler(rotBody);
+                
                 Index++;
             }
         }
@@ -57,12 +66,5 @@ public class _BodySnake : MonoBehaviour
          pos.x = Mathf.Sin(Time.time * speed) * Amplitude;
          transform.position += transform.right * pos.x;
      }
-    public void pointAt(Vector3 target)
-    {
-        transform.LookAt(target);
-        Vector3 rot = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
-        transform.rotation = Quaternion.Euler(rot);
-
-    }
 }
 
