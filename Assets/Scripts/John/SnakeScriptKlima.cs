@@ -31,31 +31,12 @@ public class SnakeScriptKlima : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    // Must be in fixed update as gap for body position is
+    // entirely framerate dependent!
+    void FixedUpdate()
     {
 
         agent.SetDestination(target.position);
-
-        /*
-        
-        //Move Forward
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            moving = true;
-        }
-        else
-        {
-            moving = false;
-        }
-
-        //Turning
-        float turningDirection = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.up, turningDirection * turningSpeed * Time.deltaTime);
-        
-        //Store position history
-        */
 
         if (agent.remainingDistance > 1)
             moving = true;
@@ -67,8 +48,7 @@ public class SnakeScriptKlima : MonoBehaviour
             positionHistory.Insert(0, transform.position);
 
             //limit the size of the position buffer
-            if (positionHistory.Count > snakeBodyParts.Count * gap)
-                positionHistory.RemoveAt(positionHistory.Count - 1);
+            positionHistory.RemoveAt(positionHistory.Count - 1);
 
             //Wiggle
             Sine(sineWaveSpeed, amplitude);
@@ -103,16 +83,7 @@ public class SnakeScriptKlima : MonoBehaviour
             positionHistory.Insert(0, transform.position);
 
     }
-    //Trigger GrowSnake
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Food"))
-    //     {
-    //         Destroy(other.gameObject);
-    //         GrowSnake();
-    //     }
-    // }
-    //Sinewave movement
+    
     private void Sine(float speed, float Amplitude)
     {
         Vector3 pos = transform.position;
