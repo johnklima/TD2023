@@ -17,6 +17,8 @@ public class GravityME : MonoBehaviour
 
     public float height = 0;
     
+    public float timeScalar = 1.0f;
+    
     public Vector3 impulse = new Vector3(0, 0, 0);
     public Vector3 curPos = new Vector3(0, 0, 0); //begin position
 
@@ -30,16 +32,21 @@ public class GravityME : MonoBehaviour
 
     void handleMovement()
     {
+        //set the rate of integration, which is (almost) equivalent to
+        //explosion by mass for impulse calc. problem is, gravity
+        //is no longer a constant. but for gameplay, maybe not an issue?
+        float forceDeltaTime = Time.deltaTime * timeScalar; 
+        
         //reset final force to the initial force of gravity
         finalForce.Set(0, GRAVITY_CONSTANT * mass, 0);
         finalForce += thrust;
 
         acceleration = finalForce / mass;        
-        velocity += acceleration * Time.deltaTime;
+        velocity += acceleration * forceDeltaTime;
         velocity += impulse;
 
         //move the object
-        transform.position += velocity * Time.deltaTime;
+        transform.position += velocity * forceDeltaTime;
 
         //this is only useful on a flat surface
         //handle with collision box or raycast to ground

@@ -25,7 +25,7 @@ public class _BodySnake : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (moving)
         {
@@ -35,7 +35,7 @@ public class _BodySnake : MonoBehaviour
             if (positionHistory.Count > snakeBodyParts.Count * gap)
                 positionHistory.RemoveAt(positionHistory.Count - 1);
 
-            bodySpeed = enemyAIScript.speed;
+            bodySpeed = enemyAIScript.speed * 10;
         }
 
         // Move Body parts

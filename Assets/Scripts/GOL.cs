@@ -5,8 +5,8 @@ using UnityEngine;
 public class GOL : MonoBehaviour
 {
 
-    public GameObject baseobject;
-
+    [SerializeField]  GameObject baseobject;
+    [SerializeField] float interval = 0.5f;
 
     const int MAX_ROWS = 32;
     const int MAX_COLUMNS = 32;
@@ -15,10 +15,12 @@ public class GOL : MonoBehaviour
     int[,] cells;
     GameObject[,] objs;
 
+    float timer = -1;
 
     // Start is called before the first frame update
     void Start()
     {
+        timer = Time.realtimeSinceStartup;
 
         Random.seed = 1325152;
 
@@ -34,8 +36,30 @@ public class GOL : MonoBehaviour
                 //create cells
                 objs[row, col] = GameObject.Instantiate(baseobject, transform);
                 float space = baseobject.transform.localScale.x;
-                Vector3 pos = new Vector3(row * space, 0, col * space );
+                Vector3 pos = new Vector3(row * space, 20, col * space );                
+
                 objs[row, col].transform.position = pos;
+
+                //find the ground
+                int layerMask = 1 << 6; //ground
+                RaycastHit hit;
+                
+                // Does the ray intersect any objects in the layer mask
+                if (Physics.Raycast(pos, -Vector3.up, out hit, 10000, layerMask))
+                {
+                                       
+
+                    float x = objs[row, col].transform.position.x;
+                    float y = hit.point.y;
+                    float z = objs[row, col].transform.position.z;
+
+                    objs[row, col].transform.position.Set(x, y, z);             //this does absolutely nothing!!!!
+                    objs[row, col].transform.position = new Vector3(x, y, z);   //this does
+
+                }
+
+
+
 
                 //init cells
                 int state =  Random.Range(0, 3);
@@ -57,8 +81,15 @@ public class GOL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Time.realtimeSinceStartup - timer > interval)
+        {
+            generateGOL();
+            timer = Time.realtimeSinceStartup;
 
-        generateGOL();
+
+
+        }
+        
         
     }
 
@@ -74,6 +105,7 @@ public class GOL : MonoBehaviour
 
             for (int col = 0; col < MAX_COLUMNS ; col++)
             {
+
 
                 //check my neigbors, so up , down, left, right, and diagonal
                 //this is what we need to do, but need to wrap around the array
@@ -103,7 +135,7 @@ public class GOL : MonoBehaviour
                 // Rules of Life
                 if ((cells[row, col] == 1) && (neighbors < 2))				// Loneliness 
                     next[row, col] = 0;
-                else if ((cells[row, col] == 1) && (neighbors > 3))     // Overpopulation
+                else if ((cells[row, col] == 1) && (neighbors > 3))         // Overpopulation
                     next[row, col] = 0;
                 else if ((cells[row, col] == 0) && (neighbors == 3))        // Reproduction 
                     next[row, col] = 1;
@@ -125,6 +157,8 @@ public class GOL : MonoBehaviour
                 else
                     objs[row, col].SetActive(false);
 
+                
+                
             }
         }
 

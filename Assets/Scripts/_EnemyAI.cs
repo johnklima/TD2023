@@ -12,7 +12,7 @@ public class _EnemyAI : MonoBehaviour
     private float amplitude = 0.005f;
     private float sineWaveSpeed = 3.5f;
     private NavMeshAgent navMeshagent;
-    [SerializeField] Transform player;
+    public Transform player;
     public LayerMask groundLayer, playerLayer;
 
     //Patroling
@@ -48,12 +48,12 @@ public class _EnemyAI : MonoBehaviour
     
     private void Awake()
     {
-        //player = GameObject.Find("Player").transform;
+        // player = GameObject.Find("Player").transform;
         navMeshagent = GetComponent<NavMeshAgent>();
         bodyScript = GetComponent<_BodySnake>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
@@ -128,7 +128,7 @@ public class _EnemyAI : MonoBehaviour
         Vector3 highHeadVector3 = new Vector3(headTarget.transform.localPosition.x, HeadHeightOffset, headTarget.transform.localPosition.z);
         navMeshagent.SetDestination(player.position);
         navMeshagent.speed = chasingSpeed;
-        Sine(sineWaveSpeed, amplitude);
+        // Sine(sineWaveSpeed, amplitude);
         
         headTarget.transform.localPosition = Vector3.Lerp(headTarget.transform.localPosition, highHeadVector3, headLiftSpeed * Time.deltaTime);
 
@@ -140,7 +140,7 @@ public class _EnemyAI : MonoBehaviour
         navMeshagent.speed = attackingWalkingSpeed;
         transform.LookAt(player);
         Transform headPosition = headTarget.transform;
-       
+        // Sine(sineWaveSpeed, amplitude);
         Vector3 attackStartHeadVector3 = new Vector3(headPosition.localPosition.x, 3f, 5f);
         headPosition.localPosition = attackStartHeadVector3;
         speed = attackSpeed;
