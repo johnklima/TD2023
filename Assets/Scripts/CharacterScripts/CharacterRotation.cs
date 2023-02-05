@@ -42,7 +42,7 @@ public class CharacterRotation : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, raycastLength, interactableLayer))
         {
             //<JPK> safety check, just in case I dont have one
-            if (PlayerMessagesUI.Instance)
+            if (PlayerMessagesUI.Instance != null)
             {
                 PlayerMessagesUI.Instance.SetPlayerText("E to interact with " + hit.collider.gameObject.name);
 

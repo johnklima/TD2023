@@ -18,6 +18,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
         //start growing the shroom, and enable the shroom-growth-effect
         if (!isGrowing)
         {
+            Debug.Log("Init effect");
             isGrowing = true;
             shroomGrowthEffect.Initialize();
             shroomGrowthEffect.startGrowing = true;
@@ -28,19 +29,12 @@ public class ShroomGrowth : MonoBehaviour, Interactable
 
     private void Start()
     {
-        timer = timeToGrow;
         shroomGrowthEffect = GetComponentInChildren<ShroomGrowthEffectGOL>();
+        timer = timeToGrow;
     }
 
     private void Update()
     {
-        //testing purpose, remember to remove
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            isGrowing = true;
-            shroomGrowthEffect.Initialize();
-            shroomGrowthEffect.startGrowing = true;
-        }
 
         if (isGrowing)
         {
