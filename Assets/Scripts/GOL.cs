@@ -47,8 +47,7 @@ public class GOL : MonoBehaviour
                 // Does the ray intersect any objects in the layer mask
                 if (Physics.Raycast(pos, -Vector3.up, out hit, 10000, layerMask))
                 {
-
-                    Debug.Log("did hit");
+                                       
 
                     float x = objs[row, col].transform.position.x;
                     float y = hit.point.y;
