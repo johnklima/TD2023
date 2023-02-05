@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class KlimaCannonMEJE : MonoBehaviour
 {
-    //private int damage = 1;
     [SerializeField] private Transform ammo;
     private float aimAmount, aimCap = 10;
 
@@ -62,7 +61,7 @@ public class KlimaCannonMEJE : MonoBehaviour
     private void FireCharge()
     {
         StopCoroutine(StartCharge());
-        end = transform.position - new Vector3(0, 1, 0) + transform.forward * aimAmount;
+        end = transform.position - new Vector3(0f, 0.001f, 0f) + transform.forward * aimAmount;
 
         grav.gameObject.SetActive(true);
         grav.inAir = true;
