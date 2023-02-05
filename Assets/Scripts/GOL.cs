@@ -135,7 +135,7 @@ public class GOL : MonoBehaviour
                 // Rules of Life
                 if ((cells[row, col] == 1) && (neighbors < 2))				// Loneliness 
                     next[row, col] = 0;
-                else if ((cells[row, col] == 1) && (neighbors > 3))     // Overpopulation
+                else if ((cells[row, col] == 1) && (neighbors > 3))         // Overpopulation
                     next[row, col] = 0;
                 else if ((cells[row, col] == 0) && (neighbors == 3))        // Reproduction 
                     next[row, col] = 1;
