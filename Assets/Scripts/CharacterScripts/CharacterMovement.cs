@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float walkSpeed, runSpeed, bounceForce, rotationSpeed;
+    [SerializeField] private float walkSpeed, runSpeed, bounceForce, rotationSpeed, distanceToGround;
     private float currentSpeed;
     private Vector3 moveDir;
     
-    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce, inAir;
+    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce;
 
     [SerializeField] private float jumpForce;
     private float gravity = -9.81f;
@@ -100,7 +100,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, .1f, groundLayer);
+        isGrounded = Physics.CheckSphere(groundCheck.position, distanceToGround, groundLayer);
         onMushroomBounce = Physics.CheckSphere(groundCheck.position, .1f, mushroomBounceLayer);
         
 
@@ -113,6 +113,8 @@ public class CharacterMovement : MonoBehaviour
         {
             velocity.y = bounceForce;
         }
+
+        Debug.Log(isGrounded);
     }
 
     public bool IsMoving(){

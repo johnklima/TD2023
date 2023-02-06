@@ -15,16 +15,12 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Update()
     {
+        
 
-        if (characterMovement.IsGrounded())
-        {
-            animator.SetBool("IsWalking", characterMovement.IsMoving());
-            animator.SetBool("IsRunning", characterMovement.IsRunning());
-            animator.SetBool("IsJumping", !characterMovement.IsJumping());
-        }
-        else
-            animator.SetBool("InAir", !characterMovement.IsGrounded());
+        animator.SetBool("IsWalking", characterMovement.IsMoving()); //if IsMoving() then set is moving bool to true
+        animator.SetBool("IsRunning", characterMovement.IsRunning()); // if IsRunning() then set is running bool to true
+        animator.SetBool("IsJumping", characterMovement.IsJumping());
 
-
+        animator.SetBool("InAir", !characterMovement.IsGrounded());
     }
 }
