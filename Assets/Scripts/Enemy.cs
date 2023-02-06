@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
 
     private void _OnDied(object sender, EventArgs e)
     {
+        animator.enabled = true;
         dead = true;
         if (animator = GetComponent<Animator>())
         {
