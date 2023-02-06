@@ -23,8 +23,7 @@ Material:
   m_Name: GoL_Material
   m_Shader: {fileID: -6465566751694194690, guid: e4f78f72231c5ff4ba84207982a43191, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _ALPHATEST_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -52,11 +51,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 0.5
+    - _AlphaClip: 0.128
     - _HeightAmplitude: 0
-    - _NormalMapStrength: 1
+    - _NormalMapStrength: 7.4
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _EmissiveColor: {r: 0.754717, g: 0.15307939, b: 0.15307939, a: 0}
+    - _EmissiveColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
