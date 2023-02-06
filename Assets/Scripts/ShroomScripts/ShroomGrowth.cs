@@ -10,7 +10,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
 
     [SerializeField] private float timeToGrow = 5f;
     private ShroomGrowthEffectGOL shroomGrowthEffect;
-    private float timer;
+    [SerializeField] private float timer = 15;
     private bool isGrowing;
 
 
@@ -35,7 +35,16 @@ public class ShroomGrowth : MonoBehaviour, Interactable
 
     private void Update()
     {
-        
+        if (isGrowing)
+        {
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+            {
+                ShroomsPlantedManager.Instance.ShroomPlanted();
+                isGrowing = false;
+            }
+
+        }
     }
 
 }

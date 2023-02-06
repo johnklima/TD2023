@@ -22,6 +22,10 @@ public class ShroomsPlantedManager : MonoBehaviour
     {
         shroomsPlanted++;
         OnShroomPlanted?.Invoke(this, EventArgs.Empty);
+        if(shroomsPlanted == maxShroomsToPlant)
+        {
+            //enable a victory ui
+        }
     }
 
     public int GetMaxShroomsToPlant()
