@@ -28,6 +28,8 @@ public class GOL : MonoBehaviour
         cells = new int[MAX_ROWS, MAX_COLUMNS];
         objs = new GameObject[MAX_ROWS, MAX_COLUMNS];
 
+        //deactivate the base object, it is there only for cloning, and to see it in design
+        baseobject.SetActive(false);
         
         for (int row = 0; row < MAX_ROWS; row++)
         {
