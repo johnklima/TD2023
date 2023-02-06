@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     private Animator animator;
 
-    private float timer = 2f;
+    private float timer = 0;
 
     bool dead;
 
@@ -38,11 +38,11 @@ public class Enemy : MonoBehaviour
     {
         if (dead)
         {
-            timer -= Time.deltaTime;
+            timer += Time.deltaTime;
             if(timer < 0)
             {
                 gameObject.SetActive(false);
-                timer -= timer;
+                timer -= Time.deltaTime;
                 timer = 0;
             }
         }

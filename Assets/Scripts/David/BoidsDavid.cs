@@ -13,7 +13,7 @@ public class BoidsDavid : MonoBehaviour
     [SerializeField] float avoidFactor = 2.0f;
 
     [SerializeField] float collisionDistance = 6.0f;
-    private float maxSpeed = 10f;
+    private float maxSpeed = 7f;
     private float startSpeed = 0.5f;
     Vector3 constrainPoint;
 
@@ -25,7 +25,7 @@ public class BoidsDavid : MonoBehaviour
     // variable to check if the player is in vicinity of a boids collider
     SphereCollider boidColl;
     bool pcInRange;
-    float distance = 10f;
+    float distance = 30f;
     [SerializeField] LayerMask playerLayer;
     Collider[] playerColl;
     [SerializeField] GameObject player;
