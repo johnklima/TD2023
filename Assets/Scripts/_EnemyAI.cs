@@ -12,7 +12,7 @@ public class _EnemyAI : MonoBehaviour
     private float amplitude = 0.005f;
     private float sineWaveSpeed = 3.5f;
     private NavMeshAgent navMeshagent;
-    public Transform player;
+    public GameObject player;
     public LayerMask groundLayer, playerLayer;
 
     //Patroling
@@ -134,7 +134,7 @@ public class _EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         Vector3 highHeadVector3 = new Vector3(headTarget.transform.localPosition.x, HeadHeightOffset, headTarget.transform.localPosition.z);
-        navMeshagent.SetDestination(player.position);
+        navMeshagent.SetDestination(player.transform.position);
         navMeshagent.speed = chasingSpeed;
         Sine(sineWaveSpeed, amplitude);
         
@@ -144,36 +144,25 @@ public class _EnemyAI : MonoBehaviour
     }
     private void Attack()
     {
-        navMeshagent.SetDestination(player.position);
+        navMeshagent.SetDestination(player.transform.position);
         navMeshagent.speed = attackingWalkingSpeed;
-        transform.LookAt(player);
+        //transform.LookAt(player);
         Transform headPosition = headTarget.transform;
         // Sine(sineWaveSpeed, amplitude);
         Vector3 attackStartHeadVector3 = new Vector3(headPosition.localPosition.x, 3f, 5f);
         headPosition.localPosition = attackStartHeadVector3;
         speed = attackSpeed;
-        if (!alreadyAttacked)
-        {
-            //Attack code goes here:
-            Vector3 attackHeadVector3 = new Vector3(headPosition.localPosition.x, 3f, 2f);
-            headPosition.localPosition = attackHeadVector3;
-            FleeAfterAttack();
-            
-            AttackAnim();
-            if (transform.position.x - player.transform.position.x < 1f)
-            {
-               alreadyAttacked = true; 
-            }
-            
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
     }
 
     private void FleeAfterAttack()
     {
-        if (!walkPointSet) SearchWalkPoint();
+        if (!walkPointSet)
+        {
+            SearchWalkPoint();
+        }
+        
         navMeshagent.SetDestination(walkPoint);
-        speed = attackingWalkingSpeed;
+        speed = attackSpeed;
         Sine(sineWaveSpeed, amplitude);
     }
 
@@ -198,6 +187,18 @@ public class _EnemyAI : MonoBehaviour
             SearchWalkPoint();
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("ATTACK !!!!!");
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            Patroling();
+        }
+    }
+
     private void Sine(float speed, float Amplitude)
     {
         Vector3 pos = transform.position;

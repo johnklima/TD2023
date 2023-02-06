@@ -288,9 +288,9 @@ GameObject:
   - component: {fileID: 1974967488885231129}
   - component: {fileID: 1974967488885231130}
   - component: {fileID: 1974967488885231131}
-  - component: {fileID: 1974967488885231128}
   - component: {fileID: 1974967488885231133}
   - component: {fileID: 1974967488885231132}
+  - component: {fileID: 648828669}
   m_Layer: 0
   m_Name: TargetSphere
   m_TagString: Untagged
@@ -367,19 +367,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1974967488885231128
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974967488885231126}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &1974967488885231133
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -428,14 +415,27 @@ MonoBehaviour:
   timeBetweenAttacks: 10
   alreadyAttacked: 0
   headTarget: {fileID: 1974967490401660736}
-  attackingWalkingSpeed: 0.1
+  attackingWalkingSpeed: 10
   attackSpeed: 5
-  sightRange: 10
+  sightRange: 100
   attackRange: 5
   HeadHeightOffset: 3
   speed: 0
   chasingSpeed: 10
   headLiftSpeed: 1
+--- !u!65 &648828669
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974967488885231126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.18, y: 1, z: 6.72}
+  m_Center: {x: 0, y: 0, z: -1.84}
 --- !u!1 &1974967489058486883
 GameObject:
   m_ObjectHideFlags: 0
