@@ -35,14 +35,12 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (maxHealth <= 0)
+        if (dead)
         {
             timer += Time.deltaTime;
             if(timer > 0.5f)
             {
                 gameObject.SetActive(false);
-                timer -= Time.deltaTime;
-                timer = 0;
             }
         }
     }
