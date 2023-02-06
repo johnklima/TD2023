@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     private float currentSpeed;
     private Vector3 moveDir;
     
-    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce;
+    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce, inAir;
 
     [SerializeField] private float jumpForce;
     private float gravity = -9.81f;
@@ -102,6 +102,7 @@ public class CharacterMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, .1f, groundLayer);
         onMushroomBounce = Physics.CheckSphere(groundCheck.position, .1f, mushroomBounceLayer);
+        
 
         Move();
         Sprint();
@@ -114,8 +115,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public bool IsMoving()
-    {
+    public bool IsMoving(){
         if (moveDir.magnitude <= 0f)
         {
             return false;
@@ -124,12 +124,15 @@ public class CharacterMovement : MonoBehaviour
             return true;
     }
 
-    public bool IsRunning()
-    {
+    public bool IsRunning(){
         return isRunning;
     }
 
-    public bool IsJumping()
+    public bool IsJumping(){
+        return isJumping;
+    }
+
+    public bool IsGrounded()
     {
         return isGrounded;
     }

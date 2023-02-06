@@ -16,9 +16,15 @@ public class PlayerAnimations : MonoBehaviour
     private void Update()
     {
 
-        //animator.SetBool("IsWalking", characterMovement.IsMoving());
-        //animator.SetBool("IsRunning", characterMovement.IsRunning());
-        //animator.SetBool("IsJumping", !characterMovement.IsJumping()); 
+        if (characterMovement.IsGrounded())
+        {
+            animator.SetBool("IsWalking", characterMovement.IsMoving());
+            animator.SetBool("IsRunning", characterMovement.IsRunning());
+            animator.SetBool("IsJumping", !characterMovement.IsJumping());
+        }
+        else
+            animator.SetBool("InAir", !characterMovement.IsGrounded());
+
 
     }
 }
