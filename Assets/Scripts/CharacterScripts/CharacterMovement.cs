@@ -16,6 +16,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask mushroomBounceLayer;
 
+    [SerializeField] private Transform playerBody;
     private Vector3 velocity;
 
     private CharacterController controller;
@@ -160,6 +161,8 @@ public class CharacterMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        playerBody.forward += Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * 20f);
     }
 
     private void Jump()
