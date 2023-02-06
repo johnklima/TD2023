@@ -25,6 +25,7 @@ public class ShroomsPlantedManager : MonoBehaviour
         if(shroomsPlanted == maxShroomsToPlant)
         {
             //enable a victory ui
+            Debug.Log("Fck yeah");
         }
     }
 

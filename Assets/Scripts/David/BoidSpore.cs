@@ -209,9 +209,10 @@ public class BoidSpore : MonoBehaviour
     }
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Interactable")
+        if (collider.gameObject.GetComponent<Interactable>() != null)
         {
             velocity = new Vector3 (0f, 0f, 0f);
+            collider.gameObject.GetComponent<Interactable>().Interact();
         }
     }
 }

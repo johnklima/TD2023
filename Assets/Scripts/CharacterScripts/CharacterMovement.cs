@@ -170,9 +170,16 @@ public class CharacterMovement : MonoBehaviour
 
         //playerBody.forward += Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * 20f);
 
-        //rotate the player based on the inputs
-        Quaternion toRotation = quaternion.LookRotation(playerBody.forward, Vector3.up);
-        playerBody.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        ////rotate the player based on the inputs
+        //Quaternion toRotation = quaternion.LookRotation(playerBody.forward, Vector3.up);
+        //playerBody.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+        if (moveDir != Vector3.zero)
+        {
+            Quaternion toRotation = quaternion.LookRotation(moveDir, Vector3.up);
+            playerBody.rotation = Quaternion.RotateTowards(playerBody.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+
     }
 
     private void Jump()
