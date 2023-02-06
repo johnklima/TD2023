@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     private Animator animator;
 
-    private float timer = 0;
+    private float timer = 0.5f;
 
     bool dead;
 
@@ -28,22 +28,15 @@ public class Enemy : MonoBehaviour
     {
         dead = true;
         PlayAnim(animator, isDead, dead);
+        StartCoroutine(Timer());
     }
     public void PlayAnim(Animator thisAnimator, string animString, bool boolValue)
     {
         thisAnimator.SetBool(animString, boolValue);
     }
-    private void Update()
+    IEnumerator Timer()
     {
-        if (maxHealth <= 0)
-        {
-            timer += Time.deltaTime;
-            if(timer > 0.5f)
-            {
-                gameObject.SetActive(false);
-                timer -= Time.deltaTime;
-                timer = 0;
-            }
-        }
+        yield return new WaitForSeconds(timer);
+        gameObject.SetActive(false);
     }
 }
