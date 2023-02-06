@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GravityME : MonoBehaviour
 {
+    [Header("John's Stuff Below - Ignore")]
     //gravity in meters per second per second
     public float GRAVITY_CONSTANT = -9.8f;                      // -- for earth,  -1.6 for moon 
 
