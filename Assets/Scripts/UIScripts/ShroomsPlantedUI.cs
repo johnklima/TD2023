@@ -12,11 +12,16 @@ public class ShroomsPlantedUI : MonoBehaviour
 
     private void Start()
     {
+
+        shroomsPlantedText = GetComponentInChildren<TextMeshProUGUI>();
+
         if (ShroomsPlantedManager.Instance != null)
         {
             ShroomsPlantedManager.Instance.OnShroomPlanted += _OnShroomPlanted;
             maxShroomsToPlant = ShroomsPlantedManager.Instance.GetMaxShroomsToPlant();
         }
+
+        shroomsPlantedText.SetText("0/" + maxShroomsToPlant);
     }
 
     private void _OnShroomPlanted(object sender, EventArgs e)

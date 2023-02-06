@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     private Animator animator;
 
-    private float timer = 2f;
+    private float timer = 0.5f;
 
     bool dead;
 
@@ -23,28 +23,26 @@ public class Enemy : MonoBehaviour
         enemyHealthSystem = new HealthSystem(maxHealth);
         enemyHealthSystem.OnDied += _OnDied;
     }
-    
-    private void _OnDied(object sender, EventArgs e)
-    {
-        dead = true;
-        PlayAnim(animator, isDead, dead);
-        // animator.SetBool(deathAnimBoolParatmeter, true);
-    }
-    public void PlayAnim(Animator thisAnimator, string animString, bool boolValue)
-    {
-        thisAnimator.SetBool(animString, boolValue);
-    }
+
     private void Update()
     {
         if (dead)
         {
             timer -= Time.deltaTime;
-            if(timer < 0)
-            {
+            if (timer <= 0)
                 gameObject.SetActive(false);
-                timer -= timer;
-                timer = 0;
-            }
         }
     }
+
+    private void _OnDied(object sender, EventArgs e)
+    {
+        dead = true;
+        PlayAnim(animator, isDead, dead);
+    }
+
+    public void PlayAnim(Animator thisAnimator, string animString, bool boolValue)
+    {
+        thisAnimator.SetBool(animString, boolValue);
+    }
+
 }

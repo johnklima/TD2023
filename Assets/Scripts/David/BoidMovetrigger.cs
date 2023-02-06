@@ -7,7 +7,7 @@ public class BoidMovetrigger : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     bool inTrigger;
 
-    float distance = 10f;
+    float distance = 80f;
     BoidsDavid[] boids;
 
     [SerializeField] SphereCollider thisColl;
