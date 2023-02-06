@@ -1,11 +1,23 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEngine.UI.Image;
 
 public class KlimaCannonMEJE : MonoBehaviour
 {
+    [Header("Insert Here")]
+    [SerializeField] private RectTransform ChargingUI;
+    private Image sprite;
+    
     [SerializeField] private Transform ammo;
-    private float aimAmount, aimCap = 10;
+    private Coroutine FireCannon;
 
+    private float aimAmount, aimCap = 10, cooldown = 0.5f;
+    private bool firing = false;
+    
+    [Header("John's Stuff Below - Ignore")]
     public float G = 9.8f;
     public Vector3 direction;
 
@@ -18,13 +30,22 @@ public class KlimaCannonMEJE : MonoBehaviour
     private void Start()
     {
         cannon = transform;
+        sprite = ChargingUI.GetComponent<Image>();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        while (cooldown < 0.5f)
+        {
+            FadeUI(true);
+            
+            cooldown += Time.deltaTime;
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
-            StartCoroutine(StartCharge());
+            FireCannon = StartCoroutine(StartCharge());
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
             FireCharge();
@@ -38,37 +59,43 @@ public class KlimaCannonMEJE : MonoBehaviour
             if (!grav.inAir)
                 break;
         }
-
+        
+        FadeUI(false);
+            
         aimAmount = 0;
+        firing = true;
         
         float time = 0;
         while (time < 2)
         {
             aimAmount += (Time.deltaTime * aimCap);
+            ChargingUI.sizeDelta += new Vector2(0f, 50f * Time.deltaTime);
+            ChargingUI.anchoredPosition += new Vector2(0f, 25f * Time.deltaTime);
             //Debug.DrawRay(start.position, aimPos + aimPos, Color.green, time);
             yield return null;
             time += Time.deltaTime;
         }
-        
-        /*Ray ray = Camera.main.ScreenPointToRay(aimPos);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 40))
-            end = hit.point;
-        
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 40))*/
     }
 
     private void FireCharge()
     {
-        StopCoroutine(StartCharge());
-        end = transform.position - new Vector3(0f, 0.001f, 0f) + transform.forward * aimAmount;
-
+        if (!firing)
+            return;
+        
+        if (FireCannon != null)
+            StopCoroutine(FireCannon);
+        
+        end = transform.position - new Vector3(0f, 0.1f, 0f) + transform.forward * aimAmount;
+        
         grav.gameObject.SetActive(true);
         grav.inAir = true;
-        grav.transform.position = transform.position + Vector3.up;
+        grav.transform.position = transform.position + new Vector3(0f, 0.1f, 0f);
         
         direction = end - cannon.position;
         grav.impulse = fire(cannon.position, end, 30.0f);
+
+        firing = false;
+        cooldown = 0;
     }
     
     public Vector3 fire(Vector3 startPoint, Vector3 endPoint, float desiredAngle)
@@ -210,5 +237,25 @@ public class KlimaCannonMEJE : MonoBehaviour
         //Debug.Log(Vo.ToString());
         //multiply by calculated "powder charge"
         return angV;
+    }
+
+    private void FadeUI(bool fade)
+    {
+        if (fade)
+        {
+            Color alpha = sprite.color;
+            alpha -= alpha;
+            alpha.a = 1f;
+            sprite.color -= alpha * Time.deltaTime * 2;
+        }
+        else
+        {
+            Color alpha = sprite.color;
+            alpha.a = 1f;
+            sprite.color = alpha;
+            
+            ChargingUI.sizeDelta = new Vector2(100, 0);
+            ChargingUI.anchoredPosition = new Vector2(0, -50);
+        }
     }
 }
