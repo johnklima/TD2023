@@ -68,7 +68,7 @@ public class GravityME : MonoBehaviour
         if (other.GetComponent<Enemy>() != null) //gonna need some "Or's" here, LayerMask? 
         {
             Debug.Log("ball hit " + other.name);
-            other.GetComponent<Enemy>().enemyHealthSystem.DealDamage(1);
+            other.GetComponent<Enemy>().healthSystem.DealDamage(1);
             reset();
         }
     }

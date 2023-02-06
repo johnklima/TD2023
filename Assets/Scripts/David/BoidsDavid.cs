@@ -30,20 +30,13 @@ public class BoidsDavid : MonoBehaviour
     Collider[] playerColl;
     [SerializeField] GameObject player;
 
+    int batHealthNum = 1;
     int damage = 5;
-
-    Animator animator;
-    Enemy batEnemy;
-    string isFlying = "isFlying";
-    string isAttacking = "isAttacking";
-    bool flyBool;
-    bool atkBool;
+    HealthSystem batHealthSyst;
     
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        batEnemy = GetComponent<Enemy>();
         // boidColl = gameObject.GetComponent<SphereCollider>();
         flock = transform.parent;
         constrainPoint = flock.position;
@@ -57,6 +50,8 @@ public class BoidsDavid : MonoBehaviour
         // velocity = (look - pos) * speed;
 
         velocity = new Vector3(0, 0, 0);
+
+        batHealthSyst = new HealthSystem(batHealthNum);
     }
 
     // Update is called once per frame
@@ -67,9 +62,6 @@ public class BoidsDavid : MonoBehaviour
 
         if (velocity != Vector3.zero && pcInRange)
         {
-            flyBool = true;
-            batEnemy.PlayAnim(animator, isFlying, flyBool);
-
             Debug.Log("Player in range");
             Vector3 newVelocity = new Vector3(0f, 0f, 0f);
             newVelocity += GoToPlayer();
@@ -83,8 +75,6 @@ public class BoidsDavid : MonoBehaviour
 
         else if (velocity != Vector3.zero && !pcInRange)
         {
-            flyBool = true;
-            batEnemy.PlayAnim(animator, isFlying, flyBool);
 
             Debug.Log("PC not in range");
             Vector3 newVelocity = new Vector3(0, 0, 0);
@@ -246,8 +236,6 @@ public class BoidsDavid : MonoBehaviour
 
         if (collider.gameObject.GetComponent<Player>() != null)
         {
-            atkBool = true;
-            batEnemy.PlayAnim(animator, isAttacking, atkBool);
             collider.gameObject.GetComponent<Player>().healthSystem.DealDamage(damage);
         }
     }
@@ -255,7 +243,5 @@ public class BoidsDavid : MonoBehaviour
     void OnTriggerExit(Collider collider)
     {
         pcInRange = false;
-        atkBool = false;
-        batEnemy.PlayAnim(animator, isAttacking, atkBool);
     }
 }

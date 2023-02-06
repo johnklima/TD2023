@@ -5,46 +5,41 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public HealthSystem enemyHealthSystem;
+    public HealthSystem healthSystem;
     [SerializeField] private int maxHealth = 1;
 
-    [SerializeField] private string isDead;
+    [SerializeField] private string deathAnimBoolParatmeter;
 
     private Animator animator;
 
     private float timer = 2f;
-
-    bool dead;
+    private bool isDead;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        enemyHealthSystem = new HealthSystem(maxHealth);
-        enemyHealthSystem.OnDied += _OnDied;
+        healthSystem = new HealthSystem(maxHealth);
+        healthSystem.OnDied += _OnDied;
     }
     
     private void _OnDied(object sender, EventArgs e)
     {
-        dead = true;
-        PlayAnim(animator, isDead, dead);
-        // animator.SetBool(deathAnimBoolParatmeter, true);
+        animator.SetBool(deathAnimBoolParatmeter, true);
+        isDead = true;
     }
-    public void PlayAnim(Animator thisAnimator, string animString, bool boolValue)
-    {
-        thisAnimator.SetBool(animString, boolValue);
-    }
+
     private void Update()
     {
-        if (dead)
+
+        if (isDead)
         {
             timer -= Time.deltaTime;
             if(timer < 0)
             {
                 gameObject.SetActive(false);
-                timer -= timer;
-                timer = 0;
             }
         }
+
     }
+
 }
