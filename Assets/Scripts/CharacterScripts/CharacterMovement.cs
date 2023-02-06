@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float walkSpeed, runSpeed, bounceForce;
+    [SerializeField] private float walkSpeed, runSpeed, bounceForce, rotationSpeed;
     private float currentSpeed;
     private Vector3 moveDir;
     
@@ -162,7 +163,11 @@ public class CharacterMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        playerBody.forward += Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * 20f);
+        //playerBody.forward += Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * 20f);
+
+        //rotate the player based on the inputs
+        Quaternion toRotation = quaternion.LookRotation(playerBody.forward, Vector3.up);
+        playerBody.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
 
     private void Jump()

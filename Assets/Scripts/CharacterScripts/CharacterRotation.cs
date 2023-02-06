@@ -74,6 +74,7 @@ public class CharacterRotation : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerChar.Rotate(Vector3.up * mouseX);
+        
     }
 
 }

@@ -2749,6 +2749,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1696540414641986722, guid: 28a4eae19004641499e74317316de34c, type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 996094095}
+    - target: {fileID: 1696540414641986722, guid: 28a4eae19004641499e74317316de34c, type: 3}
+      propertyPath: rotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1696540414641986723, guid: 28a4eae19004641499e74317316de34c, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -2797,6 +2805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PC
       objectReference: {fileID: 0}
+    - target: {fileID: 1696540414920657306, guid: 28a4eae19004641499e74317316de34c, type: 3}
+      propertyPath: interactableLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 1696540415414993908, guid: 28a4eae19004641499e74317316de34c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2825,62 +2837,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2023314765, guid: 28a4eae19004641499e74317316de34c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 28a4eae19004641499e74317316de34c, type: 3}
---- !u!114 &418031393 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1696540414641986722, guid: 28a4eae19004641499e74317316de34c, type: 3}
-  m_PrefabInstance: {fileID: 418031392}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418031396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269b344a16731d248a34bfd6491b2d2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &418031394 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1696540415414993865, guid: 28a4eae19004641499e74317316de34c, type: 3}
-  m_PrefabInstance: {fileID: 418031392}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &418031395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418031394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b28c301c4d97ed4193b9958ddc3585a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterMovement: {fileID: 418031393}
 --- !u!1 &418031396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1696540414641986725, guid: 28a4eae19004641499e74317316de34c, type: 3}
   m_PrefabInstance: {fileID: 418031392}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &418031400
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418031394}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d8c0e9160100c9f4cb23015034114aa9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &419866197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6967,6 +6931,11 @@ Transform:
   m_Father: {fileID: 54976249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &996094095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4129905401906929633, guid: 28a4eae19004641499e74317316de34c, type: 3}
+  m_PrefabInstance: {fileID: 418031392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1009709500
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11898,7 +11867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1908623038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13870,6 +13839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToGrow: 5
+  timer: 15
 --- !u!4 &5525215323070270951
 Transform:
   m_ObjectHideFlags: 0
