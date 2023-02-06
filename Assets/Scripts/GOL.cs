@@ -44,11 +44,10 @@ public class GOL : MonoBehaviour
                 int layerMask = 1 << 6; //ground
                 RaycastHit hit;
                 
-                // Does the ray intersect any objects in the layer mask
+                // Does the ray intersect any surface in the layer mask
                 if (Physics.Raycast(pos, -Vector3.up, out hit, 10000, layerMask))
                 {
-                                       
-
+                                   
                     float x = objs[row, col].transform.position.x;
                     float y = hit.point.y;
                     float z = objs[row, col].transform.position.z;
@@ -58,11 +57,8 @@ public class GOL : MonoBehaviour
 
                 }
 
-
-
-
                 //init cells
-                int state =  Random.Range(0, 3);
+                int state =  Random.Range(0, 3);   // here I init more cells live than dead. 
                 if (state >= 1)
                 {
                     objs[row, col].SetActive(true);
@@ -85,11 +81,7 @@ public class GOL : MonoBehaviour
         {
             generateGOL();
             timer = Time.realtimeSinceStartup;
-
-
-
-        }
-        
+        }      
         
     }
 
@@ -155,9 +147,7 @@ public class GOL : MonoBehaviour
                 if (cells[row, col] == 1)
                     objs[row, col].SetActive(true);
                 else
-                    objs[row, col].SetActive(false);
-
-                
+                    objs[row, col].SetActive(false);                
                 
             }
         }
