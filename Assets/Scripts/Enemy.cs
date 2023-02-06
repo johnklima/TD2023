@@ -23,20 +23,26 @@ public class Enemy : MonoBehaviour
         enemyHealthSystem = new HealthSystem(maxHealth);
         enemyHealthSystem.OnDied += _OnDied;
     }
-    
+
+    private void Update()
+    {
+        if (dead)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+                gameObject.SetActive(false);
+        }
+    }
+
     private void _OnDied(object sender, EventArgs e)
     {
         dead = true;
         PlayAnim(animator, isDead, dead);
-        StartCoroutine(Timer());
     }
+
     public void PlayAnim(Animator thisAnimator, string animString, bool boolValue)
     {
         thisAnimator.SetBool(animString, boolValue);
     }
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(timer);
-        gameObject.SetActive(false);
-    }
+
 }
