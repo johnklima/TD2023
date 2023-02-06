@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
     {
         dead = true;
         PlayAnim(animator, isDead, dead);
-        // animator.SetBool(deathAnimBoolParatmeter, true);
     }
     public void PlayAnim(Animator thisAnimator, string animString, bool boolValue)
     {
@@ -36,10 +35,10 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (dead)
+        if (maxHealth <= 0)
         {
             timer += Time.deltaTime;
-            if(timer < 0)
+            if(timer > 0.5f)
             {
                 gameObject.SetActive(false);
                 timer -= Time.deltaTime;
