@@ -30,14 +30,17 @@ public class Enemy : MonoBehaviour
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
-                gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
     private void _OnDied(object sender, EventArgs e)
     {
         dead = true;
-        PlayAnim(animator, isDead, dead);
+        if (animator = GetComponent<Animator>())
+        {
+          PlayAnim(animator, isDead, dead);
+        }
     }
 
     public void PlayAnim(Animator thisAnimator, string animString, bool boolValue)

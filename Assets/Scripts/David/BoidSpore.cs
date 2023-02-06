@@ -12,7 +12,7 @@ public class BoidSpore : MonoBehaviour
     [SerializeField] float constrainFactor = 2.0f;
     [SerializeField] float avoidFactor = 2.0f;
     [SerializeField] float collisionDistance = 6.0f;
-    private float speed = 1f;
+    private float speed = 2f;
     Vector3 constrainPoint;
 
     Transform flockparent;
