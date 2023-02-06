@@ -21,6 +21,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
         {
             anim.Play();
             shroomGrowthEffect.Initialize();
+            gameObject.GetComponent<Collider>().enabled = false;
             shroomGrowthEffect.startGrowing = true;
         }
         
