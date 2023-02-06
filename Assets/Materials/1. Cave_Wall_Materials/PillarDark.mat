@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CaveWall 13
+  m_Name: PillarDark
   m_Shader: {fileID: -6465566751694194690, guid: 4ba880dfcbb7f6346a386210646547a7, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo_Map:
-        m_Texture: {fileID: 2800000, guid: 2c6f67e404acb1d42831d3a58b706cbf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 34ae904962141f343ac4e08e5d6e3926, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormal:
@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask_RHaoM_Map:
-        m_Texture: {fileID: 2800000, guid: 69b0ede8b577909479e827090d6bf739, type: 3}
+        m_Texture: {fileID: 2800000, guid: a59287204b0e42c498c10b87f03a8cc7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MossNormal:
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 441f16d278644a1488b6165b00c28a4f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1a2770e1a5827d54383e4eec8e67482d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_ef55ff71c9bb48b68482c407518b8552_Texture_1:
@@ -75,18 +75,18 @@ Material:
     - _HexSharpness: 15
     - _HexSize: 0.8
     - _Metallic: 0.1
-    - _MossAmount: 1
-    - _MossAreaY: 18.4
+    - _MossAmount: 0
+    - _MossAreaY: 0
     - _MossDots: 2.5
-    - _Moss_Moistness: 0.58
+    - _Moss_Moistness: 0.5
     - _Moss_Tiling: 10
-    - _NormalStrength: 1
+    - _NormalStrength: 1.95
     - _PuddleAreaY: 0
-    - _Puddle_Opacity: 0
+    - _Puddle_Opacity: 0.124
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RoofMoisture: 0.386
+    - _RoofMoisture: 0.287
     - _RoofMoisture_Area: 14.5
     - _Roughness: 0.098
     - _SrcBlend: 1
@@ -96,7 +96,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _ColorVariation: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0}
+    - _ColorVariation: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0}
     - _MossDotsOffset: {r: 3.1, g: 5.28, b: 0, a: 0}
     - _Offset: {r: 1.98, g: 0.27, b: 0, a: 0}
     - _PuddleColor: {r: 0.4552332, g: 0.6119405, b: 0.6226415, a: 0}
