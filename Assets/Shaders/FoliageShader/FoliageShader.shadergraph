@@ -201,6 +201,9 @@
         },
         {
             "m_Id": "6c15a3fddd684ddca7c5ee1ade469d28"
+        },
+        {
+            "m_Id": "64d0f93c9efc442f98c75ea51c14cb0d"
         }
     ],
     "m_GroupDatas": [
@@ -407,6 +410,20 @@
                     "m_Id": "6c15a3fddd684ddca7c5ee1ade469d28"
                 },
                 "m_SlotId": 411497009
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "64d0f93c9efc442f98c75ea51c14cb0d"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "b9a265abde404a119ce621c1e66c5bc9"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -2349,6 +2366,41 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "64d0f93c9efc442f98c75ea51c14cb0d",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -192.05003356933595,
+            "y": 609.5000610351563,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "abc07f9467dd48848c3fc9278e751ee0"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "6c5a2ec1d7e94f67804e5801828e8093"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "6b6eed33f8e246558ae2a40f645201f4",
     "m_Id": 0,
@@ -3758,6 +3810,21 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "abc07f9467dd48848c3fc9278e751ee0",
+    "m_Id": 0,
+    "m_DisplayName": "AlphaClipThreshold",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
