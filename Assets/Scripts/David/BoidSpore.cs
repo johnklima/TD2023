@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoidSpore : MonoBehaviour
 {
     // player parent + all the "importance" values to determine how important one behaviour is over another
-    [SerializeField] Transform player;
+    
     [SerializeField] float cohesionFactor = 0.2f;
     [SerializeField] float separationFactor = 6.0f;
     [SerializeField] float alignFactor = 1.0f;
@@ -31,15 +31,14 @@ public class BoidSpore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flockparent = transform.parent;
-        constrainPoint = flockparent.position;
-
         velocity = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        flockparent = transform.parent;
+        constrainPoint = flockparent.position;
         
         inStationRange = Physics.CheckSphere(transform.position, distance, stationLayer);
 
