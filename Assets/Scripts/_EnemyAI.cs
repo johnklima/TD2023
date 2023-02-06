@@ -32,19 +32,19 @@ public class _EnemyAI : MonoBehaviour
     public float attackingWalkingSpeed = 1f;
     private _BodySnake bodyScript;
     public float attackSpeed;
-    
+    public int damage = 5;
     //States
     public float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
     private Transform headOriginalPosition;
     public float HeadHeightOffset;
     private bool highHead = false;
-
     public float speed;
     //Chasing
     public float chasingSpeed;
     //Animations
     public float headLiftSpeed = 0.5f;
+    //Life
     
     private void Awake()
     {
@@ -193,6 +193,7 @@ public class _EnemyAI : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("ATTACK !!!!!");
+            //other.gameObject.GetComponent<Player>().healthSystem.DealDamage(damage);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
             Patroling();
