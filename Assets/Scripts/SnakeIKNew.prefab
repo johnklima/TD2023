@@ -414,6 +414,7 @@ MonoBehaviour:
   patrollingSpeed: 3.5
   backUpLocation: {fileID: 1974967489336786880}
   rotationSpeed: 10
+  rayHeightWalkPointSearch: 5
   timeBetweenAttacks: 10
   alreadyAttacked: 0
   headTarget: {fileID: 1974967490401660736}
@@ -783,8 +784,8 @@ Transform:
   m_GameObject: {fileID: 1974967490396047809}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.1497335, y: -0.44399643, z: 5.5247087}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.65, y: 2.65, z: 2.65}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1974967489058486882}
   - {fileID: 7114392709526366208}
