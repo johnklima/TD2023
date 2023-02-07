@@ -47888,6 +47888,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+--- !u!1 &2061069247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1974967488885231126, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+  m_PrefabInstance: {fileID: 2061069246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2061069248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061069247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1536431916
+      Data2: 1265132118
+      Data3: -1944486985
+      Data4: -2073370591
+    Path: event:/FX/Animals/SnakeHiss_MultiAudio
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2062785706
 GameObject:
   m_ObjectHideFlags: 0
