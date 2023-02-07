@@ -12,7 +12,9 @@ public class _BodySnake : MonoBehaviour
     public float bodySpeed = 5f;
     public List<GameObject> snakeBodyParts = new List<GameObject>();
     private bool moving = true;
-    private List<Vector3> positionHistory = new List<Vector3>();
+    
+    [SerializeField] List<Vector3> positionHistory = new List<Vector3>();
+    
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0005f;
@@ -23,6 +25,28 @@ public class _BodySnake : MonoBehaviour
     private void Start()
     {
         enemyAIScript = FindObjectOfType<_EnemyAI>();
+        Transform trs;
+
+        trs = transform.GetChild(0);
+        int safe = 0;
+        while (trs!= null)
+        {
+            safe++;
+            if (safe > 64)
+                break;
+
+            Debug.Log("Add to History");
+            for(int i = 0; i < gap; i++)
+                positionHistory.Insert(0, transform.position);
+
+            if (trs.childCount > 0)
+                trs = trs.GetChild(0);
+            else
+                trs = null;
+
+        }
+
+        //continue
     }
 
     void FixedUpdate()
@@ -36,7 +60,8 @@ public class _BodySnake : MonoBehaviour
                 positionHistory.RemoveAt(positionHistory.Count - 1);
             if (enemyAIScript.distanceToWalkpoint.magnitude < 5f)
             {
-                bodySpeed = bodySpeedValue / enemyAIScript.distanceToWalkpoint.magnitude;
+                if (enemyAIScript.distanceToWalkpoint.magnitude > 0)
+                    bodySpeed = bodySpeedValue / enemyAIScript.distanceToWalkpoint.magnitude;
             }
             if (enemyAIScript.distanceToWalkpoint.magnitude > 5f)
             {
