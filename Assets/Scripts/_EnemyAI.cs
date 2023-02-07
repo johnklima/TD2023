@@ -67,8 +67,8 @@ public class _EnemyAI : MonoBehaviour
         if (!playerInAttackRange && !playerInSightRange) Patroling();
         if (!playerInAttackRange && playerInSightRange && !alreadyAttacked) ChasePlayer();
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) Attack();
-        if (playerInAttackRange && playerInSightRange && alreadyAttacked) FleeAfterAttack();
-        if (!playerInAttackRange && playerInSightRange && alreadyAttacked) FleeAfterAttack();
+        if (playerInAttackRange && playerInSightRange && alreadyAttacked) Patroling();
+        if (!playerInAttackRange && playerInSightRange && alreadyAttacked) Patroling();
     }
 
     private void Patroling()
@@ -93,7 +93,6 @@ public class _EnemyAI : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         Sine(sineWaveSpeed, amplitude);
-        
         
         //WalkPoint reached
         if (distanceToWalkPoint.magnitude < 1) walkPointSet = false;
