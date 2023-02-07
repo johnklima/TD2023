@@ -60,8 +60,16 @@ public class KlimaCannonMEJE : MonoBehaviour
         for(int i = 0; i < ammo.childCount; i++) //The list of balls
         {
             grav = ammo.GetChild(i).GetComponent<GravityME>();
+
+
             if (!grav.inAir)
                 break;
+            else
+                grav = null;
+        }
+        if(!grav)
+        {
+            Debug.Log("OUT OF AMMO");
         }
         
         FadeUI(false);
