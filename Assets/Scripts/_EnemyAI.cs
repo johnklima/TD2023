@@ -80,7 +80,16 @@ public class _EnemyAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
 
-        if (!playerInAttackRange && !playerInSightRange) Patroling();
+        if (playerInSightRange)
+        {
+            Music.SetParameter("Combat", 1.0f);
+        }
+
+        if (!playerInAttackRange && !playerInSightRange)
+        {
+            Patroling();
+            Music.SetParameter("Combat", 0);
+        }
         if (!playerInAttackRange && playerInSightRange && !alreadyAttacked) ChasePlayer();
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) Attack();
         if (playerInAttackRange && playerInSightRange && alreadyAttacked) Patroling();
@@ -90,7 +99,7 @@ public class _EnemyAI : MonoBehaviour
     private void Patroling()
     {
         
-        Music.SetParameter("Combat", 0);
+        
 
         if (!walkPointSet) SearchWalkPoint();
         
@@ -161,7 +170,7 @@ public class _EnemyAI : MonoBehaviour
 
         speed = chasingSpeed;
 
-        Music.SetParameter("Combat", 1.0f);
+        
 
     }
     private void Attack()
