@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
   turningSpeed: 30
-  gap: 10
+  gap: 6
   bodySpeed: 10
   snakeBodyParts:
   - {fileID: 3990827276463916209}
@@ -273,10 +273,11 @@ MonoBehaviour:
   - {fileID: 1091440644747810634}
   - {fileID: 7381792199977837202}
   - {fileID: 933853776156839488}
-  sineWaveSpeed: 3.5
-  amplitude: 0.005
+  sineWaveSpeed: 7
+  amplitude: 0.01
   bodyTransforms: []
   enemyAIScript: {fileID: 0}
+  bodySpeedValue: 40
 --- !u!1 &1974967488885231126
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4127ecb22ff986c40bcdba1eb1811f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amplitude: 0.08
+  sineWaveSpeed: 6
   player: {fileID: 0}
   groundLayer:
     serializedVersion: 2
@@ -410,22 +413,23 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  walkPointRange: 20
-  patrollingSpeed: 3.5
+  walkPointRange: 200
+  patrollingSpeed: 40
   backUpLocation: {fileID: 1974967489336786880}
   rotationSpeed: 10
   rayHeightWalkPointSearch: 5
+  distanceToWalkpoint: {x: 0, y: 0, z: 0}
   timeBetweenAttacks: 10
   alreadyAttacked: 0
   headTarget: {fileID: 1974967490401660736}
   attackingWalkingSpeed: 1
-  attackSpeed: 10
+  attackSpeed: 60
   damage: 5
   sightRange: 100
   attackRange: 5
   HeadHeightOffset: 3
   speed: 0
-  chasingSpeed: 10
+  chasingSpeed: 50
   headLiftSpeed: 1
 --- !u!65 &648828669
 BoxCollider:

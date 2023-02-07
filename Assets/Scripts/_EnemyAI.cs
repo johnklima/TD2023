@@ -9,8 +9,8 @@ using Random = UnityEngine.Random;
 
 public class _EnemyAI : MonoBehaviour
 {
-    private float amplitude = 0.005f;
-    private float sineWaveSpeed = 3.5f;
+    public float amplitude = 0.005f;
+    public float sineWaveSpeed = 3.5f;
     private NavMeshAgent navMeshagent;
     public GameObject player;
     public LayerMask groundLayer, playerLayer;
@@ -26,6 +26,7 @@ public class _EnemyAI : MonoBehaviour
     private Transform startspawn;
     public float rotationSpeed = 500;
     public float rayHeightWalkPointSearch;
+    public Vector3 distanceToWalkpoint;
     //Attacking
     public float timeBetweenAttacks;
     public bool alreadyAttacked = false;
@@ -92,11 +93,11 @@ public class _EnemyAI : MonoBehaviour
             speed = patrollingSpeed;
         }
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        distanceToWalkpoint = transform.position - walkPoint;
         Sine(sineWaveSpeed, amplitude);
         
         //WalkPoint reached
-        if (distanceToWalkPoint.magnitude < 1) walkPointSet = false;
+        if (distanceToWalkpoint.magnitude < 5) walkPointSet = false;
     }
 
     private void SearchWalkPoint()
@@ -196,6 +197,7 @@ public class _EnemyAI : MonoBehaviour
             other.gameObject.GetComponent<Player>().healthSystem.DealDamage(damage);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            walkPointSet = false;
             Patroling();
         }
     }
