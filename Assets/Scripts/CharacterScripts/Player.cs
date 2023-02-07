@@ -14,14 +14,12 @@ public class Player : MonoBehaviour
 
     public HealthSystem healthSystem;
     [SerializeField] private HealthBar healthBar;
-    
+     
+    [SerializeField] private Transform gameOverUI;
     
    
     private void Awake()
     {
-              
-        
-
         Instance = this;
 
         healthSystem = new HealthSystem(maxHealth);
@@ -42,21 +40,23 @@ public class Player : MonoBehaviour
     {
         if (healthBar != null)
             healthBar.SetHealth(healthSystem.GetHealth());
-        else
-            Debug.Log("Healthbar Reference not set");
     }
     
 
     private void _OnDied(object sender, EventArgs e)
     {
-        //activate some UI stuff / respawn thing
-        Debug.Log("You dead");
+        if(gameOverUI != null)
+        {
+            gameObject.GetComponent<CharacterMovement>().enabled = false;
+            PlayerAnimations.Instance.PlayDeathAnim();
+            Invoke("ActivateGameOverUI", 3f);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ActivateGameOverUI()
     {
-
-        
+        gameOverUI.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
     }
+
 }
