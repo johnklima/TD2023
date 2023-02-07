@@ -25,6 +25,7 @@ public class _EnemyAI : MonoBehaviour
     public Transform backUpLocation;
     private Transform startspawn;
     public float rotationSpeed = 500;
+    public float rayHeightWalkPointSearch;
     //Attacking
     public float timeBetweenAttacks;
     public bool alreadyAttacked = false;
@@ -106,12 +107,12 @@ public class _EnemyAI : MonoBehaviour
         walkPoint = new Vector3(startspawn.position.x + randomX, startspawn.position.y , startspawn.position.z + randomZ);
 
         RaycastHit hit;
-        if (Physics.Raycast(walkPoint, transform.up, out hit, 1f, groundLayer))
+        if (Physics.Raycast(walkPoint, transform.up, out hit, rayHeightWalkPointSearch, groundLayer))
         {
             walkPoint = hit.point;
             walkPointSet = true;
         }
-        if (Physics.Raycast(walkPoint, -transform.up, out hit, 1f, groundLayer))
+        if (Physics.Raycast(walkPoint, -transform.up, out hit, rayHeightWalkPointSearch, groundLayer))
         {
             walkPoint = hit.point;
             walkPointSet = true;
@@ -189,10 +190,10 @@ public class _EnemyAI : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.GetComponent<Player>() != null)
         {
             Debug.Log("ATTACK !!!!!");
-            //other.gameObject.GetComponent<Player>().healthSystem.DealDamage(damage);
+            other.gameObject.GetComponent<Player>().healthSystem.DealDamage(damage);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
             Patroling();
