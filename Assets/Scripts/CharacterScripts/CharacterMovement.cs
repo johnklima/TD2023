@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float walkSpeed, runSpeed, bounceForce, rotationSpeed, distanceToGround;
+    [SerializeField] private float walkSpeed, runSpeed, bounceForce, rotationSpeed, rotationMultiplier, distanceToGround;
     private float currentSpeed;
     private Vector3 moveDir;
     
     private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce;
 
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpForce, gravityMultiplier;
     private float gravity = -9.81f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -165,7 +165,7 @@ public class CharacterMovement : MonoBehaviour
         if (isGrounded && (velocity.y < 0f))
             velocity.y = 0f;
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime * gravityMultiplier;
         controller.Move(velocity * Time.deltaTime);
 
         //playerBody.forward += Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * 20f);
@@ -177,7 +177,7 @@ public class CharacterMovement : MonoBehaviour
         if (moveDir != Vector3.zero)
         {
             Quaternion toRotation = quaternion.LookRotation(moveDir, Vector3.up);
-            playerBody.rotation = Quaternion.RotateTowards(playerBody.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            playerBody.rotation = Quaternion.RotateTowards(playerBody.rotation, toRotation, rotationSpeed * rotationMultiplier * Time.deltaTime);
         }
 
     }

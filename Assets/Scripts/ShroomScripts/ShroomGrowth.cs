@@ -9,7 +9,6 @@ public class ShroomGrowth : MonoBehaviour, Interactable
     private int stageIndex = 0;
 
     [SerializeField] private float timeToGrow = 5f;
-    private ShroomGrowthEffectGOL shroomGrowthEffect;
     [SerializeField] private float timer = 15;
     private bool isGrowing;
 
@@ -20,9 +19,9 @@ public class ShroomGrowth : MonoBehaviour, Interactable
         if (!isGrowing)
         {
             anim.Play();
-            shroomGrowthEffect.Initialize();
             gameObject.GetComponent<Collider>().enabled = false;
-            shroomGrowthEffect.startGrowing = true;
+            //ShroomGrowthEffectGOL.Instance.Initialize();
+            ShroomGrowthEffectGOL.Instance.StartGrowing();
             isGrowing = true;
         }
         
@@ -30,7 +29,6 @@ public class ShroomGrowth : MonoBehaviour, Interactable
 
     private void Start()
     {
-        shroomGrowthEffect = GetComponentInChildren<ShroomGrowthEffectGOL>();
         anim = GetComponentInChildren<Animation>();
     }
 
@@ -43,6 +41,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
             {
                 Debug.Log("done growing");
                 ShroomsPlantedManager.Instance.ShroomPlanted();
+                ShroomGrowthEffectGOL.Instance.ResetGOL();
                 isGrowing = false;
             }
 

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class ShroomGrowthEffectGOL : MonoBehaviour
 {
-    
-    [SerializeField] private Transform objectToSpawn;
+    public static ShroomGrowthEffectGOL Instance { get; private set; }
+
+
+    [SerializeField] private Transform objectToSpawn, golStartPos;
     [SerializeField] private int maxRows, maxCol;
+    [SerializeField] private float xOffSet, zOffSet;
     private float objectSize;
     public bool startGrowing;
 
@@ -18,6 +21,14 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
     private int[,] cellsArray;
     [SerializeField] private Transform[,] objectsArray;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            gameObject.SetActive(false);
+    }
+
     private void Start()
     {
         Random.seed = seed;
@@ -26,7 +37,9 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
         objectSize = objectToSpawn.localScale.x;
         cellsArray = new int[maxRows, maxCol];
         objectsArray = new Transform[maxRows, maxCol];
-        
+
+        Initialize();
+
     }
 
     private void Update()
@@ -104,7 +117,7 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
                 //instantiate and store an object in the objectsArray list
 
                 objectsArray[row, col] = Instantiate(objectToSpawn, transform);
-                Vector3 newPosition = new Vector3(transform.position.x + row * objectSize, transform.position.y, transform.position.z + col * objectSize);
+                Vector3 newPosition = new Vector3(golStartPos.position.x + row * xOffSet, golStartPos.position.y, golStartPos.position.z + col * zOffSet);
                 objectsArray[row, col].transform.position = newPosition;
 
                 //randomly determine which ones will be active at start
@@ -122,6 +135,34 @@ public class ShroomGrowthEffectGOL : MonoBehaviour
 
             }
         }
+
+        foreach (Transform golSpore in objectsArray)
+        {
+            golSpore.gameObject.SetActive(false);
+        }
+
+    }
+
+    public void StartGrowing()
+    {
+        startGrowing = true;
+        foreach (Transform golSpore in objectsArray)
+        {
+            golSpore.gameObject.SetActive(true);
+        }
+    }
+
+    public void ResetGOL()
+    {
+        startGrowing = false;
+        foreach(Transform golSpore in objectsArray)
+        {
+            golSpore.gameObject.SetActive(false);
+        }
+        objectsArray = null;
+        objectsArray = new Transform[maxRows, maxCol];
+
+        Initialize();
     }
 
 }

@@ -67,10 +67,10 @@ Material:
     - _Distance: 1
     - _FoamAlpha: 0.5
     - _FoamAmount: 4.9
-    - _FoamCutoff: 1
+    - _FoamCutoff: 1.42
     - _FoamNormalStrength: 4.19
     - _FoamSpeed: 0.4
-    - _FoamTiling: 2
+    - _FoamTiling: 1
     - _HeightFrequency: 0.68
     - _NormalStrength: 2
     - _NormalStrength_Refraction: 0.1
@@ -79,23 +79,23 @@ Material:
     - _RefractionSpeed: 0.08
     - _Smoothness: 0.664
     - _Steps: -0.5
-    - _Tiling: 2.5
+    - _Tiling: 1
     - _Transparancy: 1
     - _WaveAmplitude: 0.29
     - _WaveNoise: 10
-    - _WaveSpeed: 0.1
+    - _WaveSpeed: 0.05
     m_Colors:
-    - _ColorVariation: {r: 0.56231445, g: 0.6792453, b: 0.55428976, a: 0}
+    - _ColorVariation: {r: 0.14396289, g: 0.14146496, b: 0.16037738, a: 0}
     - _DeepColor: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
-    - _FoamScrolling: {r: 0.1, g: 0.03, b: 0, a: 0}
+    - _EmissionColor: {r: 0.09910339, g: 0.09910339, b: 0.09910339, a: 0}
+    - _FoamColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 0}
+    - _FoamScrolling: {r: 0, g: -0.05, b: 0, a: 0}
     - _FoamTiling: {r: 50, g: 50, b: 0, a: 0}
     - _RefractionScale: {r: 2, g: 2, b: 0, a: 0}
-    - _ScrollSpeed: {r: 0.3, g: 0, b: 0, a: 0}
+    - _ScrollSpeed: {r: 0, g: -0.05, b: 0, a: 0}
     - _SurfaceColor: {r: 0, g: 0.87096786, b: 1, a: 0}
-    - _WaveAmount: {r: 0.35, g: 0, b: 0, a: 0}
-    - _WaveHeight: {r: 0, g: 0.2, b: 0, a: 0}
+    - _WaveAmount: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - _WaveHeight: {r: 0.2, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6101701421445769796
 MonoBehaviour:
