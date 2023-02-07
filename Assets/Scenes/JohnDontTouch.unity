@@ -4420,7 +4420,7 @@ MonoBehaviour:
       Data2: 1258131746
       Data3: -1381630288
       Data4: -130019791
-    Path: event:/Cave Water Flow Mono Loop 2
+    Path: event:/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -5224,10 +5224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 0}
-  isOnPebbles: 1
-  isOnForest: 1
-  isOnDirt: 1
-  walkThresh: 0.02
 --- !u!1 &1343969683
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,7 +6414,7 @@ MonoBehaviour:
       Data2: 1258131746
       Data3: -1381630288
       Data4: -130019791
-    Path: event:/Cave Water Flow Mono Loop 2
+    Path: event:/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -7099,7 +7095,7 @@ MonoBehaviour:
       Data2: 1185035985
       Data3: -1833696885
       Data4: -1448164732
-    Path: event:/Richard'sCave3Music_Attempt001
+    Path: event:/Cave3Music
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -7479,6 +7475,8 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   bounceForce: 10
+  rotationSpeed: 0
+  distanceToGround: 0
   jumpForce: 2
   groundCheck: {fileID: 1050132659}
   groundLayer:
@@ -7487,6 +7485,11 @@ MonoBehaviour:
   mushroomBounceLayer:
     serializedVersion: 2
     m_Bits: 512
+  playerBody: {fileID: 0}
+  isOnPebbles: 0
+  isOnForest: 0
+  isOnDirt: 0
+  walkThresh: 0.02
 --- !u!143 &1696540415778646447
 CharacterController:
   m_ObjectHideFlags: 0

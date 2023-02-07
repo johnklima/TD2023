@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8558bfb299e464bb7f81a206c62038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextGen: 0
 --- !u!1 &8719022
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +506,7 @@ Transform:
   m_Children:
   - {fileID: 1494097003}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &31589425
 GameObject:
@@ -701,7 +700,7 @@ RectTransform:
   - {fileID: 1474303221}
   - {fileID: 319485540}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -917,7 +916,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &143162751
 MonoBehaviour:
@@ -1172,7 +1171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280842842
 GameObject:
@@ -1270,7 +1269,7 @@ Transform:
   m_Children:
   - {fileID: 1002787478}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &282339235
 GameObject:
@@ -1964,7 +1963,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -2151,6 +2150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseobject: {fileID: 6153414}
+  interval: 0.5
 --- !u!4 &443173139
 Transform:
   m_ObjectHideFlags: 0
@@ -2165,7 +2165,7 @@ Transform:
   m_Children:
   - {fileID: 6153418}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &444721794 stripped
 Transform:
@@ -3034,7 +3034,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: -45.519, z: 0}
 --- !u!54 &504594416
 Rigidbody:
@@ -3756,7 +3756,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 45.635, z: 0}
 --- !u!54 &658963569
 Rigidbody:
@@ -3916,7 +3916,7 @@ Transform:
   - {fileID: 2004903972}
   - {fileID: 638860869}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703520379
 GameObject:
@@ -4034,7 +4034,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &703520385
 MonoBehaviour:
@@ -4138,7 +4138,7 @@ Transform:
   - {fileID: 1915759623}
   - {fileID: 989046020}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &765282799
 GameObject:
@@ -4544,7 +4544,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933694188
 GameObject:
@@ -4782,7 +4782,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &967723129
 GameObject:
@@ -4990,7 +4990,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: -29.135, z: 0}
 --- !u!54 &968515845
 Rigidbody:
@@ -6077,7 +6077,7 @@ MonoBehaviour:
       Data2: 1258131746
       Data3: -1381630288
       Data4: -130019791
-    Path: event:/Cave Water Flow Mono Loop 2
+    Path: event:/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -6164,7 +6164,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1210359336
 GameObject:
@@ -6650,7 +6650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1281867231
 GameObject:
@@ -6748,7 +6748,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 95.013, z: 0}
 --- !u!54 &1281867236
 Rigidbody:
@@ -6937,7 +6937,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1331037410
 GameObject:
@@ -7192,27 +7192,8 @@ Transform:
   - {fileID: 6627229504334221003}
   - {fileID: 528362550}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1436843622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1696540415414993865, guid: 28a4eae19004641499e74317316de34c, type: 3}
-  m_PrefabInstance: {fileID: 1145058575}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1436843628
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436843622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.85
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1474303220
 GameObject:
   m_ObjectHideFlags: 0
@@ -8743,7 +8724,7 @@ MonoBehaviour:
       Data2: 1258131746
       Data3: -1381630288
       Data4: -130019791
-    Path: event:/Cave Water Flow Mono Loop 2
+    Path: event:/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -8830,7 +8811,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879518833
 GameObject:
@@ -8898,7 +8879,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1906718335
 GameObject:
@@ -9497,7 +9478,7 @@ MonoBehaviour:
       Data2: 1185035985
       Data3: -1833696885
       Data4: -1448164732
-    Path: event:/Richard'sCave3Music_Attempt001
+    Path: event:/Cave3Music
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -10057,6 +10038,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aba78e9143364546b62b258ef388258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Apos: {x: 0, y: 0, z: 0}
+  Bpos: {x: 0, y: 0, z: 0}
+  length: 0
+  sineSpeed: 0
+  sineAmplitude: 0
+  parent: {fileID: 0}
+  child: {fileID: 0}
 --- !u!1 &6627229503890902374
 GameObject:
   m_ObjectHideFlags: 0
@@ -10133,6 +10121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aba78e9143364546b62b258ef388258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Apos: {x: 0, y: 0, z: 0}
+  Bpos: {x: 0, y: 0, z: 0}
+  length: 0
+  sineSpeed: 0
+  sineAmplitude: 0
+  parent: {fileID: 0}
+  child: {fileID: 0}
 --- !u!4 &6627229504328820808
 Transform:
   m_ObjectHideFlags: 0
@@ -10292,6 +10287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aba78e9143364546b62b258ef388258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Apos: {x: 0, y: 0, z: 0}
+  Bpos: {x: 0, y: 0, z: 0}
+  length: 0
+  sineSpeed: 0
+  sineAmplitude: 0
+  parent: {fileID: 0}
+  child: {fileID: 0}
 --- !u!4 &6627229504499319775
 Transform:
   m_ObjectHideFlags: 0
@@ -10405,6 +10407,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aba78e9143364546b62b258ef388258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Apos: {x: 0, y: 0, z: 0}
+  Bpos: {x: 0, y: 0, z: 0}
+  length: 0
+  sineSpeed: 0
+  sineAmplitude: 0
+  parent: {fileID: 0}
+  child: {fileID: 0}
 --- !u!4 &6627229504780137208
 Transform:
   m_ObjectHideFlags: 0
