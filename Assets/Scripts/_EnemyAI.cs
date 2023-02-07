@@ -27,6 +27,8 @@ public class _EnemyAI : MonoBehaviour
     public float rotationSpeed = 500;
     public float rayHeightWalkPointSearch;
     public Vector3 distanceToWalkpoint;
+
+    public Vector3 normalHeightBody;
     //Attacking
     public float timeBetweenAttacks;
     public bool alreadyAttacked = false;
@@ -35,6 +37,10 @@ public class _EnemyAI : MonoBehaviour
     private _BodySnake bodyScript;
     public float attackSpeed;
     public int damage = 5;
+
+    private Vector3 bodyHeightChasing;
+
+    private Vector3 bodyHeightAttacking;
     //States
     public float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
@@ -59,6 +65,11 @@ public class _EnemyAI : MonoBehaviour
     private void Start()
     {
         startspawn= this.transform;
+        normalHeightBody = new Vector3(transform.GetChild(0).transform.localPosition.x,
+            transform.GetChild(0).transform.localPosition.y, transform.GetChild(0).transform.localPosition.z);
+        bodyHeightChasing = new Vector3(normalHeightBody.x, normalHeightBody.y + 1f, normalHeightBody.z);
+        bodyHeightAttacking = new Vector3(bodyHeightChasing.x,
+            bodyHeightChasing.y, bodyHeightChasing.z + 1);
     }
 
     private void Update()
@@ -83,8 +94,9 @@ public class _EnemyAI : MonoBehaviour
             
             Quaternion toRotation = quaternion.LookRotation(walkPoint, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-            navMeshagent.SetDestination(walkPoint); 
-                
+            navMeshagent.SetDestination(walkPoint);
+
+            transform.GetChild(0).transform.localPosition = Vector3.Lerp(transform.GetChild(0).transform.localPosition, normalHeightBody, headLiftSpeed * Time.deltaTime);
             Vector3 lowHeadVector3 = new Vector3(headTarget.transform.localPosition.x, 0.3f, headTarget.transform.localPosition.z);
 
             headTarget.transform.localPosition = Vector3.Lerp(headTarget.transform.localPosition, lowHeadVector3, headLiftSpeed * Time.deltaTime);
@@ -134,17 +146,19 @@ public class _EnemyAI : MonoBehaviour
     }
     private void ChasePlayer()
     {
+        
         Vector3 highHeadVector3 = new Vector3(headTarget.transform.localPosition.x, HeadHeightOffset, headTarget.transform.localPosition.z);
         navMeshagent.SetDestination(player.transform.position);
         navMeshagent.speed = chasingSpeed;
         Sine(sineWaveSpeed, amplitude);
-        
+        transform.GetChild(0).transform.localPosition = Vector3.Lerp(transform.GetChild(0).transform.localPosition, bodyHeightChasing, headLiftSpeed * Time.deltaTime);
         headTarget.transform.localPosition = Vector3.Lerp(headTarget.transform.localPosition, highHeadVector3, headLiftSpeed * Time.deltaTime);
 
         speed = chasingSpeed;
     }
     private void Attack()
     {
+        transform.GetChild(0).transform.localPosition = Vector3.Lerp(transform.GetChild(0).transform.localPosition, bodyHeightAttacking, headLiftSpeed * Time.deltaTime);
         navMeshagent.SetDestination(player.transform.position);
         navMeshagent.speed = attackingWalkingSpeed;
         //transform.LookAt(player);
