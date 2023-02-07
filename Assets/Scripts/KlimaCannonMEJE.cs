@@ -30,7 +30,8 @@ public class KlimaCannonMEJE : MonoBehaviour
     private void Start()
     {
         cannon = transform;
-        sprite = ChargingUI.GetComponent<Image>();
+        if(ChargingUI)
+            sprite = ChargingUI.GetComponent<Image>();
     }
 
     // Update is called once per frame
