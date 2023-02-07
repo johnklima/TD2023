@@ -11,6 +11,8 @@ public class VictoryUI : MonoBehaviour
     {
         mainMenuBtn.onClick.AddListener(() => { MainMenu(); });
         quitBtn.onClick.AddListener(() => { Application.Quit(); });
+
+        gameObject.SetActive(false);
     }
 
     private void MainMenu()

@@ -10,6 +10,7 @@ public class ShroomsPlantedManager : MonoBehaviour
 
     private int shroomsPlanted;
     [SerializeField] private int maxShroomsToPlant;
+    [SerializeField] private Transform victoryUI;
 
     public event EventHandler OnShroomPlanted;
 
@@ -25,8 +26,8 @@ public class ShroomsPlantedManager : MonoBehaviour
         OnShroomPlanted?.Invoke(this, EventArgs.Empty);
         if(shroomsPlanted == maxShroomsToPlant)
         {
-            //enable a victory ui
-            Debug.Log("Fck yeah");
+            victoryUI.gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
