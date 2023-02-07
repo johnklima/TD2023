@@ -109,6 +109,8 @@ public class CharacterMovement : MonoBehaviour
 
         Jump();
 
+        doSound();
+
         if (onMushroomBounce)
         {
             velocity.y = bounceForce;
