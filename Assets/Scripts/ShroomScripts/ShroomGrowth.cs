@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShroomGrowth : MonoBehaviour, Interactable
 {
 
-     private Animation anim;
+    [SerializeField] private Animation anim;
     private int stageIndex = 0;
 
     [SerializeField] private float timeToGrow = 5f;
@@ -29,6 +29,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
 
     private void Start()
     {
+        if(anim == null)
         anim = GetComponentInChildren<Animation>();
     }
 
