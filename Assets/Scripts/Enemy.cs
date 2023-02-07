@@ -30,8 +30,6 @@ public class Enemy : MonoBehaviour
     {
         if (dead)
         {
-
-             
             Music.SetParameter("Combat", 0);
             timer -= Time.deltaTime;
             if (timer <= 0)
