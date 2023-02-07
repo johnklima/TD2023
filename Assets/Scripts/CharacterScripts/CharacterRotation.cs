@@ -9,7 +9,7 @@ public class CharacterRotation : MonoBehaviour
     public bool invX = false, invY = false;*/
     
     [SerializeField] private float mouseSens, xNegativeClamp, xPositiveClamp, virtCamXRotationXNegativeClamp, virtCamXRotationxPositiveClamp, 
-        composerVirtcamNegativeClamp, composerVirtcamPositiveClamp;
+        composerVirtcamNegativeClamp, composerVirtcamPositiveClamp, speedVirtComposer;
 
     [SerializeField] private Transform playerChar, camTransformLookat;
     private float virtCamXRotation, virtCamYRotation;
@@ -98,14 +98,13 @@ public class CharacterRotation : MonoBehaviour
 
         virtCamTransposer.m_FollowOffset = virtFollowOffsetCamVector;
 
-
         virtCamYRotation += mouseX;
         virtCamYRotation = Mathf.Clamp(virtCamYRotation, composerVirtcamNegativeClamp, composerVirtcamPositiveClamp);
         
         virtCamComposer.m_TrackedObjectOffset = new Vector3(virtCamYRotation, virtCamComposerOffset.y, virtCamComposerOffset.z);
 
 
-        playerChar.Rotate(Vector3.up * mouseX);
+        playerChar.Rotate(Vector3.up * mouseX * speedVirtComposer);
     }
 
 }

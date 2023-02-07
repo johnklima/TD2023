@@ -54,6 +54,9 @@ public class KlimaCannonMEJE : MonoBehaviour
     
     private IEnumerator StartCharge()
     {
+
+        PlayerAnimations.Instance.PlayShootAnim();
+
         for(int i = 0; i < ammo.childCount; i++) //The list of balls
         {
             grav = ammo.GetChild(i).GetComponent<GravityME>();

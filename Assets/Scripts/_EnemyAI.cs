@@ -82,12 +82,14 @@ public class _EnemyAI : MonoBehaviour
 
         if (playerInSightRange)
         {
+            if(Music != null)
             Music.SetParameter("Combat", 1.0f);
         }
 
         if (!playerInAttackRange && !playerInSightRange)
         {
             Patroling();
+            if(Music != null)
             Music.SetParameter("Combat", 0);
         }
         if (!playerInAttackRange && playerInSightRange && !alreadyAttacked) ChasePlayer();
