@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public static CharacterMovement Instance { get; private set; }
+
+
     [SerializeField] private float walkSpeed, runSpeed, bounceForce, rotationSpeed, rotationMultiplier, distanceToGround;
     private float currentSpeed;
     private Vector3 moveDir;
     
-    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce;
+    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce, canMove = true;
 
     [SerializeField] private float jumpForce, gravityMultiplier;
     private float gravity = -9.81f;
@@ -82,6 +85,9 @@ public class CharacterMovement : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
+
         ewalk = FMODUnity.RuntimeManager.CreateInstance("event:/Footstep");
         ewalk.start();
         ewalk.setPaused(true);
@@ -116,7 +122,22 @@ public class CharacterMovement : MonoBehaviour
             velocity.y = bounceForce;
         }
 
+        if (Input.GetMouseButtonDown(1) && isGrounded)
+        {
+            canMove = false;
+            PlayerAnimations.Instance.PlayAimAnim(true);
+        } else if (Input.GetMouseButtonUp(1))
+        {
+            canMove = true;
+            PlayerAnimations.Instance.PlayAimAnim(false);
+        }
+
         Debug.Log(isGrounded);
+    }
+
+    public bool CanMove()
+    {
+        return canMove;
     }
 
     public bool IsMoving(){
@@ -157,6 +178,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Move()
     {
+        if (!canMove) return;
         float horizontalInput = Input.GetAxis("Horizontal") * currentSpeed * Time.deltaTime;
         float verticalInput = Input.GetAxis("Vertical") * currentSpeed * Time.deltaTime;
 

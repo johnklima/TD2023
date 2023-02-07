@@ -34,10 +34,9 @@ public class PlayerAnimations : MonoBehaviour
         isDead = true;
     }
 
-    public void PlayShootAnim()
+    public void PlayAimAnim(bool isAiming)
     {
-        animator.SetBool("IsShooting", true);
-        Invoke("ResetShootingAnim", .05f);
+        animator.SetBool("IsShooting", isAiming);
     }
 
     private void ResetShootingAnim()

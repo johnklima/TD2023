@@ -45,18 +45,15 @@ public class KlimaCannonMEJE : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !CharacterMovement.Instance.CanMove())
             FireCannon = StartCoroutine(StartCharge());
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0) && !CharacterMovement.Instance.CanMove())
             FireCharge();
     }
     
     private IEnumerator StartCharge()
     {
-
-        PlayerAnimations.Instance.PlayShootAnim();
-
         for(int i = 0; i < ammo.childCount; i++) //The list of balls
         {
             grav = ammo.GetChild(i).GetComponent<GravityME>();
