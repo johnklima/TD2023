@@ -1033,6 +1033,10 @@ PrefabInstance:
       value: 28.03
       objectReference: {fileID: 0}
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
+    - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1693703537}
@@ -3425,6 +3429,10 @@ PrefabInstance:
       value: 28.03
       objectReference: {fileID: 0}
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
+    - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1693703537}
@@ -4498,6 +4506,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (3)
@@ -4856,6 +4868,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (1)
@@ -6956,6 +6972,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (4)
@@ -11310,6 +11330,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (9)
@@ -15130,6 +15154,10 @@ PrefabInstance:
       value: 28.03
       objectReference: {fileID: 0}
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
+    - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1693703537}
@@ -16603,6 +16631,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (6)
@@ -21944,6 +21976,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1012288205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012288207}
+  - component: {fileID: 1012288206}
+  m_Layer: 0
+  m_Name: Global
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1012288206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012288205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0c8a51ab856234990c399c299deab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Music: {fileID: 424618542}
+--- !u!4 &1012288207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012288205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1016241084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22471,6 +22548,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (5)
@@ -23725,6 +23806,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
+    - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1693703537}
@@ -24340,6 +24425,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: player
       value: 
@@ -28270,6 +28359,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (2)
@@ -29315,6 +29408,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: player
       value: 
@@ -32250,6 +32347,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (8)
@@ -35411,6 +35512,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat
@@ -39804,6 +39909,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 418031396}
+    - target: {fileID: 5145032999056220141, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 424618542}
     - target: {fileID: 5212424914972740869, guid: 6fa6588d85718bf44b4d693ca930c67d, type: 3}
       propertyPath: m_Name
       value: Bat (7)

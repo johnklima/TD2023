@@ -53,7 +53,10 @@ public class _EnemyAI : MonoBehaviour
     //Animations
     public float headLiftSpeed = 0.5f;
     //Life
-    
+
+
+    public FMODUnity.StudioEventEmitter Music;
+
     private void Awake()
     {
         // player = GameObject.Find("Player").transform;
@@ -87,6 +90,8 @@ public class _EnemyAI : MonoBehaviour
     private void Patroling()
     {
         
+        Music.SetParameter("Combat", 0);
+
         if (!walkPointSet) SearchWalkPoint();
         
         if (walkPointSet)
@@ -155,6 +160,9 @@ public class _EnemyAI : MonoBehaviour
         headTarget.transform.localPosition = Vector3.Lerp(headTarget.transform.localPosition, highHeadVector3, headLiftSpeed * Time.deltaTime);
 
         speed = chasingSpeed;
+
+        Music.SetParameter("Combat", 1.0f);
+
     }
     private void Attack()
     {
