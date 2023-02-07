@@ -23,6 +23,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
             shroomGrowthEffect.Initialize();
             gameObject.GetComponent<Collider>().enabled = false;
             shroomGrowthEffect.startGrowing = true;
+            isGrowing = true;
         }
         
     }
@@ -40,6 +41,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
             timer -= Time.deltaTime;
             if(timer <= 0)
             {
+                Debug.Log("done growing");
                 ShroomsPlantedManager.Instance.ShroomPlanted();
                 isGrowing = false;
             }

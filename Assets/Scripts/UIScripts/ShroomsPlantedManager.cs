@@ -20,6 +20,7 @@ public class ShroomsPlantedManager : MonoBehaviour
 
     public void ShroomPlanted()
     {
+        Debug.Log("another shroomy planted");
         shroomsPlanted++;
         OnShroomPlanted?.Invoke(this, EventArgs.Empty);
         if(shroomsPlanted == maxShroomsToPlant)
