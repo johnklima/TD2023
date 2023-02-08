@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
     private float currentSpeed;
     private Vector3 moveDir;
     
-    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce, canMove = true;
+    private bool isRunning, isJumping, isMoving, isGrounded, onMushroomBounce, canMove = true, performedJump;
 
     [SerializeField] private float jumpForce, gravityMultiplier;
     private float gravity = -9.81f;
@@ -108,7 +108,6 @@ public class CharacterMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, distanceToGround, groundLayer);
         onMushroomBounce = Physics.CheckSphere(groundCheck.position, .1f, mushroomBounceLayer);
-        
 
         Move();
         Sprint();
@@ -138,6 +137,11 @@ public class CharacterMovement : MonoBehaviour
     public bool CanMove()
     {
         return canMove;
+    }
+
+    public bool PerformedJump()
+    {
+        return performedJump;
     }
 
     public bool IsMoving(){
@@ -200,7 +204,6 @@ public class CharacterMovement : MonoBehaviour
 
         if (moveDir != Vector3.zero)
         {
-
             Quaternion toRotation = quaternion.LookRotation(moveDir, Vector3.up);
             playerBody.rotation = Quaternion.RotateTowards(playerBody.rotation, toRotation, rotationSpeed * rotationMultiplier * Time.deltaTime);
         }
@@ -212,6 +215,14 @@ public class CharacterMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            performedJump = true;
+            PlayerAnimations.Instance.InitLanding();
+            Invoke("ResetJump", 1f);
         }
+    }
+
+    private void ResetJump()
+    {
+        performedJump = false;
     }
 }
