@@ -18,7 +18,7 @@ public class _BodySnake : MonoBehaviour
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0005f;
-    public List<Transform> bodyTransforms = new List<Transform>();
+    //public List<Transform> bodyTransforms = new List<Transform>();
     public _EnemyAI enemyAIScript;
     public float bodySpeedValue = 60f;
 
