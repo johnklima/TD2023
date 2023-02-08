@@ -25,11 +25,12 @@ public class AimCannon : MonoBehaviour
         layerMask |= (1 << 3);
         layerMask = ~layerMask; //not spore, not player, not UI
 
-        Vector3 campos = cam.transform.position + cam.transform.forward * 3;
+        Vector3 pos = cam.transform.position + cam.transform.forward * 3;
         Vector3 fwd = cam.transform.forward;
         RaycastHit hit;
-        if (Physics.Raycast(campos, fwd, out hit, 3000, layerMask))
+        if (Physics.Raycast(pos, fwd, out hit, 3000, layerMask))
         {
+            //player facing is independent of player position
             Vector3 v1 = hit.point - player.position;
             v1.Normalize();           
 
