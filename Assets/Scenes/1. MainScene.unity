@@ -54658,18 +54658,20 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1536431916
-      Data2: 1265132118
-      Data3: -1944486985
-      Data4: -2073370591
-    Path: event:/FX/Animals/SnakeHiss_MultiAudio
+      Data1: -200658922
+      Data2: 1119958457
+      Data3: 1475483523
+      Data4: 309164238
+    Path: event:/V2 Sound (Coders)/Snake_Hiss_V2
   Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: Hiss Set Active
+    Value: 1
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
