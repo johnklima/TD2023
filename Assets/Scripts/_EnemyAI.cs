@@ -82,14 +82,12 @@ public class _EnemyAI : MonoBehaviour
 
         if (playerInSightRange)
         {
-            if(Music != null)
             Music.SetParameter("Combat", 1.0f);
         }
 
         if (!playerInAttackRange && !playerInSightRange)
         {
             Patroling();
-            if(Music != null)
             Music.SetParameter("Combat", 0);
         }
         if (!playerInAttackRange && playerInSightRange && !alreadyAttacked) ChasePlayer();
@@ -158,7 +156,7 @@ public class _EnemyAI : MonoBehaviour
 
         StartCoroutine(CheckIfStopped());
         
-        Debug.Log(walkPoint);
+       
     }
     private void ChasePlayer()
     {
@@ -213,12 +211,14 @@ public class _EnemyAI : MonoBehaviour
     private IEnumerator CheckIfStopped()
     {
         yield return new WaitForSeconds(5f);
-        var firstPosition = transform.position.x;
+        var firstPosition = transform.position.x + transform.position.z;
         yield return new WaitForSeconds(5f);
-        var secondPosition = transform.position.x;
-        if (firstPosition - secondPosition > 3f)
+        var secondPosition = transform.position.x + transform.position.z;
+        Debug.Log(firstPosition - secondPosition);
+        if (firstPosition - secondPosition < 30f)
         {
             SearchWalkPoint();
+            Debug.Log("It should change");
         }
     }
 
