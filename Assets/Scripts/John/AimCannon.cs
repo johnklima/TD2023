@@ -34,7 +34,7 @@ public class AimCannon : MonoBehaviour
             v1.Normalize();           
 
 
-            if (Vector3.Dot(v1,fwd) > 0.3f )
+            if (Vector3.Dot(v1,fwd) > 0.3f && hit.distance > 7.0f )
             {
                 target.position = hit.point;
                 target.LookAt(cam.transform.position);
