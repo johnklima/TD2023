@@ -20,6 +20,7 @@ public class CannonBall : MonoBehaviour
     void Start()
     {
         grav = GetComponent<BallGravity>();
+        
     }
 
     // Update is called once per frame
@@ -28,9 +29,16 @@ public class CannonBall : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) && !inAir)
         {
             inAir = true;
-            transform.position += Vector3.up;
+            
+            //lift up and forward
+            transform.position = start.position;
+            transform.position += Vector3.up + transform.forward * 2;
+
+            transform.LookAt(end);            
             grav.enabled = true;
-            grav.impulse = fire(start.position, end.position, launchAngle);
+            grav.impulse = fire(transform.position, end.position, launchAngle);
+
+            GetComponent<MeshRenderer>().enabled = true;
         }
     }
 
@@ -210,23 +218,22 @@ public class CannonBall : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "CannonTarget")
-        {
-            Debug.Log("ball hit target");
-            grav.reset();
-            grav.enabled = false;
-            inAir = false;
-            transform.localPosition = Vector3.zero;
-            //do some damage? handle it on the thing hit? explosion?
-        }
-        else
+
+        GameObject obj = other.gameObject;
+        if (obj.layer != LayerMask.NameToLayer("Player")            &&
+            obj.layer != LayerMask.NameToLayer("Ignore Raycast")    &&
+            obj.layer != LayerMask.NameToLayer("Water")             &&
+            obj.layer != LayerMask.NameToLayer("UI")                &&
+            obj.layer != LayerMask.NameToLayer("Spore")             &&
+            inAir                                                     )
         {
             Debug.Log("ball hit " + other.name);
             grav.reset();
             grav.enabled = false;
             inAir = false;
             transform.localPosition = Vector3.zero;
-            //explosion?
+            GetComponent<MeshRenderer>().enabled = false;
+            //EXPLOSION!!!!
 
         }
 

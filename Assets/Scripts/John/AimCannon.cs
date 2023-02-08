@@ -7,6 +7,7 @@ public class AimCannon : MonoBehaviour
 
     Camera cam;
     [SerializeField] Transform target;
+    [SerializeField] Transform player;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +28,16 @@ public class AimCannon : MonoBehaviour
         Vector3 campos = cam.transform.position + cam.transform.forward * 3;
         Vector3 fwd = cam.transform.forward;
         RaycastHit hit;
-        if (Physics.Raycast(campos, fwd, out hit, 300, layerMask))
+        if (Physics.Raycast(campos, fwd, out hit, 3000, layerMask))
         {
-            //Debug.DrawRay(campos, fwd * hit.distance, Color.red);
-            target.position = hit.point;            
+            Vector3 v1 = hit.point - player.position;
+            v1.Normalize();           
+
+
+            if (Vector3.Dot(v1,fwd) > 0.3f )
+            {
+                target.position = hit.point;
+            }         
            
         }
     }

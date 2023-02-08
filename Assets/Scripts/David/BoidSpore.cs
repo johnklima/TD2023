@@ -58,7 +58,7 @@ public class BoidSpore : MonoBehaviour
         else if (!inStationRange)
         {
 
-            Debug.Log("Spore NOT in range of station");
+            //Debug.Log("Spore NOT in range of station");
             Vector3 newVelocity = new Vector3(0, 0, 0);
             
             // rule 1 all boids steer towards center of mass - cohesion

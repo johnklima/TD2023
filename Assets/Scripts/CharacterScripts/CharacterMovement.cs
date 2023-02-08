@@ -132,7 +132,7 @@ public class CharacterMovement : MonoBehaviour
             PlayerAnimations.Instance.PlayAimAnim(false);
         }
 
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
     }
 
     public bool CanMove()

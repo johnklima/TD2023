@@ -70,7 +70,7 @@ public class BoidsDavid : MonoBehaviour
             flyBool = true;
             batEnemy.PlayAnim(animator, isFlying, flyBool);
 
-            Debug.Log("Player in range");
+            //Debug.Log("Player in range");
             Vector3 newVelocity = new Vector3(0f, 0f, 0f);
             newVelocity += GoToPlayer();
             Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
@@ -86,7 +86,7 @@ public class BoidsDavid : MonoBehaviour
             flyBool = true;
             batEnemy.PlayAnim(animator, isFlying, flyBool);
 
-            Debug.Log("PC not in range");
+            //Debug.Log("PC not in range");
             Vector3 newVelocity = new Vector3(0, 0, 0);
             
             // rule 1 all boids steer towards center of mass - cohesion

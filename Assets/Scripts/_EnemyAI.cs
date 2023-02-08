@@ -146,7 +146,8 @@ public class _EnemyAI : MonoBehaviour
         }
         else
         {
-            SearchWalkPoint();
+            //ummmmm, calling itself endlessly?
+            //SearchWalkPoint();   //disable for testing
         }
         
         if (highHead)
@@ -214,7 +215,7 @@ public class _EnemyAI : MonoBehaviour
         var firstPosition = transform.position.x + transform.position.z;
         yield return new WaitForSeconds(5f);
         var secondPosition = transform.position.x + transform.position.z;
-        Debug.Log(firstPosition - secondPosition);
+        //Debug.Log(firstPosition - secondPosition);  83,000 debug log messages
         if (firstPosition - secondPosition < 30f)
         {
             SearchWalkPoint();
