@@ -147,7 +147,7 @@ public class _EnemyAI : MonoBehaviour
         else
         {
             //ummmmm, calling itself endlessly?
-            //SearchWalkPoint();   //disable for testing
+            //SearchWalkPoint();   
         }
         
         if (highHead)

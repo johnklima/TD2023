@@ -37,6 +37,7 @@ public class AimCannon : MonoBehaviour
             if (Vector3.Dot(v1,fwd) > 0.3f )
             {
                 target.position = hit.point;
+                target.LookAt(cam.transform.position);
             }         
            
         }
