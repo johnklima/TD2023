@@ -273,6 +273,7 @@ MonoBehaviour:
   - {fileID: 1091440644747810634}
   - {fileID: 7381792199977837202}
   - {fileID: 933853776156839488}
+  positionHistory: []
   sineWaveSpeed: 7
   amplitude: 0.01
   bodyTransforms: []
@@ -294,6 +295,7 @@ GameObject:
   - component: {fileID: 648828669}
   - component: {fileID: 648828671}
   - component: {fileID: 648828670}
+  - component: {fileID: 2061069248}
   m_Layer: 0
   m_Name: TargetSphere
   m_TagString: Untagged
@@ -309,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974967488885231126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalPosition: {x: 96.9, y: 0.51, z: 103.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -432,6 +434,7 @@ MonoBehaviour:
   speed: 0
   chasingSpeed: 50
   headLiftSpeed: 1
+  Music: {fileID: 0}
 --- !u!65 &648828669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -479,6 +482,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   isDead: SnakeDied
+  Music: {fileID: 0}
+--- !u!114 &2061069248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974967488885231126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -200658922
+      Data2: 1119958457
+      Data3: 1475483523
+      Data4: 309164238
+    Path: event:/V2 Sound (Coders)/Snake_Hiss_V2
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Hiss Set Active
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1974967489058486883
 GameObject:
   m_ObjectHideFlags: 0
