@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class VictoryUI : MonoBehaviour
 {
@@ -17,6 +18,6 @@ public class VictoryUI : MonoBehaviour
 
     private void MainMenu()
     {
-        //go to menu
+        SceneManager.LoadScene(0);
     }
 }

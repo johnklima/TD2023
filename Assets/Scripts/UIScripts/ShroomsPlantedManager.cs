@@ -26,8 +26,8 @@ public class ShroomsPlantedManager : MonoBehaviour
         OnShroomPlanted?.Invoke(this, EventArgs.Empty);
         if(shroomsPlanted == maxShroomsToPlant)
         {
-            victoryUI.gameObject.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
+            victoryUI.gameObject.SetActive(true);
         }
     }
 
