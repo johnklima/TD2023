@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     
     public FMODUnity.StudioEventEmitter Music;
 
+    [SerializeField] GameObject objToKill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,7 @@ public class Enemy : MonoBehaviour
             Music.SetParameter("Combat", 0);
             timer -= Time.deltaTime;
             if (timer <= 0)
-            gameObject.SetActive(false);
+            objToKill.SetActive(false);
         }
     }
 
