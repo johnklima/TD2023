@@ -2809,6 +2809,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110270164}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &115869007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+  m_PrefabInstance: {fileID: 2061069246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4127ecb22ff986c40bcdba1eb1811f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &117256424
 GameObject:
   m_ObjectHideFlags: 0
@@ -21577,6 +21588,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3524713367162542503, guid: 0c632ff002e788e4b8be85efd31ea615, type: 3}
   m_PrefabInstance: {fileID: 755441880}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &756869600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+  m_PrefabInstance: {fileID: 1564880785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4127ecb22ff986c40bcdba1eb1811f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &759988470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41248,6 +41270,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1974967488559438940, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: enemyAIScript
+      value: 
+      objectReference: {fileID: 756869600}
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: Music
       value: 
@@ -55122,6 +55148,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1974967488559438940, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
+      propertyPath: enemyAIScript
+      value: 
+      objectReference: {fileID: 115869007}
     - target: {fileID: 1974967488885231132, guid: 1ec8d9e93b86e1b46b551db2f2370408, type: 3}
       propertyPath: Music
       value: 
