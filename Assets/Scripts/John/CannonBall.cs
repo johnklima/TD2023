@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CannonBall : MonoBehaviour
 {
+    [SerializeField] private Transform poofs;
 
     public float G = 9.8f;
     public Vector3 direction;
@@ -230,6 +231,8 @@ public class CannonBall : MonoBehaviour
             inAir                                                     )
         {
             Debug.Log("ball hit " + other.name);
+            StartCoroutine(Poof());
+
             grav.reset();
             grav.enabled = false;
             inAir = false;
@@ -244,5 +247,23 @@ public class CannonBall : MonoBehaviour
 
         }
 
+    }
+
+    private IEnumerator Poof()
+    {
+        for (int i = 0; i < poofs.childCount; i++)
+        {
+            GameObject puffPoof = poofs.GetChild(i).gameObject;
+            if (!puffPoof.activeSelf)
+            {
+                puffPoof.SetActive(true);
+                puffPoof.transform.position = grav.transform.position;
+                
+                yield return new WaitForSeconds(1);
+                puffPoof.SetActive(false);
+                
+                break;
+            }
+        }
     }
 }
