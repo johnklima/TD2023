@@ -18,8 +18,11 @@ public class AimCannon : MonoBehaviour
     void Update()
     {
 
-        // Bit shift the index of the layer (7) to get a bit mask
-        int layerMask = 1 << 7; //enemy
+        //build exclusion layer mask
+        int layerMask = (1 << 10);
+        layerMask |= (1 << 5);
+        layerMask |= (1 << 3);
+        layerMask = ~layerMask; //not spore, not player, not UI
 
         Vector3 campos = cam.transform.position + cam.transform.forward * 3;
         Vector3 fwd = cam.transform.forward;
@@ -27,7 +30,7 @@ public class AimCannon : MonoBehaviour
         if (Physics.Raycast(campos, fwd, out hit, 300, layerMask))
         {
             //Debug.DrawRay(campos, fwd * hit.distance, Color.red);
-            target.position = hit.point;
+            target.position = hit.point;            
            
         }
     }
