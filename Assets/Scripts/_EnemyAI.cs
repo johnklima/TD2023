@@ -98,10 +98,17 @@ public class _EnemyAI : MonoBehaviour
 
     private void Patroling()
     {
-        
-        
 
-        if (!walkPointSet) SearchWalkPoint();
+
+
+        if (!walkPointSet) 
+        {
+
+            SearchWalkPoint();
+            if (!walkPointSet)
+                return;
+
+        } 
         
         if (walkPointSet)
         {
@@ -144,11 +151,7 @@ public class _EnemyAI : MonoBehaviour
             walkPoint = hit.point;
             walkPointSet = true;
         }
-        else
-        {
-            //ummmmm, calling itself endlessly?
-            //SearchWalkPoint();   
-        }
+  
         
         if (highHead)
         {
