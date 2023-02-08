@@ -42,9 +42,10 @@ public class CannonBall : MonoBehaviour
             grav.enabled = true;
             grav.impulse = fire(transform.position, end.position, launchAngle);
 
-            //GetComponent<MeshRenderer>().enabled = true;
+            
             //the puffball
             transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+            end.gameObject.SetActive(false);
         }
     }
 
@@ -256,6 +257,7 @@ public class CannonBall : MonoBehaviour
         inAir = false;
         transform.localPosition = Vector3.zero;
         transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;  //the puffball
+        end.gameObject.SetActive(true);
     }
 
     private IEnumerator Poof()
