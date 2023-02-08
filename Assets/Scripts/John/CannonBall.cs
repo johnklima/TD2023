@@ -38,7 +38,9 @@ public class CannonBall : MonoBehaviour
             grav.enabled = true;
             grav.impulse = fire(transform.position, end.position, launchAngle);
 
-            GetComponent<MeshRenderer>().enabled = true;
+            //GetComponent<MeshRenderer>().enabled = true;
+            //the puffball
+            transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
         }
     }
 
@@ -232,7 +234,13 @@ public class CannonBall : MonoBehaviour
             grav.enabled = false;
             inAir = false;
             transform.localPosition = Vector3.zero;
-            GetComponent<MeshRenderer>().enabled = false;
+            transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;  //the puffball
+
+            if (obj.layer != LayerMask.NameToLayer("Enemy"))
+            {
+                other.GetComponent<Enemy>().enemyHealthSystem.DealDamage(1);
+
+            }
             //EXPLOSION!!!!
 
         }
