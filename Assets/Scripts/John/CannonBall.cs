@@ -16,12 +16,17 @@ public class CannonBall : MonoBehaviour
 
     public BallGravity grav;
     public bool inAir;
-    public float launchAngle = 10;
+    public float launchAngle = 45;
 
+    Camera cam;    
+    [SerializeField] Transform player;
+    [SerializeField] Transform playerCharacter;
+    [SerializeField] Transform CannonRoot;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         grav = GetComponent<BallGravity>();
         
     }
@@ -31,6 +36,43 @@ public class CannonBall : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && !inAir)
         {
+            //force player model to face forward
+            playerCharacter.localRotation = Quaternion.identity;
+
+            //take aim
+            // follow the player as if I were a child
+            CannonRoot.position = player.position;
+            CannonRoot.rotation = player.rotation;
+
+            //build exclusion layer mask
+            int layerMask = (1 << 10);
+            layerMask |= (1 << 5);
+            layerMask |= (1 << 3);
+            layerMask = ~layerMask; //not spore, not player, not UI
+
+            Vector3 pos = cam.transform.position + cam.transform.forward * 3;
+            Vector3 fwd = cam.transform.forward;
+            RaycastHit hit;
+            if (Physics.Raycast(pos, fwd, out hit, 3000, layerMask))
+            {
+                //player facing is independent of player position
+                Vector3 v1 = hit.point - player.position;
+                v1.Normalize();
+
+
+                if (Vector3.Dot(v1, fwd) > 0.3f && hit.distance > 7.0f)
+                {
+                    end.position = hit.point;
+                    end.LookAt(cam.transform.position);
+                }
+
+            }
+
+
+
+
+
+
             firstHit = true;
             inAir = true;
             

@@ -8,6 +8,7 @@ public class AimCannon : MonoBehaviour
     Camera cam;
     [SerializeField] Transform target;
     [SerializeField] Transform player;
+    [SerializeField] Transform playerCharacter;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,11 @@ public class AimCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        //follow the player as if I were a child
+        transform.position = player.position;
+        transform.rotation = player.rotation;
 
         //build exclusion layer mask
         int layerMask = (1 << 10);
