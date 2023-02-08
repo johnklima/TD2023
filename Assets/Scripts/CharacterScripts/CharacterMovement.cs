@@ -200,6 +200,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (moveDir != Vector3.zero)
         {
+
             Quaternion toRotation = quaternion.LookRotation(moveDir, Vector3.up);
             playerBody.rotation = Quaternion.RotateTowards(playerBody.rotation, toRotation, rotationSpeed * rotationMultiplier * Time.deltaTime);
         }

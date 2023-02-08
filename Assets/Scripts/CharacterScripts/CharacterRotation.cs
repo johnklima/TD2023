@@ -47,7 +47,7 @@ public class CharacterRotation : MonoBehaviour
     {
         Rotate();
 
-        DetectInteractables();
+        //DetectInteractables();
     }
 
     private void DetectInteractables()

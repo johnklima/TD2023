@@ -25,6 +25,7 @@ public class ShroomGrowth : MonoBehaviour, Interactable
         //start growing the shroom, and enable the shroom-growth-effect
         if (!isGrowing)
         {
+            Debug.Log("Got interacted with");
             anim.Play();
             gameObject.GetComponent<Collider>().enabled = false;
             //ShroomGrowthEffectGOL.Instance.Initialize();
