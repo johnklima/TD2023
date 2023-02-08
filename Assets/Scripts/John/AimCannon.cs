@@ -5,13 +5,13 @@ using UnityEngine;
 public class AimCannon : MonoBehaviour
 {
 
-    [SerializeField] Camera camera;
+    Camera cam;
     [SerializeField] Transform target;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -21,12 +21,12 @@ public class AimCannon : MonoBehaviour
         // Bit shift the index of the layer (7) to get a bit mask
         int layerMask = 1 << 7; //enemy
 
-        Vector3 campos = camera.transform.position + camera.transform.forward;
-        Vector3 fwd = camera.transform.forward;
+        Vector3 campos = cam.transform.position + cam.transform.forward * 3;
+        Vector3 fwd = cam.transform.forward;
         RaycastHit hit;
-        if (Physics.Raycast(campos, fwd, out hit, 300))
+        if (Physics.Raycast(campos, fwd, out hit, 300, layerMask))
         {
-            Debug.DrawRay(campos, fwd * hit.distance, Color.red);
+            //Debug.DrawRay(campos, fwd * hit.distance, Color.red);
             target.position = hit.point;
            
         }
