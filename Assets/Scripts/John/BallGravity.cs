@@ -77,6 +77,7 @@ public class BallGravity : MonoBehaviour
         acceleration *= 0;
         impulse *= 0;
         thrust *= 0;
+        GetComponent<SphereCollider>().radius = 0.5f;
     }
 
 }
