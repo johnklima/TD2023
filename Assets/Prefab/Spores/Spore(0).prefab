@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 7293787093239511867}
   - component: {fileID: 2729094344503513380}
   - component: {fileID: 1356252615}
+  - component: {fileID: 909929223}
   m_Layer: 10
   m_Name: Spore(0)
   m_TagString: Untagged
@@ -75,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 1920028978010242087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.9052, y: -1.6864, z: -16.857}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 817732863}
@@ -144,13 +145,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fb4ec59b67dff409e383e03a6b0942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cohesionFactor: 2
-  separationFactor: 12
-  alignFactor: 0.2
-  constrainFactor: 6
-  avoidFactor: 2
+  cohesionFactor: 6
+  separationFactor: 8
+  alignFactor: 1
+  constrainFactor: 30
+  avoidFactor: 3
   collisionDistance: 6
-  velocity: {x: 0.4848636, y: -0.86369807, z: -0.13759686}
+  player: {fileID: 0}
+  velocity: {x: -0.035790637, y: -0.77430284, z: 0.6318023}
   stationLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!135 &909929223
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920028978010242087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 14.526281
+  m_Center: {x: -0.13068724, y: -0.049515247, z: 0.42714024}
