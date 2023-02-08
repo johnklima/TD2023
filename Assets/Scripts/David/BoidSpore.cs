@@ -12,10 +12,12 @@ public class BoidSpore : MonoBehaviour
     [SerializeField] float constrainFactor = 2.0f;
     [SerializeField] float avoidFactor = 2.0f;
     [SerializeField] float collisionDistance = 6.0f;
-    private float speed = 5f;
+    private float speed = 30f;
+    private float defaultSpeed, maxSpeed;
     Vector3 constrainPoint;
 
     Transform flockparent;
+    [SerializeField] Transform player;
 
     // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
     public Vector3 velocity;
@@ -32,20 +34,22 @@ public class BoidSpore : MonoBehaviour
     void Start()
     {
         velocity = new Vector3(0, 0, 0);
+        defaultSpeed = speed;
+        maxSpeed = speed*2 + 10;
     }
 
     // Update is called once per frame
     void Update()
     {
         flockparent = transform.parent;
-        constrainPoint = flockparent.position;
+        constrainPoint = player.position;
         
         inStationRange = Physics.CheckSphere(transform.position, distance, stationLayer);
 
+        BoidSpeed();
+
         if (inStationRange)
-        {
-            Debug.Log("Spore in range of station");
-            
+        {   
             Vector3 newVelocity = new Vector3(0f, 0f, 0f);
             newVelocity += GoToStation();
             Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
@@ -58,7 +62,6 @@ public class BoidSpore : MonoBehaviour
         else if (!inStationRange)
         {
 
-            //Debug.Log("Spore NOT in range of station");
             Vector3 newVelocity = new Vector3(0, 0, 0);
             
             // rule 1 all boids steer towards center of mass - cohesion
@@ -207,12 +210,27 @@ public class BoidSpore : MonoBehaviour
 
         return steer;
     }
+    private void BoidSpeed()
+    {
+        if (player.GetComponent<CharacterMovement>().IsRunning())
+        {
+            speed += maxSpeed * Time.deltaTime; 
+            if (speed > maxSpeed)
+            {
+                speed = maxSpeed;
+            }
+        }
+        else
+        {
+            speed = defaultSpeed;
+        }
+    }
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.GetComponent<Interactable>() != null)
         {
-            velocity = new Vector3 (0f, 0f, 0f);
             collider.gameObject.GetComponent<Interactable>().Interact();
+            gameObject.SetActive(false);
         }
     }
 }
