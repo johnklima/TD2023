@@ -257,7 +257,7 @@ public class CannonBall : MonoBehaviour
         inAir = false;
         transform.localPosition = Vector3.zero;
         transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;  //the puffball
-        end.gameObject.SetActive(true);
+        
     }
 
     private IEnumerator Poof()
@@ -272,7 +272,8 @@ public class CannonBall : MonoBehaviour
                 
                 yield return new WaitForSeconds(1);
                 puffPoof.SetActive(false);
-                
+                end.gameObject.SetActive(true);
+
                 break;
             }
         }
