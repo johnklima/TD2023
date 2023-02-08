@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{44d3b03c-fa82-442c-b979-e5abe8a241aa}">
+		<property name="name">
+			<value>Damage Active</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{03aa85e3-088b-47dc-9895-5795d9d17c62}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{03aa85e3-088b-47dc-9895-5795d9d17c62}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

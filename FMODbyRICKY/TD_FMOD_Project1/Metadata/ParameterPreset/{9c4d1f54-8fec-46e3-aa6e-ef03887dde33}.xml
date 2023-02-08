@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{9c4d1f54-8fec-46e3-aa6e-ef03887dde33}">
+		<property name="name">
+			<value>Bat Sound Active</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5858741d-40ec-4d51-ab7f-b2cc264221fb}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5858741d-40ec-4d51-ab7f-b2cc264221fb}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

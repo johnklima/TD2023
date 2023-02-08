@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{06a1860a-1d52-4df8-9bd1-ef36bfba330f}">
+		<property name="name">
+			<value>Bat Attack Active</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{42beb578-75c1-49fa-aca3-8470661598c7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{42beb578-75c1-49fa-aca3-8470661598c7}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1a910686-a887-46dd-894b-840744a9bca0}">
+		<property name="name">
+			<value>Snake Attack Active</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{46befa70-2a18-495b-8e26-1c670a6ce847}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{46befa70-2a18-495b-8e26-1c670a6ce847}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

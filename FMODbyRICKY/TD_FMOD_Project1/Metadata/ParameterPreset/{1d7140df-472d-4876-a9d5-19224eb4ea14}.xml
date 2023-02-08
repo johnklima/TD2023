@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1d7140df-472d-4876-a9d5-19224eb4ea14}">
+		<property name="name">
+			<value>Jump Active</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{efd07b1d-99d0-487a-af47-8d3d64323242}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{efd07b1d-99d0-487a-af47-8d3d64323242}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

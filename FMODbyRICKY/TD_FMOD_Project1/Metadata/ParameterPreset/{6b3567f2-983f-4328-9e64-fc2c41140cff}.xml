@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{6b3567f2-983f-4328-9e64-fc2c41140cff}">
+		<property name="name">
+			<value>Forrest Active</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a345a9ff-29a7-4fe5-b90f-30a2df172e41}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a345a9ff-29a7-4fe5-b90f-30a2df172e41}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
