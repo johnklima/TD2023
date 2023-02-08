@@ -12,7 +12,14 @@ public class ShroomGrowth : MonoBehaviour, Interactable
     [SerializeField] private float timer = 15;
     private bool isGrowing;
 
+    ShroomGrowthEffectGOL growthEffGOL; // do we need to set a variable version to something?
 
+
+    private void Start()
+    {
+        if(anim == null)
+        anim = GetComponentInChildren<Animation>();
+    }
     public void Interact()
     {
         //start growing the shroom, and enable the shroom-growth-effect
@@ -27,11 +34,6 @@ public class ShroomGrowth : MonoBehaviour, Interactable
         
     }
 
-    private void Start()
-    {
-        if(anim == null)
-        anim = GetComponentInChildren<Animation>();
-    }
 
     private void Update()
     {
