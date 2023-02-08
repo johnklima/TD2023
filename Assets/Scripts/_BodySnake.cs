@@ -18,13 +18,13 @@ public class _BodySnake : MonoBehaviour
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0005f;
+    //public List<Transform> bodyTransforms = new List<Transform>();
     public _EnemyAI enemyAIScript;
     public float bodySpeedValue = 60f;
 
-
     private void Start()
     {
-        
+        enemyAIScript = FindObjectOfType<_EnemyAI>();
         Transform trs;
 
         trs = transform.GetChild(0);
@@ -58,9 +58,6 @@ public class _BodySnake : MonoBehaviour
             //limit the size of the position buffer
             if (positionHistory.Count > snakeBodyParts.Count * gap)
                 positionHistory.RemoveAt(positionHistory.Count - 1);
-
-                       
-            
             if (enemyAIScript.distanceToWalkpoint.magnitude < 5f)
             {
                 if (enemyAIScript.distanceToWalkpoint.magnitude > 0)
@@ -70,7 +67,6 @@ public class _BodySnake : MonoBehaviour
             {
                 bodySpeed = bodySpeedValue;
             }
-            
         }
 
         // Move Body parts
