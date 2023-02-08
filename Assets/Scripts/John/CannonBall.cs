@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CannonBall : MonoBehaviour
 {
+    [SerializeField] private Transform poofs;
+    private bool firstHit = true;
 
     public float G = 9.8f;
     public Vector3 direction;
@@ -28,6 +31,7 @@ public class CannonBall : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1) && !inAir)
         {
+            firstHit = true;
             inAir = true;
             
             //lift up and forward
@@ -219,8 +223,6 @@ public class CannonBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-
         GameObject obj = other.gameObject;
         if (obj.layer != LayerMask.NameToLayer("Player")            &&
             obj.layer != LayerMask.NameToLayer("Ignore Raycast")    &&
@@ -230,19 +232,47 @@ public class CannonBall : MonoBehaviour
             inAir                                                     )
         {
             Debug.Log("ball hit " + other.name);
-            grav.reset();
-            grav.enabled = false;
-            inAir = false;
-            transform.localPosition = Vector3.zero;
-            transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;  //the puffball
 
             if (other.GetComponent<Enemy>())
-            {
                 other.GetComponent<Enemy>().enemyHealthSystem.DealDamage(1);
+
+            if (firstHit)
+            {
+                firstHit = false;
+                grav.GetComponent<SphereCollider>().radius = 2f; //EXPLOSION!!!! size
+                StartCoroutine(Poof());
+                StartCoroutine(FirstHit());
             }
-            //EXPLOSION!!!!
-
         }
+    }
 
+    private IEnumerator FirstHit()
+    {
+        for (int i = 0; i < 2; i++)
+            yield return null;
+        
+        grav.reset();
+        grav.enabled = false;
+        inAir = false;
+        transform.localPosition = Vector3.zero;
+        transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;  //the puffball
+    }
+
+    private IEnumerator Poof()
+    {
+        for (int i = 0; i < poofs.childCount; i++)
+        {
+            GameObject puffPoof = poofs.GetChild(i).gameObject;
+            if (!puffPoof.activeSelf)
+            {
+                puffPoof.SetActive(true);
+                puffPoof.transform.position = grav.transform.position;
+                
+                yield return new WaitForSeconds(1);
+                puffPoof.SetActive(false);
+                
+                break;
+            }
+        }
     }
 }
