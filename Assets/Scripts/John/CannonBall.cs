@@ -240,9 +240,13 @@ public class CannonBall : MonoBehaviour
             if (firstHit)
             {
                 firstHit = false;
+                end.gameObject.SetActive(true);
                 grav.GetComponent<SphereCollider>().radius = 2f; //EXPLOSION!!!! size
-                StartCoroutine(Poof());
-                StartCoroutine(FirstHit());
+                
+                if (poofs)
+                    StartCoroutine(Poof());
+                if (transform.GetChild(0).GetComponent<MeshRenderer>())
+                    StartCoroutine(FirstHit());
             }
         }
     }
@@ -272,7 +276,6 @@ public class CannonBall : MonoBehaviour
                 
                 yield return new WaitForSeconds(1);
                 puffPoof.SetActive(false);
-                end.gameObject.SetActive(true);
 
                 break;
             }
