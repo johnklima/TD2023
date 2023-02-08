@@ -236,10 +236,9 @@ public class CannonBall : MonoBehaviour
             transform.localPosition = Vector3.zero;
             transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;  //the puffball
 
-            if (obj.layer != LayerMask.NameToLayer("Enemy"))
+            if (obj.layer != LayerMask.NameToLayer("Enemy") && other.GetComponent<Enemy>())
             {
                 other.GetComponent<Enemy>().enemyHealthSystem.DealDamage(1);
-
             }
             //EXPLOSION!!!!
 
