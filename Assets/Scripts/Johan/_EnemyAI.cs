@@ -56,7 +56,7 @@ public class _EnemyAI : MonoBehaviour
 
     public Transform NMAtarget;
 
-    public FMODUnity.StudioEventEmitter Music;
+    //public FMODUnity.StudioEventEmitter Music;
 
     private void Awake()
     {
@@ -78,26 +78,27 @@ public class _EnemyAI : MonoBehaviour
 
     private void Update()
     {
-               
-      
 
+       
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
 
         if (playerInSightRange)
         {
-            Music.SetParameter("Combat", 1.0f);
+           // Music.SetParameter("Combat", 1.0f);
         }
 
         if (!playerInAttackRange && !playerInSightRange)
         {
             Patroling();
-            Music.SetParameter("Combat", 0);
+           // Music.SetParameter("Combat", 0);
         }
         if (!playerInAttackRange && playerInSightRange && !alreadyAttacked) ChasePlayer();
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) Attack();
         if (playerInAttackRange && playerInSightRange && alreadyAttacked) Patroling();
         if (!playerInAttackRange && playerInSightRange && alreadyAttacked) Patroling();
+
+        Sine(sineWaveSpeed, amplitude);
     }
 
     private void Patroling()
@@ -132,7 +133,7 @@ public class _EnemyAI : MonoBehaviour
         }
 
         distanceToWalkpoint = transform.position - walkPoint;
-        Sine(sineWaveSpeed, amplitude);
+        //Sine(sineWaveSpeed, amplitude);
         
         //WalkPoint reached
         if (distanceToWalkpoint.magnitude < 5) walkPointSet = false;
@@ -175,7 +176,7 @@ public class _EnemyAI : MonoBehaviour
         
 
         navMeshagent.speed = chasingSpeed;
-        Sine(sineWaveSpeed, amplitude);
+        //Sine(sineWaveSpeed, amplitude);
         transform.GetChild(0).transform.localPosition = Vector3.Lerp(transform.GetChild(0).transform.localPosition, bodyHeightChasing, headLiftSpeed * Time.deltaTime);
         headTarget.transform.localPosition = Vector3.Lerp(headTarget.transform.localPosition, highHeadVector3, headLiftSpeed * Time.deltaTime);
 
@@ -210,7 +211,7 @@ public class _EnemyAI : MonoBehaviour
       
 
         speed = attackSpeed;
-        Sine(sineWaveSpeed, amplitude);
+        //Sine(sineWaveSpeed, amplitude);
     }
 
     private void AttackAnim()

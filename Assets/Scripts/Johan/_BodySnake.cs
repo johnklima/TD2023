@@ -91,11 +91,5 @@ public class _BodySnake : MonoBehaviour
     }
     
 
-    private void Sine(float speed, float Amplitude)
-     {
-         Vector3 pos = transform.position;
-         pos.x = Mathf.Sin(Time.time * speed) * Amplitude;
-         transform.position += transform.right * pos.x;
-     }
 }
 
