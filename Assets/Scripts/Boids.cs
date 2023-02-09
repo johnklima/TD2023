@@ -14,37 +14,42 @@ public class Boids : MonoBehaviour
     [SerializeField] float collisionDistance = 6.0f;
     [SerializeField] float speed = 6.0f;
     [SerializeField] Vector3 constrainPoint;
-    [SerializeField] bool flocking = true;
+    
     [SerializeField] Vector3 avoidObst;
     [SerializeField] float integrationRate = 3.0f;
-    // velicoty for our boid, obstacles to avoid + amount of obstalces avoided
-    public Vector3 velocity;
-   
-    float avoidCount;
     
+    //final velocity
+    public Vector3 velocity;
+    //states
+    public bool isFlocking = true;
+    public Transform target;
+
+    float avoidCount;
+
+
     // Start is called before the first frame update
     void Start()
     {
         flock = transform.parent;
         
 
-        Vector3 pos = new Vector3(Random.Range(0f, 20f), Random.Range(0f, 20f), Random.Range(0f, 20f));
-        Vector3 look = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
-        float speed = Random.Range(0f, 1f);
+        Vector3 pos = new Vector3(Random.Range(0f, 80), Random.Range(0f, 20f), Random.Range(0f, 80));
+        Vector3 look = new Vector3(Random.Range(-1000f, 1000f), Random.Range(-1000f, 1000f), Random.Range(-1000f, 1000f));
+        float speed = Random.Range(0f, 3f);
 
 
-        transform.position = pos;
+        transform.localPosition = pos;
         transform.LookAt(look);
         velocity = (look - pos) * speed;
 
-        velocity = new Vector3(0, 0, 0);
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (flocking)
+        if (isFlocking)
         {
             constrainPoint = flock.position;  //flock folows player
 
@@ -69,6 +74,28 @@ public class Boids : MonoBehaviour
             transform.position += velocity * Time.deltaTime * speed;
             transform.LookAt(transform.position + velocity);
 
+        }
+        else if(target)  
+        {
+
+            Debug.Log("Attacking");
+
+            //if not flocking, its going for a target, usually attacking
+            Vector3 newVelocity = target.position - transform.position;
+
+            Vector3 slerpVelo = Vector3.Slerp(newVelocity, velocity, Time.deltaTime * integrationRate);
+
+            velocity = slerpVelo.normalized;
+
+            transform.position += velocity * Time.deltaTime * speed;
+            transform.LookAt(transform.position + velocity);
+
+            if(Vector3.Distance(transform.position, target.position) < 0.3f)
+            {
+                //Attack successfull, do damage, fly away
+                Debug.Log("Hit Player");
+                isFlocking = true;
+            }
         }
     }
 
