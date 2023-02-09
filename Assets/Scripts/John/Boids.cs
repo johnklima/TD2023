@@ -23,7 +23,7 @@ public class Boids : MonoBehaviour
     //states
     public bool isFlocking = true;
     public Transform target;
-    public GameObject batGeom;
+    public GameObject batGeom = null;
     public Player player;
 
     float avoidCount;
@@ -52,7 +52,7 @@ public class Boids : MonoBehaviour
     void Update()
     {
         //bat is dead
-        if(batGeom.activeSelf == false)
+        if(batGeom && batGeom.activeSelf == false)
         {
             Destroy(transform.gameObject);
         }
