@@ -88,7 +88,7 @@ public class CharacterMovement : MonoBehaviour
         Instance = this;
 
 
-        ewalk = FMODUnity.RuntimeManager.CreateInstance("event:/Footstep");
+        ewalk = FMODUnity.RuntimeManager.CreateInstance("event:/V2 Sound (Coders)/Footsteps_V2");
         ewalk.start();
         ewalk.setPaused(true);
     }
