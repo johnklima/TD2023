@@ -50,7 +50,7 @@ public class CannonBall : MonoBehaviour
             layerMask |= (1 << 3);
             layerMask = ~layerMask; //not spore, not player, not UI
 
-            Vector3 pos = cam.transform.position + cam.transform.forward * 3;
+            Vector3 pos = cam.transform.position + cam.transform.forward;
             Vector3 fwd = cam.transform.forward;
             RaycastHit hit;
             if (Physics.Raycast(pos, fwd, out hit, 3000, layerMask))
@@ -60,7 +60,7 @@ public class CannonBall : MonoBehaviour
                 v1.Normalize();
 
 
-                if (Vector3.Dot(v1, fwd) > 0.3f && hit.distance > 7.0f)
+                if (Vector3.Dot(v1, fwd) > 0.3f && hit.distance > 1.0f)
                 {
                     end.position = hit.point;
                     end.LookAt(cam.transform.position);
@@ -78,7 +78,7 @@ public class CannonBall : MonoBehaviour
             
             //lift up and forward
             transform.position = start.position;
-            transform.position += Vector3.up + transform.forward * 2;
+            transform.position += Vector3.up + transform.forward;
 
             transform.LookAt(end);            
             grav.enabled = true;
