@@ -23,6 +23,8 @@ public class Boids : MonoBehaviour
     //states
     public bool isFlocking = true;
     public Transform target;
+    public GameObject batGeom;
+    public Player player;
 
     float avoidCount;
 
@@ -49,6 +51,12 @@ public class Boids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //bat is dead
+        if(batGeom.activeSelf == false)
+        {
+            Destroy(transform.gameObject);
+        }
+
         if (isFlocking)
         {
             constrainPoint = flock.position;  //flock folows player
@@ -95,6 +103,7 @@ public class Boids : MonoBehaviour
                 //Attack successfull, do damage, fly away
                 Debug.Log("Hit Player");
                 isFlocking = true;
+                player.healthSystem.DealDamage(2);
             }
         }
     }
