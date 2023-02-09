@@ -86,7 +86,7 @@ public class CharacterRotation : MonoBehaviour
          if (invY)
             xRotation += mouseY;
         else*/
-        xRotation -= mouseY;
+            xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, xNegativeClamp, xPositiveClamp);
 
         //transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
@@ -94,7 +94,7 @@ public class CharacterRotation : MonoBehaviour
         virtCamXRotation -= mouseY;
         virtCamXRotation = Mathf.Clamp(virtCamXRotation, virtCamXRotationXNegativeClamp, virtCamXRotationxPositiveClamp);
 
-        Vector3 virtFollowOffsetCamVector = new Vector3(0, virtCamXRotation, -20f);
+        Vector3 virtFollowOffsetCamVector = new Vector3(0f, virtCamXRotation, -20f);
 
         virtCamTransposer.m_FollowOffset = virtFollowOffsetCamVector;
 

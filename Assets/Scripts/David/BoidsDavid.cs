@@ -102,7 +102,7 @@ public class BoidsDavid : MonoBehaviour
     
             newVelocity += avoid() * avoidFactor;
            
-            Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime * 3);
+            Vector3 slerpVelo = Vector3.Slerp(velocity, newVelocity, Time.deltaTime);
     
             velocity = slerpVelo.normalized;
     
@@ -243,7 +243,7 @@ public class BoidsDavid : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        //<JPK> only actual player object of player layer initializes attack
+
         if (collider.gameObject.GetComponent<Player>() != null)
         {
             atkBool = true;
@@ -254,13 +254,8 @@ public class BoidsDavid : MonoBehaviour
 
     void OnTriggerExit(Collider collider)
     {
-        //<JPK> only actual player object of player layer cancels attack
-        if (collider.gameObject.GetComponent<Player>() != null)
-        {
-            pcInRange = false;
-            atkBool = false;
-            batEnemy.PlayAnim(animator, isAttacking, atkBool);
-        }
-        
+        pcInRange = false;
+        atkBool = false;
+        batEnemy.PlayAnim(animator, isAttacking, atkBool);
     }
 }
