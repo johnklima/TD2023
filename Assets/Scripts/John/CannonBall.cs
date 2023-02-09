@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using FMODUnity;
+
 
 public class CannonBall : MonoBehaviour
 {
@@ -22,6 +24,26 @@ public class CannonBall : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Transform playerCharacter;
     [SerializeField] Transform CannonRoot;
+
+   
+    StudioEventEmitter firesound;
+    StudioEventEmitter hitsound;
+
+
+    private void Awake()
+    {
+
+        //get multiple emitters
+        List <StudioEventEmitter>  emits = new List<StudioEventEmitter>();
+
+        GetComponents<StudioEventEmitter>(emits) ;
+
+        //assuming they are in top to bottom order
+        firesound = emits[0];
+        hitsound = emits[1];
+        //doing this only saves me the trouble of setting 3dAttributes. I question the value of it
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -69,10 +91,6 @@ public class CannonBall : MonoBehaviour
             }
 
 
-
-
-
-
             firstHit = true;
             inAir = true;
             
@@ -83,6 +101,7 @@ public class CannonBall : MonoBehaviour
             transform.LookAt(end);            
             grav.enabled = true;
             grav.impulse = fire(transform.position, end.position, launchAngle);
+            firesound.Play();
 
             
             //the puffball
@@ -275,6 +294,7 @@ public class CannonBall : MonoBehaviour
             inAir                                                     )
         {
             Debug.Log("ball hit " + other.name);
+            hitsound.Play();
 
             if (other.GetComponent<Enemy>())
                 other.GetComponent<Enemy>().enemyHealthSystem.DealDamage(1);

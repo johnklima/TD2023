@@ -54,6 +54,7 @@ public class _EnemyAI : MonoBehaviour
     public float headLiftSpeed = 0.5f;
     //Life
 
+    public Transform NMAtarget;
 
     public FMODUnity.StudioEventEmitter Music;
 
@@ -77,6 +78,9 @@ public class _EnemyAI : MonoBehaviour
 
     private void Update()
     {
+               
+      
+
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
 
@@ -116,6 +120,7 @@ public class _EnemyAI : MonoBehaviour
             Quaternion toRotation = quaternion.LookRotation(walkPoint, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             navMeshagent.SetDestination(walkPoint);
+          
 
             transform.GetChild(0).transform.localPosition = Vector3.Lerp(transform.GetChild(0).transform.localPosition, normalHeightBody, headLiftSpeed * Time.deltaTime);
             Vector3 lowHeadVector3 = new Vector3(headTarget.transform.localPosition.x, 0.3f, headTarget.transform.localPosition.z);
@@ -167,6 +172,8 @@ public class _EnemyAI : MonoBehaviour
         
         Vector3 highHeadVector3 = new Vector3(headTarget.transform.localPosition.x, HeadHeightOffset, headTarget.transform.localPosition.z);
         navMeshagent.SetDestination(player.transform.position);
+        
+
         navMeshagent.speed = chasingSpeed;
         Sine(sineWaveSpeed, amplitude);
         transform.GetChild(0).transform.localPosition = Vector3.Lerp(transform.GetChild(0).transform.localPosition, bodyHeightChasing, headLiftSpeed * Time.deltaTime);
@@ -181,6 +188,8 @@ public class _EnemyAI : MonoBehaviour
     {
         transform.GetChild(0).transform.localPosition = Vector3.Lerp(transform.GetChild(0).transform.localPosition, bodyHeightAttacking, headLiftSpeed * Time.deltaTime);
         navMeshagent.SetDestination(player.transform.position);
+     
+
         navMeshagent.speed = attackingWalkingSpeed;
         //transform.LookAt(player);
         Transform headPosition = headTarget.transform;
@@ -198,6 +207,8 @@ public class _EnemyAI : MonoBehaviour
         }
         
         navMeshagent.SetDestination(walkPoint);
+      
+
         speed = attackSpeed;
         Sine(sineWaveSpeed, amplitude);
     }
