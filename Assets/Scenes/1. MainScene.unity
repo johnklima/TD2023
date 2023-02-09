@@ -55253,6 +55253,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ae7c8605627ee4a8ab45beb183a866, type: 3}
+--- !u!1 &1455156732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5060559440094006749, guid: 92e0263013bace84794f56c4e2bc97dc, type: 3}
+  m_PrefabInstance: {fileID: 1761913267655869112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1455156736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455156732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 629418001
+      Data2: 1176116130
+      Data3: -381885523
+      Data4: -1784769596
+    Path: event:/V2 Sound (Coders)/Footsteps_V2
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1457762053
 PrefabInstance:
   m_ObjectHideFlags: 0
