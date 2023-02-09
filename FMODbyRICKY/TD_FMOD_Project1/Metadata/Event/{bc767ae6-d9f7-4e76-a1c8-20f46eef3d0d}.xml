@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{bc767ae6-d9f7-4e76-a1c8-20f46eef3d0d}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>Bat_Attack_V2</value>
 		</property>
@@ -56,7 +59,7 @@
 			<destination>{c168adde-cef7-43ef-bc33-cc69c9e9d575}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{fa6227e9-1564-4fd4-8195-0333cc4c1af9}</destination>
+			<destination>{3d73a72a-26e4-419e-9178-170083573bbb}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{f88f29d5-c370-4643-ac4a-15052a88eb0d}" />

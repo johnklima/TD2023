@@ -510,7 +510,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -4420,7 +4420,7 @@ MonoBehaviour:
       Data2: 1258131746
       Data3: -1381630288
       Data4: -130019791
-    Path: event:/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
+    Path: event:/Trash - Do not use/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -4658,6 +4658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a565c8fdd38f10459fef654f1d841f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poofs: {fileID: 0}
   G: 9.8
   direction: {x: 0, y: 0, z: 0}
   start: {fileID: 1915759623}
@@ -4665,6 +4666,9 @@ MonoBehaviour:
   grav: {fileID: 1210359344}
   inAir: 0
   launchAngle: 10
+  player: {fileID: 0}
+  playerCharacter: {fileID: 0}
+  CannonRoot: {fileID: 0}
 --- !u!1 &1218220139
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,7 +5074,7 @@ MonoBehaviour:
       Data2: 1133185960
       Data3: 25639056
       Data4: -873522458
-    Path: event:/Ambient 2 Mono
+    Path: event:/Trash - Do not use/Ambient 2 Mono
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -5224,6 +5228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 0}
+  gameOverUI: {fileID: 0}
 --- !u!1 &1343969683
 GameObject:
   m_ObjectHideFlags: 0
@@ -6414,7 +6419,7 @@ MonoBehaviour:
       Data2: 1258131746
       Data3: -1381630288
       Data4: -130019791
-    Path: event:/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
+    Path: event:/Trash - Do not use/FX/Ambient Sounds/Cave Water Flow Mono Loop 2
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -7095,7 +7100,7 @@ MonoBehaviour:
       Data2: 1185035985
       Data3: -1833696885
       Data4: -1448164732
-    Path: event:/Cave3Music
+    Path: event:/Trash - Do not use/Cave3Music
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -7295,13 +7300,20 @@ MonoBehaviour:
   mouseSens: 70
   xNegativeClamp: -50
   xPositiveClamp: 50
+  virtCamXRotationXNegativeClamp: 0
+  virtCamXRotationxPositiveClamp: 0
+  composerVirtcamNegativeClamp: 0
+  composerVirtcamPositiveClamp: 0
+  speedVirtComposer: 0
   playerChar: {fileID: 1696540415778646444}
+  camTransformLookat: {fileID: 0}
   raycastLength: 20
   raycastStartPoint: {fileID: 1090062452}
   interactableLayer:
     serializedVersion: 2
     m_Bits: 384
   interactableKeyCode: 101
+  virtCamComposerOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1696540413909843102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7476,8 +7488,10 @@ MonoBehaviour:
   runSpeed: 10
   bounceForce: 10
   rotationSpeed: 0
+  rotationMultiplier: 0
   distanceToGround: 0
   jumpForce: 2
+  gravityMultiplier: 0
   groundCheck: {fileID: 1050132659}
   groundLayer:
     serializedVersion: 2

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e2a31d8a-f515-4783-bc35-6474685f2caf}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>Snake_Attack_V2</value>
 		</property>
@@ -56,7 +59,7 @@
 			<destination>{a74ecbba-0208-4bb1-bcfd-46912accf5ab}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{fa6227e9-1564-4fd4-8195-0333cc4c1af9}</destination>
+			<destination>{3d73a72a-26e4-419e-9178-170083573bbb}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{e33d3191-d0e0-4625-9ccc-16643bf47866}" />

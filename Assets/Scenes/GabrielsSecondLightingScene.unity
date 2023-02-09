@@ -1030,6 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a565c8fdd38f10459fef654f1d841f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poofs: {fileID: 0}
   G: 9.8
   direction: {x: 0, y: 0, z: 0}
   start: {fileID: 881493417}
@@ -1037,6 +1038,9 @@ MonoBehaviour:
   grav: {fileID: 37854814}
   inAir: 0
   launchAngle: 30
+  player: {fileID: 0}
+  playerCharacter: {fileID: 0}
+  CannonRoot: {fileID: 0}
 --- !u!54 &37854816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1429,7 +1433,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -4190,7 +4194,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -9097,7 +9101,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -11490,7 +11494,7 @@ MonoBehaviour:
       Data2: 1185035985
       Data3: -1833696885
       Data4: -1448164732
-    Path: event:/Cave3Music
+    Path: event:/Trash - Do not use/Cave3Music
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -12058,7 +12062,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -12102,7 +12106,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -12146,7 +12150,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -13874,7 +13878,7 @@ MonoBehaviour:
       Data2: 1309611863
       Data3: -127981404
       Data4: 485087791
-    Path: event:/Cave2Music
+    Path: event:/Trash - Do not use/Cave2Music
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -14502,7 +14506,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -16018,7 +16022,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -16258,7 +16262,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -18835,7 +18839,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -19099,7 +19103,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -27834,7 +27838,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -30272,7 +30276,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -33023,7 +33027,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -36283,6 +36287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 513558498}
   player: {fileID: 1696540414229543817}
+  playerCharacter: {fileID: 0}
 --- !u!1001 &1369102030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39688,7 +39693,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -41894,7 +41899,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -42172,7 +42177,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -42888,7 +42893,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -45927,7 +45932,7 @@ MonoBehaviour:
       Data2: 1090389744
       Data3: -1100933755
       Data4: -2113393042
-    Path: event:/Cave1Music
+    Path: event:/Trash - Do not use/Cave1Music
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -50209,7 +50214,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -50539,7 +50544,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -55963,7 +55968,7 @@ MonoBehaviour:
       Data2: 1311613733
       Data3: 548653991
       Data4: -915346924
-    Path: snapshot:/RevSnap1
+    Path: snapshot:/Cave Reverb 1
   Event: 
   PlayEvent: 3
   StopEvent: 4
@@ -58262,11 +58267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8420310614648627842, guid: 16d53fad28a5e4e42b197b76f642f809, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.026790872
+      value: 0.026790999
       objectReference: {fileID: 0}
     - target: {fileID: 8420310614648627842, guid: 16d53fad28a5e4e42b197b76f642f809, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026336084
+      value: -0.0026336208
       objectReference: {fileID: 0}
     - target: {fileID: 8420310614648627843, guid: 16d53fad28a5e4e42b197b76f642f809, type: 3}
       propertyPath: m_Layer
@@ -58298,11 +58303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8420310614866549213, guid: 16d53fad28a5e4e42b197b76f642f809, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.026790872
+      value: 0.026790999
       objectReference: {fileID: 0}
     - target: {fileID: 8420310614866549213, guid: 16d53fad28a5e4e42b197b76f642f809, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0026336084
+      value: -0.0026336208
       objectReference: {fileID: 0}
     - target: {fileID: 8420310614943815132, guid: 16d53fad28a5e4e42b197b76f642f809, type: 3}
       propertyPath: player

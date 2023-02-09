@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{180f3578-873e-476f-a1bc-fadd3a90f679}">
+		<property name="name">
+			<value>Fungi_Completion_Active</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f17d297b-a5be-4c1b-bbbd-72cb6e115631}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c983da67-0ee2-4d76-b208-32b35a85b3d6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c983da67-0ee2-4d76-b208-32b35a85b3d6}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

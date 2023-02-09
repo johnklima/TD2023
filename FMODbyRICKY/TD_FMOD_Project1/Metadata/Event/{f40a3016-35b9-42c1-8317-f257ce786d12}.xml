@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{f40a3016-35b9-42c1-8317-f257ce786d12}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>Snake_Hiss_V2</value>
 		</property>
@@ -60,7 +63,7 @@
 			<destination>{adbfdccc-f6b0-4f3e-ac27-99572732f2ac}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{fa6227e9-1564-4fd4-8195-0333cc4c1af9}</destination>
+			<destination>{3d73a72a-26e4-419e-9178-170083573bbb}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{74fb28be-56d9-449c-8922-21582a1e47c0}" />
