@@ -8,11 +8,11 @@ public class _Segment3d : MonoBehaviour
     public Vector3 Apos = new Vector3(0, 0, 0);
     public Vector3 Bpos = new Vector3(0, 0, 0);
 
-    public float length = 0;
-    public float sineSpeed;
-    public float sineAmplitude;
+    public float length = 1;
+    
     public _Segment3d parent = null;
     public _Segment3d child = null;
+    public Transform joint;
 
     void Start()
     {
@@ -56,6 +56,12 @@ public class _Segment3d : MonoBehaviour
     public void pointAt(Vector3 target)
     {
         transform.LookAt(target);
+
+        Vector3 rot = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(rot);
+
+        joint.position = transform.position;
+       
     }
 
     
@@ -75,10 +81,5 @@ public class _Segment3d : MonoBehaviour
         drag(target);
         updateSegment();
     }
-    private void Sine(float speed, float Amplitude)
-    {
-        Vector3 pos = transform.position;
-        pos.x = Mathf.Sin(Time.time * speed) * Amplitude;
-        transform.position += transform.right * pos.x;
-    }
+
 }

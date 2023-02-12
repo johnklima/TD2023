@@ -51,9 +51,7 @@ public class _Segments3D : MonoBehaviour
         {
             parent.drag(transform.position);
         }
-        {
-            
-        }
+       
     }
 
     public void reach(Vector3 target)

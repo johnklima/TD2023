@@ -19,5 +19,9 @@ public class GameOverUI : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
+    //listener above not working?
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

@@ -12,21 +12,22 @@ public class _SnakesScript : MonoBehaviour
     public int gap = 280;
     public float bodySpeed = 5f;
     private List<GameObject> snakeBodyParts = new List<GameObject>();
-    private bool moving = true;
+    public bool moving = true;
     private List<Vector3> positionHistory = new List<Vector3>();
     private float maxDistanceIndex = 5000;
     public float sineWaveSpeed = 3.5f;
     public float amplitude = 0.0005f;
     public int segments = 16;
+    public SnakeNavMesh navMeshScript;
 
-    private _EnemyAI navMeshScript;
+
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < segments; i++)
             GrowSnake();
 
-        navMeshScript = GetComponent<_EnemyAI>();
+        
     }
 
     // Update is called once per frame

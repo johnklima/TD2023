@@ -55,6 +55,8 @@ public class Segment3d : MonoBehaviour
     public void pointAt(Vector3 target)
     {
         transform.LookAt(target);
+        
+        //remove twist
         Vector3 rot = new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
         transform.rotation = Quaternion.Euler(rot);
 
