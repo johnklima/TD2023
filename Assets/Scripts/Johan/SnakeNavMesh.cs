@@ -45,7 +45,7 @@ public class SnakeNavMesh : MonoBehaviour
 
         navMeshagent.SetDestination(NMAtarget.position);
 
-        if (navMeshagent.remainingDistance < 1.0f)
+        if (navMeshagent.remainingDistance < 2.0f)
         {
             bodyScript.isMoving = false;
             navMeshagent.speed = 0;

@@ -24,8 +24,7 @@ public class Boids : MonoBehaviour
     public bool isFlocking = true;
     public Transform target;
     public GameObject batGeom = null;
-    public Player player;
-
+   
     float avoidCount;
 
 
@@ -101,9 +100,9 @@ public class Boids : MonoBehaviour
             if(Vector3.Distance(transform.position, target.position) < 0.3f)
             {
                 //Attack successfull, do damage, fly away
-                Debug.Log("Hit Player");
+                Debug.Log("Hit Target");
                 isFlocking = true;
-                player.healthSystem.DealDamage(2);
+                
             }
         }
     }
